@@ -7,8 +7,8 @@ tags: [sample, testing]
 comments: false
 toc: false
 pinned: true
-banner: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/images/1_banner.png
-dlink: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/SampleCustomLevel.zip
+banner: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/1_banner.png
+dlink: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/SampleCustomLevel.zip
 version-start: v1.2.0
 version-end: latest
 ---

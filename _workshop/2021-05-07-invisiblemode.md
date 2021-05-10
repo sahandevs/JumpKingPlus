@@ -7,7 +7,7 @@ tags: [invisible, official-levels]
 comments: false
 toc: false
 pinned: false
-banner: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/images/2_banner.png
+banner: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/2_banner.png
 dlink: https://docs.google.com/uc?export=download&id=1otkk6pOOAjiwRtgg-fmmg-McmeOzL_Ja
 version-start: v1.2.0
 version-end: latest

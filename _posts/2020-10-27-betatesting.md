@@ -10,7 +10,7 @@ pinned: false
 hidden: false
 ---
 
-![Early Access](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/images/Banner.png)
+![Early Access](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/Banner.png)
 
 <p><strong>Betatesting</strong> can be applied by compiling the form below.
 The early access form ends October 28th, 2020 at 2 PM UTC+1.<br>

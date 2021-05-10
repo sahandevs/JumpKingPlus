@@ -27,7 +27,7 @@ pinned: false
 
 Welcome to the documentation for custom levels on Jump King using JumpKingPlus! On your left you can find the table of contents with everything you should need to make a custom level.
 
-<a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a>
+<a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a>
 
 ## Warning
 When this document referres on a folder, this is obviously meant to be inside `Jump King/Content/mods`, JumpKingPlus does **not** take any responsibility of your actions as you agreed downloading JumpKingPlus with a MIT License.
@@ -37,7 +37,7 @@ I reccomend you to use the **working sample level** to start with, and edit it f
 ## Requirements for building custom levels
 > Custom levels are available only using __JumpKingPlus on [v1.2.0](https://github.com/Phoenixx19/JumpKingPlus/releases/tag/v1.2.0) or above__.
 
-- The [__sample custom level__](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/SampleCustomLevel.zip) by Phoenixx19
+- The [__sample custom level__](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/SampleCustomLevel.zip) by Phoenixx19
 - A simple pixel art editor (Aseprite or GraphicsGale)
 - A good image editor for editing and exporting hitboxes (GIMP or Adobe Photoshop)
 - [JumpKingManager](https://github.com/ShootMe/LiveSplit.JumpKing/releases/latest) to access one area quickly
@@ -91,7 +91,7 @@ If you want to unpack an image from the game, put the file inside the `packed` f
 #### Pack images
 If you want to pack an image to put on the mod, make sure you have the .json file of your file ready to get packed with your image. If you never unpacked an image you can use this simple .json and modify for your own use! 
 
-<span style="color: grey; font-size: small; font-weight:600;">YOURFILENAMEHERE.json&nbsp;&nbsp;<a class="ws-button code-show" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/YOURFILENAMEHERE.json"><ion-icon name="code-download"></ion-icon> Download</a></span>
+<span style="color: grey; font-size: small; font-weight:600;">YOURFILENAMEHERE.json&nbsp;&nbsp;<a class="ws-button code-show" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/YOURFILENAMEHERE.json"><ion-icon name="code-download"></ion-icon> Download</a></span>
 ```json
 {
     "header": {
@@ -143,7 +143,7 @@ Last warning. This takes a lot in both space on your drive and time. Choose only
 After installing and downloading all the files needed; you can start working on your first custom level. In order to make the custom level working you will need to create two files inside your `JumpKing/Contents/mods` folder. JumpKingPlus loads the custom mode when both the `level.xnb` and the `mod.xml` files are in the folder above.
 
 ### Mod config file
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/mod.xml"><ion-icon name="code"></ion-icon> Blank mod.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/example_mod.xml"><ion-icon name="code-slash"></ion-icon> Example mod.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mod.xml"><ion-icon name="code"></ion-icon> Blank mod.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/example_mod.xml"><ion-icon name="code-slash"></ion-icon> Example mod.xml</a></div>
 
 In this file, you will set up the basics information of your level such as:
 
@@ -403,44 +403,44 @@ The screen folder contains textures such as background, foreground, midground, s
 The background is usually used for skies or gradients to put back on a certain or multiple screens.
 The name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.xnb`.
 
-![BG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/background.png)
+![BG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/background.png)
 
 #### Foreground
 The foreground is used for details that are in front of the player, such as vines or grass.
 The name of the file should be `fg(SCREEN NUMBER).xnb`, or as an example, `fg1.xnb`.
 
-![FG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/foreground.png)
+![FG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/foreground.png)
 
 #### Masks
 The masks are animated backgrounds that are stored inside the default `particles` folder. Masks can be used to give more depth to the level, some examples of masks are ash, rain and snow. 
 The name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an example `light_snow_bgmask1.xnb`.
 
-![Mask](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/mask.png)
+![Mask](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mask.png)
 
 #### Midground
 The midground is usually used for platforms and detail that want to be behind the player (the player can go over them).
 The name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
 
-![MG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/midground.png)
+![MG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/midground.png)
 
 #### Scrolling images
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/scroll.xml"><ion-icon name="code-slash"></ion-icon> Example scroll.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/scroll.xml"><ion-icon name="code-slash"></ion-icon> Example scroll.xml</a></div>
 
 The scrolling images are managed by an .xml file, that determines their texture, position, velocity and layer mode (see example scroll.xml above). The scrolling texture is usually used for clouds or birds flying in the distance. The texture name should be the same of the namefile. Which means if you created a new scrolling texture called `clouds.xnb` the name of the texture inside the scroll setting file should be `<texture>clouds</texture>`.
 
-![Scrolling](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/scroll.png)
+![Scrolling](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/scroll.png)
 
 All of the layers together make this (not counting the hidden wall because that's a prop):
 
-![Example Image](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/final.jpg)
+![Example Image](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/final.jpg)
 
 ### Props folder
 The props folder contains textures and settings of props used in-game; their categories are: worlditems, textures, messages, hidden walls and hidden walls props. Avoid using props in the final screen to prevent slight visual bugs from the game itself.
 
 #### World items
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/worlditems.xml"><ion-icon name="code-slash"></ion-icon> Example worlditems.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/worlditems.xml"><ion-icon name="code-slash"></ion-icon> Example worlditems.xml</a></div>
 
 The world items are items that the player can pick up by walking on them. These have their own texture from the wearable items and they are stored in `props/worlditems`.
 
@@ -528,7 +528,7 @@ The raven is the entity related to the bird. It is located inside the `textures/
 
 #### Props
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/prop_settings.xml"><ion-icon name="code-slash"></ion-icon> Example prop_settings.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/prop1.xml"><ion-icon name="code-slash"></ion-icon> Example prop.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/prop_settings.xml"><ion-icon name="code-slash"></ion-icon> Example prop_settings.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/prop1.xml"><ion-icon name="code-slash"></ion-icon> Example prop.xml</a></div>
 
 The props in-game (such as the bonfire in the first screen) are stored in the `props/textures` and they have one setting file named `prop_settings.xml` which contains:
 
@@ -549,7 +549,7 @@ To add a prop on a screen, you will need to create a configuration file called `
 
 #### Hidden walls
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/hidden_wall.xml"><ion-icon name="code-slash"></ion-icon> Example hidden_wall.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/prop.xml"><ion-icon name="code-slash"></ion-icon> Example prop.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/hidden_wall.xml"><ion-icon name="code-slash"></ion-icon> Example hidden_wall.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/prop.xml"><ion-icon name="code-slash"></ion-icon> Example prop.xml</a></div>
 
 Hidden walls are used in-game to hide areas or make the screen more realistic, the hidden wall works as foreground until the player gets into its position where it gets transparent.
 
@@ -564,7 +564,7 @@ The king folder contains the textures of the wearable items by the player, by ch
 
 #### Locations
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/location_settings.xml"><ion-icon name="code-slash"></ion-icon> Example location_settings.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/location_settings.xml"><ion-icon name="code-slash"></ion-icon> Example location_settings.xml</a></div>
 
 The locations in-game can be changed using the `gui/location_settings.xml` file.
 
@@ -579,7 +579,7 @@ The locations in-game can be changed using the `gui/location_settings.xml` file.
 
 #### Earthquake effect
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/earthquake_settings.xml"><ion-icon name="code-slash"></ion-icon> Example earthquake_settings.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/earthquake_settings.xml"><ion-icon name="code-slash"></ion-icon> Example earthquake_settings.xml</a></div>
 
 Implemented from <span class="badge-pill">v1.4.0</span>, this permits to disable/enable the earthquake effect used by Jump King in correspondence of the towers. This is effect consists into moving the screen left and right by one pixel.
 
@@ -618,7 +618,7 @@ The ambient music should be placed inside `audio/background` as an .xnb file. To
 
 #### values.xml file
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/values.xml"><ion-icon name="code-slash"></ion-icon> Example values.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/values.xml"><ion-icon name="code-slash"></ion-icon> Example values.xml</a></div>
 
 |tag|description|
 |---|---|
@@ -681,7 +681,7 @@ And event music which is a subfolder which contains music that can be triggered,
 
 ### Particles folder
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/weather.xml"><ion-icon name="code-slash"></ion-icon> Example weather.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/master/docs/workshop/files/snow_settings.xml"><ion-icon name="code-slash"></ion-icon> Example snow_settings.xml</a></div>
+<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/weather.xml"><ion-icon name="code-slash"></ion-icon> Example weather.xml</a><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/snow_settings.xml"><ion-icon name="code-slash"></ion-icon> Example snow_settings.xml</a></div>
 
 The particles folder should include two .xml configuration file which are:
 - snow_settings.xml (which sets the snow)
