@@ -129,7 +129,7 @@ namespace JumpKingPlus
 						},
 						Assets = new Assets
 						{
-							LargeImageKey = "unknown",
+							LargeImageKey = ParseData.getImageKey(),
 							LargeImageText = "",
 							SmallImageKey = "jkpluslogo",
 							SmallImageText = "JumpKingPlus v" + JKVersion.version.ToString()
