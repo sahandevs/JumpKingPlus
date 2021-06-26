@@ -3,6 +3,7 @@ using System;
 using JumpKing;
 using JumpKing.SaveThread;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace JumpKingPlus
 {
@@ -182,6 +183,80 @@ namespace JumpKingPlus
             var value = (currentjump / jumptime) * 100;
             value = (float)Math.Round(value);
             return Convert.ToInt32(value);
+        }
+
+        public List<int> GetAllBabeScreens(int target, int startingPoint = 0)
+        {
+            // starting point must be x + 1 !!!!
+            target += 1;
+            DiscordLocations.Location[] locs = DiscordLocations._discordLocation.locations;
+            bool addList = false;
+            List<int> allLocs = new List<int>();
+            if (startingPoint == 0) { addList = true; }
+
+            foreach (DiscordLocations.Location loc in locs)
+            {
+                if (startingPoint != 0 && (loc.start == startingPoint || loc.end == startingPoint))
+                {
+                    addList = true;
+                    continue;
+                }
+                if (addList && loc.start != target && loc.end != target)
+                {
+                    for (int i = loc.start - 1; i < loc.end; i++)
+                    {
+                        allLocs.Add(i);
+                    }
+                }
+                if (loc.start == target || loc.end == target)
+                {
+                    break;
+                }
+            }
+
+            return allLocs;
+        }
+
+        public string GamePercent(int currentScreen)
+        {
+            EndingFix babeScreens = new EndingFix();
+            babeScreens.Default();
+            List<int> screens = new List<int>() {
+                babeScreens.Main,
+                babeScreens.NBP,
+                babeScreens.Owl
+            };
+
+            /*List<int> main = GetAllBabeScreens(babeScreens.Main);
+            List<int> nbp = GetAllBabeScreens(babeScreens.NBP, babeScreens.Main + 1);
+            List<int> owl = GetAllBabeScreens(babeScreens.Owl, babeScreens.NBP + 1);*/
+
+
+            int subtract = 0;
+            foreach (int babes in screens)
+            {
+                if (currentScreen <= babes)
+                {
+
+                    List<int> allScreens = GetAllBabeScreens(babes, subtract);
+                    var current = allScreens.IndexOf(currentScreen);
+                    float value = (float)(current) / (float)(allScreens.Count);
+                    value *= 100f;
+                    return value.ToString("0.00");
+                }
+                subtract = babes + 1;
+            }   
+            return "???";
+        }
+        public string GamePercent(int currentScreen, int customScreen)
+        {
+            if (currentScreen <= customScreen)
+            {
+                float value = (float)currentScreen / (float)(customScreen - 1);
+                value *= 100f;
+                return value.ToString("0.00");
+            }
+            return "???";
         }
 
         public void ToggleCheatAction()

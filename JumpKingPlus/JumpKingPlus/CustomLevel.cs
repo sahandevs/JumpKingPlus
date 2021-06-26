@@ -102,7 +102,6 @@ namespace JumpKingPlus
         {
             if (CheckReadFile(dir))
             {
-                Game1.jkdata.ToggleCheats = false;
                 Game1.jkdata.cheats.AchievementAccess = false;
                 Game1.jkdata.CustomGame = true;
             }

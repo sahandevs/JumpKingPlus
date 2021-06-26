@@ -190,7 +190,11 @@ namespace JumpKingPlus
             {
 				if (screen >= (loc.start - 1) && screen <= (loc.end - 1))
                 {
-					text = language.ResourceManager.GetString(loc.name);
+					text = loc.name;
+					if (language.ResourceManager.GetString(loc.name) != null)
+                    {
+						text = language.ResourceManager.GetString(loc.name);
+                    }
 					image = loc.imageKey;
 					break;
                 }
