@@ -52,13 +52,14 @@ I reccomend you to use the **working sample level** to start with, and edit it f
 ## Common rules
 Level design in Jump King is a delicate balance between fairness and hardness. These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on level design. Also in order to get your map approved on the site, these rules **need** to be followed.
 
-1. __Screen transitions must be full jumps__; it would be unfair for a player not knowing how to jump over a new screen
-
-2. __Transition platforms should always work__ (with a full jump) and they __must not be related to a specific position__ in the platform before the transition to the new screen
-
-3. __Platforms must be bordered with a line__ (with at least 1px)
-
-4. Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file), that area sucks
+<div class="intro" style="padding: 1.6em;">
+    <ol>
+        <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player not knowing how to jump over a new screen</li>
+        <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> in the platform before the transition to the new screen</li>
+        <li><b>Platforms must be bordered with a line</b> (with at least 1px)</li>
+        <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are one after another!</li>
+    </ol>
+</div>
 
 Testing is the most important phase of your level that should take you a lot of time, a good level has every single fall calculated, nothing is left to be random. Check out some more tips [**here**](https://phoenixx19.github.io/JumpKingPlus/workshop/commonrules/).
 
@@ -417,6 +418,10 @@ The name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an ex
 
 ![Mask](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mask.png)
 
+Removing a mask inside a screen that has already a particle effect (written on `particles/weather.xml`) will display the effect on the whole screen.
+
+The mask lets you display the particles effect only on the blue/cyan mask you are creating, to add a particle effect, [**click here**](#weather).
+
 #### Midground
 The midground is usually used for platforms and detail that want to be behind the player (the player can go over them).
 The name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
@@ -446,8 +451,13 @@ The world items are items that the player can pick up by walking on them. These 
 
 The game to position and read their texture reads a configuration file called `worlditems.xml`. The file is self explainatory so there's no need of a table.
 
+To add a world item to a screen, you can follow the example file above which is pretty self explainatory.
+To remove a world item on a screen, simply get rid of the `<WorldItemState>` with the same screen number.
+
 #### NPCs
 Everything related to NPCs can be found inside `textures/old_man`. NPCs can be of two types: which are `old man` (normal NPC that speaks only) and `merchant` which is an entity that includes the `old man` type but can also sell items. The textures for both needs to be inside `textures/old_man` while the quotes work differently.
+
+NPCs are hardcoded in the game, so they can not be removed; but they can be reskinned. If you simply don't want one (or multiple of them), a simple workaround is to move the NPC to a screen you might not use, like 169, the last screen possible in the game limitations.
 
 old_man_quotes.xml file (located in `textures/old_man/lines`)
 
@@ -510,6 +520,8 @@ merchant_quotes.xml file (located in `textures/old_man/merchant`)
 
 #### Raven
 The raven is the entity related to the bird. It is located inside the `textures/raven` folder. The folder should contain the raver texture and the `(raven name).ravset` (which is a xml file).
+
+Ravens are also hardcoded in the game. Please use the ones already available.
 
 |tag|description|
 |---|---|
@@ -698,17 +710,31 @@ The particles folder should include two .xml configuration file which are:
 |`<screens>`|int[]|
 |`<int>`|Screen number|
 
-By setting the weather to a specific screen number, that screen also can use masks to crop the particles at will.
+To add a particle effect to a screen, simply edit the `weather.xml` file and at the weather wanted (identifiable by the name tag being snow, snow_slow, etc.) inside the `<screens>` tag add a new int tag with the screen number you'd like.
+
+```xml 
+<Weather>
+  <name>snow</name>
+  <fps>12</fps>
+  <screens>
+    <int>5</int>
+  </screens>
+</Weather>
+```
+
+On the example above, I added the particle effect `snow` inside the screen 5, you can crop at will the particles on screen 5 using the [**masks**](#masks).
 
 #### Snow settings
-This needs to be configured, if the snow particle is used.
+This needs to be configured, if the `snow` particle is used.
+
+> add something here
 
 ---
 
 ## Publishing
 To get it published on the site, post your map in the [#modding](http://discord.gg/QhnERYV) channel on Discord where it will get verified by one the level publisher moderators.
 
-The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, GitHub does not work as a cloud!
+The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, the JumpKingPlus' GitHub repository does not work as a cloud!
 
 <br>
 Special thanks to MERNY!<br>
