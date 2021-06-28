@@ -90,56 +90,8 @@ namespace JumpKingPlus
             SaveManager.instance.m_player.m_body.velocity = Vector2.Zero;
             Camera.UpdateCamera(SaveManager.instance.m_player.m_body.GetHitbox().Center);
         }
-        public void BestScreenAssignment()
-        {
-            if (Camera.CurrentScreen > bestScreen)
-            {
-                bestScreen = Camera.CurrentScreen;
-            }
-        }
 
-        public int LocationsUnlocked()
-        {
-            switch (bestScreen)
-            {
-                case int n when (n >= 0 && n <= 4 || n >= 44 && n <= 45 || n >= 155 && n <= 159):
-                    return 0;
-
-                case int n when (n >= 5 && n <= 9 || n >= 46 && n <= 51 || n >= 160 && n <= 163):
-                    return 1;
-
-                case int n when (n >= 10 && n <= 13 || n >= 52 && n <= 58 || n >= 101 && n <= 107):
-                    return 2;
-
-                case int n when (n >= 14 && n <= 18 || n >= 59 && n <= 62 || n >= 108 && n <= 115):
-                    return 3;
-
-                case int n when (n >= 19 && n <= 24 || n >= 63 && n <= 69 || n >= 116 && n <= 122):
-                    return 4;
-
-                case int n when (n >= 26 && n <= 31 || n >= 70 && n <= 76 || n >= 123 && n <= 129):
-                    return 5;
-
-                case int n when (n >= 32 && n <= 35 || n >= 77 && n <= 82 || n >= 130 && n <= 138):
-                    return 6;
-
-                case int n when (n >= 36 && n <= 38 || n >= 83 && n <= 88 || n >= 139 && n <= 146):
-                    return 7;
-
-                case int n when (n >= 39 && n <= 41 || n >= 89 && n <= 93 || n >= 147 && n <= 152):
-                    return 8;
-
-                case int n when (n == 42 || n >= 94 && n <= 98 || n == 153):
-                    return 9;
-
-                case 99:
-                    return 10;
-
-                default:
-                    return 5;
-            }
-        }
-
+        //locs used for teleports
         public int[] locInt = { 
             0, 5, 10, 14, 19, 25, 26, 32, 36, 39, 42,
             44, 46, 52, 59, 63, 70, 77, 83, 89, 94, 99,
@@ -185,78 +137,68 @@ namespace JumpKingPlus
             return Convert.ToInt32(value);
         }
 
-        public List<int> GetAllBabeScreens(int target, int startingPoint = 0)
+        public List<int> splittedLocs(int skipAmount)
         {
-            // starting point must be x + 1 !!!!
-            target += 1;
-            DiscordLocations.Location[] locs = DiscordLocations._discordLocation.locations;
-            bool addList = false;
-            List<int> allLocs = new List<int>();
-            if (startingPoint == 0) { addList = true; }
-
-            foreach (DiscordLocations.Location loc in locs)
+            var currSkip = 0;
+            var startingId = 1;
+            List<int> locations = new List<int>() { };
+            foreach (DiscordLocations.Location loc in DiscordLocations._discordLocation.locations)
             {
-                if (startingPoint != 0 && (loc.start == startingPoint || loc.end == startingPoint))
+                if (loc.id == startingId)
                 {
-                    addList = true;
-                    continue;
-                }
-                if (addList && loc.start != target && loc.end != target)
-                {
-                    for (int i = loc.start - 1; i < loc.end; i++)
+                    if (currSkip == skipAmount)
                     {
-                        allLocs.Add(i);
+                        for (int i = loc.start - 1; i < loc.end; i++)
+                        {
+                            locations.Add(i);
+                        }
+                        startingId += 1;
+                        continue;
                     }
+                    currSkip += 1;
                 }
-                if (loc.start == target || loc.end == target)
+            }
+            return locations;
+        }
+
+        public List<int> customSplittedLocs()
+        {
+            List<int> locations = new List<int>() { };
+            foreach (JumpKing.MiscSystems.LocationText.Location loc in JumpKing.MiscSystems.LocationText.LocationTextManager.SETTINGS.locations)
+            {
+                for (int i = loc.start - 1; i < loc.end; i++)
                 {
+                    locations.Add(i);
+                }
+            }
+            return locations;
+        }
+
+        public string GamePercent(int currentScreen, bool customMap = false)
+        {
+            List<int> currentBabe = new List<int>();
+
+            if (customMap)
+            {
+                currentBabe = customSplittedLocs();
+                float value2 = (float)(currentScreen + 1) / (float)(currentBabe.Count);
+                value2 *= 100f;
+                return value2.ToString("0.00");
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (splittedLocs(i).Contains(currentScreen))
+                {
+                    currentBabe = splittedLocs(i);
                     break;
                 }
             }
 
-            return allLocs;
-        }
-
-        public string GamePercent(int currentScreen)
-        {
-            EndingFix babeScreens = new EndingFix();
-            babeScreens.Default();
-            List<int> screens = new List<int>() {
-                babeScreens.Main,
-                babeScreens.NBP,
-                babeScreens.Owl
-            };
-
-            /*List<int> main = GetAllBabeScreens(babeScreens.Main);
-            List<int> nbp = GetAllBabeScreens(babeScreens.NBP, babeScreens.Main + 1);
-            List<int> owl = GetAllBabeScreens(babeScreens.Owl, babeScreens.NBP + 1);*/
-
-
-            int subtract = 0;
-            foreach (int babes in screens)
-            {
-                if (currentScreen <= babes)
-                {
-
-                    List<int> allScreens = GetAllBabeScreens(babes, subtract);
-                    var current = allScreens.IndexOf(currentScreen);
-                    float value = (float)(current) / (float)(allScreens.Count);
-                    value *= 100f;
-                    return value.ToString("0.00");
-                }
-                subtract = babes + 1;
-            }   
-            return "???";
-        }
-        public string GamePercent(int currentScreen, int customScreen)
-        {
-            if (currentScreen <= customScreen)
-            {
-                float value = (float)currentScreen / (float)(customScreen - 1);
-                value *= 100f;
-                return value.ToString("0.00");
-            }
-            return "???";
+            var current = currentBabe.IndexOf(currentScreen);
+            float value = (float)(current + 1) / (float)(currentBabe.Count);
+            value *= 100f;
+            return value.ToString("0.00");
         }
 
         public void ToggleCheatAction()

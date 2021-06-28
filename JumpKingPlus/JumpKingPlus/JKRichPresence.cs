@@ -28,6 +28,7 @@ namespace JumpKingPlus
 			public int end;
 			public string name;
 			public string imageKey;
+			public int id;
 		}
 	}
 
