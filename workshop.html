@@ -28,6 +28,7 @@ title: Workshop
   </h2>
   <div class="levels">
     {% for post in site.workshop reversed %}
+      {{ post.id }}{{ post.hidden }}
       {% if post.hidden == false %}
         <div class="card">
           <a href="{{ site.baseurl }}{{ post.id }}">
