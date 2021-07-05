@@ -5,7 +5,7 @@
 # 你的博客名称，请用你想要的博客名替换“LOFFER”，以下修改都可类似处理
 # 注意，“name: LOFFER”，冒号后面的空格不可以省略。
 # 井号后面的文字是说明文档，不会被程序读取。
-name: JumpKingPlus
+title: JumpKingPlus
 # 描述/签名
 description: An enhanced version of Jump King. ✨
 
@@ -80,7 +80,7 @@ url:
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
 baseurl: /JumpKingPlus
-repository: Phoenixx19/JumpKingPlus
+github: [metadata]
 
 
 #
