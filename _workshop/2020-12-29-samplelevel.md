@@ -15,6 +15,7 @@ version-start: v1.2.0
 version-end: latest
 video: WvFE5sDvriU
 levelId: "1"
+hidden: true
 ---
 
 Build your own level with this sample level! __This is not a custom playable map! Testing only!__
