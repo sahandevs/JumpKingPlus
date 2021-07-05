@@ -1,5 +1,4 @@
 ---
-id: 2
 layout: level
 title: Invisible mode
 date: 2021-05-07
