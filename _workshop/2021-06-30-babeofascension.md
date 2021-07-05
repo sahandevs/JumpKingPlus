@@ -1,30 +1,27 @@
 ---
-id: 3
-layout: post
+layout: level
 title: Babe of Ascension
 date: 2021-06-30
 Author: IntroCar
+tags: [long, polished]
 Helpers: [
     Lord of Cheeses,
     Bioro,
     Kebb
 ]
-levelscreens: 84
-tags: [long, polished]
-comments: false
-toc: false
-pinned: false
-banner: https://media.discordapp.net/attachments/771125324846858261/859833295298756608/Banner.PNG
+levelscreens: "84"
 images: [
-    https://media.discordapp.net/attachments/771125324846858261/859825051683913738/unknown.png,
-    https://media.discordapp.net/attachments/771125324846858261/859825347909517344/143.png,
-    https://media.discordapp.net/attachments/771125324846858261/859834047978930196/unknown.png,
-    https://media.discordapp.net/attachments/771125324846858261/859834435728834580/unknown.png,
-    https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png
+    "https://media.discordapp.net/attachments/771125324846858261/859833295298756608/Banner.PNG",
+    "https://media.discordapp.net/attachments/771125324846858261/859825051683913738/unknown.png",
+    "https://media.discordapp.net/attachments/771125324846858261/859825347909517344/143.png",
+    "https://media.discordapp.net/attachments/771125324846858261/859834047978930196/unknown.png",
+    "https://media.discordapp.net/attachments/771125324846858261/859834435728834580/unknown.png",
+    "https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png"
 ]
-dlink: https://www.google.com/
+dlink: "https://www.google.com/"
 version-start: v1.4.2
 version-end: latest
+levelId: "3"
 hidden: true
 ---
 

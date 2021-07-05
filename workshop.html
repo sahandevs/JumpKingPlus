@@ -28,15 +28,10 @@ title: Workshop
   </h2>
   <div class="levels">
     {% for level in site.workshop reversed %}
-
-
-      {{ level.id }}{{ level.title }}{{ level.date }}{{ level.Author }}{{ level.Helpers }}{{ level.levelscreens }}{{ level.tags }}{{ level.banner }}{{ level.images }}{{ level.dlink }}{{ level.hidden }} <br>
-
-
       {% if level.hidden == false %}
         <div class="card">
           <a href="{{ site.baseurl }}{{ level.id }}">
-            <img src="{{ level.banner }}" style="border-radius: 0; margin: 0; height: 229px; object-fit: cover;"
+            <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; height: 229px; object-fit: cover;"
                   alt="{{ level.title }} by {{ level.Author }}">
           </a>
           <div class="details">
