@@ -732,9 +732,7 @@ This needs to be configured, if the `snow` particle is used.
 ---
 
 ## Publishing
-To get it published on the site, post your map in the [#modding](http://discord.gg/QhnERYV) channel on Discord where it will get verified by one the level publisher moderators.
-
-The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, the JumpKingPlus' GitHub repository does not work as a cloud!
+Head over on the [__publish page__]() to get your level added!
 
 <br>
 Special thanks to MERNY!<br>

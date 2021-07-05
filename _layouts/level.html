@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include wsnav.html %}
+    
+    <div id="main" role="main" class="wrapper-content">
+        
+        <div class="blurred" style="background-image: url({{ page.banner }});"></div>
+        
+        <article class="page level">
+            <div class="container">
+                <div class="entry">
+
+                    {% if page.hidden == true %}
+                        <h1>Nothing to see here...</h1>
+                        <span class="author-level">...yet! ;)</span>
+                    {% endif %}
+                    
+                    {% unless page.hidden %}
+                    <h1>{{ page.title }}
+                        <a class="dl-button" href="{{ page.dlink }}" title="Download">
+                            Download <ion-icon name="download"></ion-icon>
+                        </a>
+                    </h1>
+
+                    <span class="author-level">
+                        <ion-icon name="person"></ion-icon> by {{ page.Author }}
+                        <span style="float: right;">
+                            from {{ page.version-start }} to {{ page.version-end }}
+                            {% if page.version-end == "latest" %}
+                            <ion-icon name="checkmark-sharp"></ion-icon>
+                            {% else %}
+                            <ion-icon name="close-sharp"></ion-icon>
+                            {% endif %}
+                        </span>
+                    </span>
+
+                    {{ content }}
+
+                    <hr />
+                    
+                    <div id="details">
+                        <!-- IMAGES -->
+                        {% assign imgList = page.images | size %}
+                        {% if imgList != 0 %}
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+                            {% if page.video %}
+                                <div class="swiper-slide">
+                                    <iframe width="672" height="378" src="https://www.youtube-nocookie.com/embed/{{ page.video }}?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            {% endif %}
+                            {% for image in page.images %}
+                                <div class="swiper-slide">
+                                    <img src="{{ image }}">
+                                </div>
+                            {% endfor %}
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <script>
+                            let desc = document.getElementById("description");
+                            let deta = document.getElementById("details");
+                            deta.append(...desc.childNodes);
+                        </script>
+
+                        <!-- Swiper JS -->
+                        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+                        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+                        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+                        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+                        <!-- Initialize Swiper -->
+                        <script>
+                            var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: "auto",
+                            centeredSlides: true,
+                            /*
+                            autoplay: {
+                                delay: 7500,
+                                disableOnInteraction: true,
+                            }, */
+                            spaceBetween: 20,
+                            loop: true,
+                            mousewheel: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            });
+                        </script>
+                        {% endif %}
+
+                        <div class="details" style="padding: 0;">
+                            <h2>Details</h2>
+                            <table>
+                                <tr>
+                                    <td>Release date</td>
+                                    <td>{{ page.date  | date: "%-d %B %Y" }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Author</td>
+                                    <td>{{ page.Author }}</td>
+                                </tr>
+                                {% if page.Helpers %}
+                                <tr>
+                                    <td>Helpers</td>
+                                    <td>{% for helper in page.Helpers %}
+                                        <span style="display: block;">{{ helper }}</span>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td>Level screens</td>
+                                    <td>{{ page.levelscreens }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Compatibility</td>
+                                    <td>From <b>{{ page.version-start }}</b> to <b>{{ page.version-end }}</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Tags</td>
+                                    <td>
+                                        {% for tag in page.tags %}
+                                        <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
+                                        <span class="rounded-full level-tag">
+                                            <span style="color: #868e96;">#</span>{{ tag }}
+                                        </span>
+                                        </a>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Workshop ID</td>
+                                    <td><code>{{ page.id }}</code></td>
+                                </tr>
+                            </table>
+                        </div>
+                    {% endunless %}
+                    </div>
+
+                </div> 
+            </div>
+        </article>
+    </div>
+
+  </body>
+
+  <div class="wrapper-footer-mobile">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+
+
+</html>
