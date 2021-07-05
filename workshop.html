@@ -28,7 +28,11 @@ title: Workshop
   </h2>
   <div class="levels">
     {% for post in site.workshop reversed %}
-      {{ post }} <br>
+
+
+      {{ post.id }}{{ post.title }}{{ post.date }}{{ post.Author }}{{ post.Helpers }}{{ post.levelscreens }}{{ post.tags }}{{ post.banner }}{{ post.images }}{{ post.dlink }}{{ post.hidden }} <br>
+
+
       {% if post.hidden == false %}
         <div class="card">
           <a href="{{ site.baseurl }}{{ post.id }}">
