@@ -14,7 +14,6 @@ images: [https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/1_
 dlink: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/SampleCustomLevel.zip
 version-start: v1.2.0
 version-end: latest
-hidden: false
 ---
 
 Build your own level with this sample level! __This is not a custom playable map! Testing only!__
