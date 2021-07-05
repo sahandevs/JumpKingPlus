@@ -27,35 +27,35 @@ title: Workshop
     </a>
   </h2>
   <div class="levels">
-    {% for post in site.workshop reversed %}
+    {% for level in site.workshop reversed %}
 
 
-      {{ post.id }}{{ post.title }}{{ post.date }}{{ post.Author }}{{ post.Helpers }}{{ post.levelscreens }}{{ post.tags }}{{ post.banner }}{{ post.images }}{{ post.dlink }}{{ post.hidden }} <br>
+      {{ level.id }}{{ level.title }}{{ level.date }}{{ level.Author }}{{ level.Helpers }}{{ level.levelscreens }}{{ level.tags }}{{ level.banner }}{{ level.images }}{{ level.dlink }}{{ level.hidden }} <br>
 
 
-      {% if post.hidden == false %}
+      {% if level.hidden == false %}
         <div class="card">
-          <a href="{{ site.baseurl }}{{ post.id }}">
-            <img src="{{ post.banner }}" style="border-radius: 0; margin: 0; height: 229px; object-fit: cover;"
-                  alt="{{ post.title }} by {{ post.Author }}">
+          <a href="{{ site.baseurl }}{{ level.id }}">
+            <img src="{{ level.banner }}" style="border-radius: 0; margin: 0; height: 229px; object-fit: cover;"
+                  alt="{{ level.title }} by {{ level.Author }}">
           </a>
           <div class="details">
             <div class="title-level">
-              <a href="{{ site.baseurl }}{{ post.id }}">
-                <span>{{ post.title }}</span>
+              <a href="{{ site.baseurl }}{{ level.id }}">
+                <span>{{ level.title }}</span>
               </a>
-              <a class="dl-button" href="{{ post.dlink }}" title="Download">
+              <a class="dl-button" href="{{ level.dlink }}" title="Download">
                 <ion-icon name="download"></ion-icon>
               </a>
             </div>
             <span class="author-level">
-              <ion-icon name="person"></ion-icon> {{ post.Author }}
+              <ion-icon name="person"></ion-icon> {{ level.Author }}
             </span>
             <p class="desc">
-              {{ post.excerpt | truncate: 300 }}
+              {{ level.excerpt | truncate: 300 }}
             </p>
             <div class="details" style="padding: 0;">
-              {% for tag in post.tags %}
+              {% for tag in level.tags %}
               <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
                 <span class="rounded-full level-tag">
                   <span style="color: #868e96;">#</span>{{ tag }}
