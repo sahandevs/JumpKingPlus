@@ -205,7 +205,7 @@ span.author-level {
 
 div.intro {
   padding: 0.5em 1.6em 1.6em 1.6em;
-  margin: 2em 0;
+  margin-bottom: 2em;
   border-radius: 10px;
   background: linear-gradient(23deg, #f8f9fa 10%, #7fc2855e 80%);
   border: 1px solid #f1f3f5;
@@ -298,8 +298,15 @@ iframe {
 .card {
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
   overflow: hidden;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
   border-radius: 20px;
   margin: 30px 0 15px 0;
+}
+
+.card:hover {
+  margin: 25px 0 20px 0;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 20%), 0 4px 6px -2px rgb(0 0 0 / 15%);
 }
 
 .card:before, .card:after {
