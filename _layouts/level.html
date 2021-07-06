@@ -15,9 +15,11 @@ layout: levelbase
             
             {% unless page.hidden %}
             <h1>{{ page.title }}
-                <a class="dl-button" href="{{ page.dlink }}" title="Download">
-                    Download <ion-icon name="download"></ion-icon>
-                </a>
+                {% if page.bitly %}
+                    <a class="dl-button" href="https://bit.ly/{{ page.bitly }}" title="Download">
+                        Download <ion-icon name="download"></ion-icon>
+                    </a>
+                {% endif %}
             </h1>
 
             <span class="author-level">
@@ -93,6 +95,10 @@ layout: levelbase
                     <h2>Details</h2>
                     <table>
                         <tr>
+                            <td>Workshop ID</td>
+                            <td><code>{{ page.levelId }}</code></td>
+                        </tr>
+                        <tr>
                             <td>Release date</td>
                             <td>{{ page.date  | date: "%-d %B %Y" }}</td>
                         </tr>
@@ -129,10 +135,26 @@ layout: levelbase
                                 {% endfor %}
                             </td>
                         </tr>
-                        <tr>
-                            <td>Workshop ID</td>
-                            <td><code>{{ page.levelId }}</code></td>
-                        </tr>
+                        {% if page.bitly %}
+                            <tr>
+                                <td>Downloads <span class="rounded-full level-tag">BETA</span></td>
+                                <td id="bitly">Loading...</td>
+                            </tr>
+                            <script>
+                                async function GET(url) {
+                                    const response = await fetch(url, {
+                                        headers: {
+                                            'Authorization': 'Bearer 7f05c8ea219d6e248bef62926eebb83954f9bef4'
+                                        }
+                                    })
+                                    const json = await response.json();
+                                    return json;
+                                }
+
+                                GET("https://api-ssl.bitly.com/v4/bitlinks/bit.ly/{{ page.bitly }}/clicks/summary?units=-1")
+                                    .then(success => document.getElementById('bitly').innerHTML = success.total_clicks)
+                            </script>
+                        {% endif %}
                     </table>
                 </div>
             {% endunless %}
