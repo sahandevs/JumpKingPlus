@@ -39,9 +39,11 @@ title: Workshop
               <a href="{{ site.baseurl }}{{ level.id }}">
                 <span>{{ level.title }}</span>
               </a>
-              <a class="dl-button" href="{{ level.dlink }}" title="Download">
-                <ion-icon name="download"></ion-icon>
-              </a>
+              {% if level.bitly %}
+                <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download">
+                  <ion-icon name="download"></ion-icon>
+                </a>
+              {% endif %}
             </div>
             <span class="author-level">
               <ion-icon name="person"></ion-icon> {{ level.Author }}
