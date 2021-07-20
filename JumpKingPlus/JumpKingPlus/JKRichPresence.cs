@@ -164,18 +164,7 @@ namespace JumpKingPlus
 						LargeImageText = "",
 						SmallImageKey = "jkplus",
 						SmallImageText = "JumpKingPlus v" + JKVersion.version.ToString()
-					},
-					Secrets = new Secrets
-                    {
-						JoinSecret = "mybolsitch",
-						SpectateSecret = "mybolsitchparttwo"
-					},
-					Party = new Party
-                    {
-						ID = "getpr4nkedlolxdab",
-						Size = 1,
-						Max = 4
-                    }
+					}
 				});
 			}
 		}
