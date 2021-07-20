@@ -517,6 +517,61 @@ merchant_quotes.xml file (located in `textures/old_man/merchant`)
 |`<lines>`|string[]|
 |`<settings>`|Old Man settings (the table above)|
 
+Implemented from <span class="badge-pill">v1.5.0</span>, you can create quotes that triggers for only wearing an item or for the amount of falls.
+
+##### Item trigger
+
+|tag|description|
+|---|---|
+|`<items>`|OldManItem[]|
+|`<OldManItem>`|Contains the info for every item trigger|
+|`<item>`|Item name|
+|`<quotes>`|OldManQuote[]|
+
+An example of item trigger:
+```xml
+<items>
+  <OldManItem>
+    <item>Cap</item>
+    <quotes>
+      <OldManQuote>
+        <lines>
+          <string>Sick hat, bro!</string>
+        </lines>
+      </OldManQuote>
+    </quotes>
+  </OldManItem>
+  <!-- add another OldManItem, if you want another trigger -->
+</items>
+```
+
+##### Fall trigger
+
+|tag|description|
+|---|---|
+|`<falls>`|OldManFalls[]|
+|`<OldManFalls>`|Contains the info for every item trigger|
+|`<fallStart>`|Minimal fall number (number included!)|
+|`<fallEnd>`|Maximum fall number|
+|`<quotes>`|OldManQuote[]|
+
+An example of fall trigger:
+```xml
+<falls>
+  <OldManFall>
+    <fallStart>15</fallStart> <!-- you can use 15 for fallEnd for the next OldManFall -->
+    <fallEnd>20</fallEnd> <!-- you can use 20 for fallStart for the next OldManFall -->
+    <quotes>
+      <OldManQuote>
+        <lines>
+          <string>Sick hat, bro!</string>
+        </lines>
+      </OldManQuote>
+    </quotes>
+  </OldManFall>
+  <!-- add another OldManFall, if you want another trigger -->
+</falls>
+```
 
 #### Raven
 The raven is the entity related to the bird. It is located inside the `textures/raven` folder. The folder should contain the raver texture and the `(raven name).ravset` (which is a xml file).
