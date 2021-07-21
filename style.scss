@@ -225,6 +225,15 @@ div.intro {
   border-top: 1px solid #f1f3f5;
 }
 
+@media screen and (max-width: 750px) {
+  .levels {
+    flex-direction: column;
+  }
+  .levels>div {
+    width: auto!important;
+  }
+}
+
 .levels>div {
   width: 42.5%;
 }
