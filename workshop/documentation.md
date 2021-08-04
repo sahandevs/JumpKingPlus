@@ -37,7 +37,7 @@ I reccomend you to use the **working sample level** to start with, and edit it f
 ## Requirements for building custom levels
 > Custom levels are available only using __JumpKingPlus on [v1.2.0](https://github.com/Phoenixx19/JumpKingPlus/releases/tag/v1.2.0) or above__.
 
-- The [__sample custom level__](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/SampleCustomLevel.zip) by Phoenixx19
+- The [__sample custom level__]({{ site.baseurl }}/workshop/1) by Phoenixx19
 - A simple pixel art editor (Aseprite or GraphicsGale)
 - A good image editor for editing and exporting hitboxes (GIMP or Adobe Photoshop)
 - [JumpKingManager](https://github.com/ShootMe/LiveSplit.JumpKing/releases/latest) to access one area quickly
@@ -782,13 +782,15 @@ On the example above, I added the particle effect `snow` inside the screen 5, yo
 #### Snow settings
 This needs to be configured, if the `snow` particle is used.
 
-> add something here
+### Title screen 
+Implemented from <span class="badge-pill">v1.5.1</span>, this let's you change the initial Jump King title screen.
+<br>Simply put a `title_logo.xnb` file inside your `mods` folder.
 
 ---
 
 ## Publishing
-Head over on the [__publish page__]() to get your level added!
+Head over on the [__publish page__]({{ site.baseurl }}/workshop/publish) to get your level added!
 
 <br>
 Special thanks to MERNY!<br>
-~Phoenixx19, 2020
+~Phoenixx19, 2021
