@@ -47,7 +47,7 @@ The installer was made public and open source because of recently; the goal of m
 ### Is this a virus, does it have malware?
 I can not stress this enough; it is **NOT** a virus.
 
-JumpKingPlus is open source, has hundreds of downloads, speedrunners use it for its fast reset time along with other features. If you need proof, head back to the [__FAQ page__]({{ site.baseurl }}/workshop/publish).
+JumpKingPlus is open source, has hundreds of downloads, speedrunners use it for its fast reset time along with other features. If you need proof, head back to the [__FAQ page__]({{ site.baseurl }}/faq).
 
 ### Is this even official?
 __Not official by Nexile, but approved by Nexile.__
