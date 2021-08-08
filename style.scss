@@ -267,14 +267,14 @@ div.intro {
 }
 
 article.page.level {
-  background: linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 115%);
+  background: linear-gradient(0deg, rgba(255,255,255,1) $level-gradient-height, rgba(255,255,255,0) 115%);
   
   h2 {
     margin-top: 1em;
   }
 
   .container {
-    margin-top: -145px;
+    margin-top: -125px;
   }
 }
 
@@ -287,6 +287,7 @@ article.page.level {
 .swiper-slide {
   width: auto!important;
   max-width: 70%;
+  max-height: 378px;
 }
 .swiper-slide img {
   display: block;

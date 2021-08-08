@@ -94,3 +94,5 @@ $dd-position: $dt-width+$dt-dd-space;
     @content;
   }
 }
+
+$level-gradient-height: calc(100% - 125px);
