@@ -250,25 +250,25 @@ The hitbox file is a **Texture2D** (.png image with alpha channel or transparent
       <td>Works both left and right side of the screen</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(1,0,255), rgb(255,0,255));"></div></td>
     </tr>
-    <tr style="background-color: #fff3b2;">
+    <tr class="exclusive">
       <td>Low gravity</td>
       <td>Velocity and gravity is between water and normal, distance is slightly higher (fixed all problems related with solid platforms in v1.3.1)</td>
       <td></td>
       <td><div class="rectangle" style="background:rgb(128,255,255);"></div></td>
     </tr>
-    <tr style="background-color: #fff3b2;">
+    <tr class="exclusive">
       <td>Wind gradients</td>
       <td>16 values that determinates the intensity of the wind</td>
       <td>From 12.5% (Red: 192) to 200% (Red: 207) of the original wind strength</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(192,255,0), rgb(207,255,0));"></div></td>
     </tr>
-    <tr style="background-color: #fff3b2;">
+    <tr class="exclusive">
       <td>One-way wind gradients (LEFT)</td>
       <td>16 values that determinates the intensity of the wind, the wind will never change direction.</td>
       <td>From 12.5% (Red: 208) to 200% (Red: 223) of the original wind strength</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(208,255,0), rgb(223,255,0));"></div></td>
     </tr>
-    <tr style="background-color: #fff3b2;">
+    <tr class="exclusive">
       <td>One-way wind gradients (RIGHT)</td>
       <td>16 values that determinates the intensity of the wind, the wind will never change direction.</td>
       <td>From 12.5% (Red: 224) to 200% (Red: 239) of the original wind strength</td>

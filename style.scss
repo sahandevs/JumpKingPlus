@@ -1095,6 +1095,48 @@ footer {
   }
 }
 
+tr.exclusive { background-color: #fff3b2!important; }
+
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, h5, h6, p, .site-name { color: white; }
+  article.page.level { background: linear-gradient(0deg, rgb(25, 25, 25) calc(100% - 125px), rgba(255, 255, 255, 0) 115%); }
+  .entry hr, hr { border-color: rgb(50, 50, 50); }
+  .details tr > td:first-child { color: lightgrey; }
+  .details tr > td { color: lightgrey; border-bottom-color: rgb(50, 50, 50); }
+  .level-tag { color: lightgrey; background-color: rgb(50, 50, 50); }
+  a.tag-link:hover .level-tag { background-color: rgba(9,146,105,0.25); }
+  .wrapper-sidebar { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); }
+  .wrapper-footer-desktop, .wrapper-footer-mobile { background-color: rgb(33, 33, 33); border-top: 1px solid rgb(45, 45, 45); }
+  footer .svg-icon svg { fill: lightgrey; }
+  footer p, .site-description { color: lightgrey; }
+  body, #main { background-color: rgb(25, 25, 25); }
+  div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, #7fc2855e 80%); border: 1px solid rgb(45, 45, 45); }
+  div.card { border: 1px solid rgb(45, 45, 45); }
+  .levels { border-top: 1px solid rgb(45, 45, 45); }
+  a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }
+  a.ws-button { background-color: rgb(33, 33, 33); }
+  code.highlighter-rouge { background-color: rgb(50, 50, 50)!important; color: #8e97c2!important; }
+  li { color: lightgrey; }
+  blockquote { color: #868e96; }
+  pre.highlight { border: 0!important; background-color: rgb(50, 50, 50); color: lightgrey; }
+  .post { background-color: rgb(33, 33, 33)!important; border: 1px solid rgb(45, 45, 45)!important; }
+  .post.pinned { background-color: rgba(9,146,105,0.1)!important; border: 1px solid rgba(9,146,105,0.25)!important; }
+  .post.pinned .meta { border-bottom: 1px solid rgba(9,146,105,0.25)!important; }
+  .post .meta { border-bottom: 1px solid rgb(45, 45, 45)!important; }
+  .pagination { border-top: 1px solid rgb(45, 45, 45); }
+  .pagination > .next a, .pagination > .prev a { background-color: rgb(33, 33, 33); border: 1px solid rgb(45, 45, 45) }
+  .pagination > .next a:hover, .pagination > .next a:focus { background-color: rgba(9,146,105,0.25)!important;  }
+  .pagination > .prev a:hover, .pagination > .prev a:focus { background-color: rgba(9,146,105,0.25)!important;  }
+  .disclaimer p { color: black }
+  .posts .tag li > a { color: lightgrey; background-color: rgb(45, 45, 45); }
+  .posts .tag li > a:hover { background-color: rgba(9,146,105,0.25); }
+  table { border: 1px solid rgb(50, 50, 50); color: lightgrey; }
+  td, th { border: 1px solid rgb(50, 50, 50); }
+  tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color: rgb(33, 33, 33); }
+  tr.exclusive td { background-color: #fff3b267!important; color: grey }
+  .toc { color: lightgrey }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
