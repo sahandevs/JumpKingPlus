@@ -240,7 +240,7 @@ The hitbox file is a **Texture2D** (.png image with alpha channel or transparent
     </tr>
     <tr>
       <td>Quark</td>
-      <td>Rounds the player's Y position to make falls less different; reference <b><a href="https://media.discordapp.net/attachments/623779998494490624/782275174916685864/unknown.png">here</a></b></td>
+      <td>Rounds the player's X position to make falls less inconsistent; reference <b><a href="https://media.discordapp.net/attachments/623779998494490624/782275174916685864/unknown.png">here</a></b></td>
       <td>Used when player is in full velocity</td>
       <td><div class="rectangle" style="background:rgb(182,255,0);"></div></td>
     </tr>
