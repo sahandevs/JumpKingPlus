@@ -46,7 +46,7 @@ I reccomend you to use the **working sample level** to start with, and edit it f
 
   - [Fast XNB Builder](https://github.com/Phoenixx19/Fast-XNB-Builder/releases/tag/r3) for converting **images and music** into XNB
 
-  - [PNG to XNB](https://cdn.discordapp.com/attachments/765578031749136395/881986228998778880/png_to_xnb.exe) for converting one PNG at a time or an entire folder of PNGs at once to XNB. 
+  - [PNG to XNB](https://cdn.discordapp.com/attachments/765578031749136395/881986228998778880/png_to_xnb.exe) for converting one PNG at a time or an entire folder of PNGs at once to XNB. [Thanks, Terraria forum](https://forums.terraria.org/index.php?threads/yet-another-png-to-xnb-converter.39420/)
 
   - Visual Studio 2019 (or above) using MonoGame for converting all files; check out more [**here**](#convert-all-vs2019monogame), this is pretty long and time consuming I suggest you to not use it unless you have to.
 - *(optional)* [JKPlusModManager](https://github.com/Phoenixx19/JumpKingPlus/releases/download/v1.2.0/JKPlusModManager-v0.1.0.exe) to unload and load custom levels
