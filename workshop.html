@@ -4,34 +4,21 @@ title: Workshop
 ---
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-  <div class="intro">
-    <h1>Welcome to the Workshop!</h1>
-    <p>With this section of the JumpKingPlus page, you can have access to new content!
-      <br>Find out how to create a new map with the <b>documentation</b>.
-      <br>...or how to get your map approved on the site,
-      <br>...or simply you want some level design tips on the <b>guidelines and tips</b> page.
-    </p>
-    <div class="ws-buttons">
-      <a class="ws-button" href="{{ site.baseurl }}/workshop/documentation">
-        <ion-icon name="library"></ion-icon> Documentation
-      </a>
-      <a class="ws-button" href="{{ site.baseurl }}/workshop/commonrules">
-        <ion-icon name="trail-sign"></ion-icon> Guidelines and tips
-      </a>
-    </div>
-  </div>
+  
+  <h1>Welcome to the Workshop!</h1>
 
   <h2>Custom levels&nbsp;
     <a href="{{ site.baseurl }}/faq/#how-do-i-install-a-custom-level" style="display: inline-block;">
       <span class="badge-pill" style="font-size: smaller;">Installation method</span>
     </a>
   </h2>
+
   <div class="levels">
     {% for level in site.workshop reversed %}
       {% if level.hidden == false %}
         <div class="card">
           <a href="{{ site.baseurl }}{{ level.id }}">
-            <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; height: 229px; object-fit: cover;"
+            <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; object-fit: cover;"
                   alt="{{ level.title }} by {{ level.Author }}">
           </a>
           <div class="details">
@@ -52,6 +39,7 @@ title: Workshop
               {{ level.excerpt | truncate: 300 }}
             </p>
             <div class="details" style="padding: 0;">
+
               {% for tag in level.tags %}
               <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
                 <span class="rounded-full level-tag">
@@ -64,4 +52,17 @@ title: Workshop
         </div>
       {% endif %}
     {% endfor %}
-</div>
+  </div>
+
+  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+  <script>
+    let magicGrid = new MagicGrid({
+      container: ".levels", // Required. Can be a class, id, or an HTMLElement.
+      static: true, // Required for static content.
+      gutter: 40, // Optional. Space between items. Default: 25(px).
+      maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+    });
+
+    magicGrid.listen();
+  </script>
+  
