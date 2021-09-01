@@ -8,7 +8,7 @@ permalink: /workshop/tags/
 {% assign tags = site.workshop | map: 'tags' | join: ','  | split: ',' | uniq %}
 <!-- {{ page.url }} -->
 
-<h1>Tags</h1>
+<h1>Tags <span class="rounded-full level-tag" style="display:inline;vertical-align:middle;">BETA</span></h1>
 <p>Current tags available:</p>
 
 {% if site.workshop.size == 0 %}
@@ -48,10 +48,11 @@ permalink: /workshop/tags/
           {% if tag1 == tag %}
           
             <div class="card">
-              <img src="{{ post.banner }}" style="border-radius: 0; margin: 0;" alt="Sunset in the mountains">
               <div class="details">
                 <div class="title-level">
-                  <span>{{ post.title }}</span>
+                  <a href="{{ site.baseurl }}{{ post.id }}">
+                    <span>{{ post.title }}</span>
+                  </a>
                   <a class="dl-button" href="{{ post.dlink }}" title="Download">
                     <ion-icon name="download"></ion-icon>
                   </a>

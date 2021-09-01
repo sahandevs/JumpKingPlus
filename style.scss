@@ -217,25 +217,42 @@ div.intro {
   margin-left: 1em;
 }
 
-.levels {
-  display: flex;
-  justify-content: space-evenly;
+.reskins {
+  /*display: flex;
+  justify-content: flex-start;
   place-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
+  border-top: 1px solid #f1f3f5;
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+  }
+}
+
+.reskins > .card {
+  width: 20%;
+  margin-right: 1rem;
+}
+.reskins > .card:hover {
+  margin-right: 1rem;
+}
+
+.levels {
+  margin-bottom: 30px;
   border-top: 1px solid #f1f3f5;
 }
 
 @media screen and (max-width: 750px) {
-  .levels {
+  .reskins {
     flex-direction: column;
   }
   .levels>div {
     width: auto!important;
   }
-}
-
-.levels>div {
-  width: 42.5%;
 }
 
 .container-banner {
@@ -251,7 +268,7 @@ div.intro {
   z-index: -1;
   position: absolute;
   width: 100%;
-  height: 300px;
+  height: 400px;
   backdrop-filter: blur(10px); /* apply the blur */
   pointer-events: none; /* make the overlay click-through */
 }
@@ -260,7 +277,7 @@ div.intro {
   z-index: -1;
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
   background: no-repeat center center;
   background-position: 33%;
   background-size: cover;
@@ -283,19 +300,28 @@ article.page.level {
   height: 100%;
   border-radius: 10px;
   margin: 1em 0;
+  overflow: clip;
+  position: relative;
 }
-.swiper-slide {
-  width: auto!important;
-  max-width: 70%;
-  max-height: 378px;
+
+.swiper-button-next, .swiper-button-prev {
+  transition: .3s;
 }
-.swiper-slide img {
-  display: block;
+
+.swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  backdrop-filter: blur(10px);
+  padding: 0 8px 4px 8px;
   width: auto;
-  height: 378px;
-  object-fit: cover;
-  margin: 0;
-  border-radius: 10px;
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swiper-pagination-bullet {
+  background-color: lightgray!important;
 }
 .swiper-pagination-bullet-active {
   background-color: #12b886!important;
@@ -308,7 +334,9 @@ iframe {
   border-radius: 10px;
 }
 
+
 .card {
+  width: 45%;
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
   overflow: hidden;
   transition: .25s ease-out;
@@ -327,8 +355,24 @@ iframe {
    border-color: #e2e8f0;
 }
 
-div.card img {
-  width: 100%;
+.card {
+  > a {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+
+    > img {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }
 
 .level-tag {
@@ -354,9 +398,9 @@ a.tag-link:hover {
   }
 } 
 
-.latest {
+/*.latest {
   background-color: #d0e8d2!important;
-}
+}*/
 
 .rounded-full {
    border-radius: 9999px;
@@ -754,7 +798,7 @@ nav {
   a {
     margin: 0 10px;
     text-align: right;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 1px;
 
     @include mobile {
@@ -1105,14 +1149,14 @@ tr.exclusive { background-color: #fff3b2!important; }
   .details tr > td { color: lightgrey; border-bottom-color: rgb(50, 50, 50); }
   .level-tag { color: lightgrey; background-color: rgb(50, 50, 50); }
   a.tag-link:hover .level-tag { background-color: rgba(9,146,105,0.25); }
-  .wrapper-sidebar { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); }
+  .wrapper-sidebar { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); border-bottom: 1px solid rgb(45, 45, 45); }
   .wrapper-footer-desktop, .wrapper-footer-mobile { background-color: rgb(33, 33, 33); border-top: 1px solid rgb(45, 45, 45); }
   footer .svg-icon svg { fill: lightgrey; }
   footer p, .site-description { color: lightgrey; }
   body, #main { background-color: rgb(25, 25, 25); }
   div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, #7fc2855e 80%); border: 1px solid rgb(45, 45, 45); }
   div.card { border: 1px solid rgb(45, 45, 45); }
-  .levels { border-top: 1px solid rgb(45, 45, 45); }
+  .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
   a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }
   a.ws-button { background-color: rgb(33, 33, 33); }
   code.highlighter-rouge { background-color: rgb(50, 50, 50)!important; color: #8e97c2!important; }

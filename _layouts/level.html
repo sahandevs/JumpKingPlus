@@ -2,6 +2,22 @@
 layout: levelbase
 ---
 
+<style>
+    .swiper-slide {
+        width: auto!important;
+        max-width: 70%;
+        max-height: 378px;
+    }
+    .swiper-slide img {
+        display: block;
+        width: auto;
+        height: 378px;
+        object-fit: cover;
+        margin: 0;
+        border-radius: 10px;
+    }
+</style>
+
 <div class="blurred" style="background-image: url({{ page.images[0] }});"></div>
         
 <article class="page level">
@@ -14,6 +30,15 @@ layout: levelbase
             {% endif %}
             
             {% unless page.hidden %}
+            
+            {% for tag in page.tags %}
+            <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
+                <span class="rounded-full level-tag">
+                    <span style="color: #868e96;">#</span>{{ tag }}
+                </span>
+            </a>
+            {% endfor %}
+
             <h1>{{ page.title }}
                 {% if page.bitly2 %}
                     <a class="dl-button" href="https://bit.ly/{{ page.bitly2 }}" style="margin-left: 1rem;" title="Mirror, if the download doesn't work">
@@ -124,21 +149,9 @@ layout: levelbase
                             <td>Compatibility</td>
                             <td>From <b>{{ page.version-start }}</b> to <b>{{ page.version-end }}</b></td>
                         </tr>
-                        <tr>
-                            <td>Tags</td>
-                            <td>
-                                {% for tag in page.tags %}
-                                <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
-                                <span class="rounded-full level-tag">
-                                    <span style="color: #868e96;">#</span>{{ tag }}
-                                </span>
-                                </a>
-                                {% endfor %}
-                            </td>
-                        </tr>
                         {% if page.bitly %}
                             <tr>
-                                <td>Downloads <span class="rounded-full level-tag">BETA</span></td>
+                                <td>Downloads</td>
                                 <td id="bitly">Loading...</td>
                             </tr>
                             <script>
