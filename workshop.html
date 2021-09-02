@@ -6,8 +6,78 @@ title: Workshop
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   
   <h1>Welcome to the Workshop!</h1>
+  <h3 style="margin-bottom: 30px;">Currently work in progress for a future update...</h3>
 
-  <h2>Custom levels&nbsp;
+  <div class="blr">
+    
+    <h2>Featured</h2>
+
+    <h2>Latest reskins&nbsp;
+      <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
+    </h2>
+    <div class="reskins">
+
+
+
+      <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
+
+      <div class="swiper-container swiper-reskins">
+        <div class="swiper-wrapper">
+      {% for rskin in site.reskins reversed %}
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="typology">
+                <img src="" alt="">
+              </div>
+              <img
+                src="{{ rskin.images[0] }}"
+                alt="{{ rskin.title }}"
+                onmouseover="this.src='{{ rskin.images[1] }}'"
+                onmouseout="this.src='{{ rskin.images[0] }}'"
+              >
+              <div class="details">
+                <div class="title-level">{{ rskin.title }}</div>
+                <span class="author-level">
+                  <ion-icon name="person"></ion-icon> {{ rskin.Author }}
+                </span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      
+        <div class="swiper-button-next"><div class="gradient-next"></div></div>
+      
+
+      <!-- Swiper JS -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".swiper-reskins", {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          }
+        });
+      </script>
+
+    </div>
+
+  </div>
+
+  <h2>Latest levels&nbsp;
     <a href="{{ site.baseurl }}/faq/#how-do-i-install-a-custom-level" style="display: inline-block;">
       <span class="badge-pill" style="font-size: smaller;">Installation method</span>
     </a>

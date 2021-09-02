@@ -15,6 +15,10 @@
 /* BASE RULES */
 /**************/
 
+:root {
+  --swiper-theme-color: #12b886!important;
+}
+
 html {
   font-size: $base-font-size;
 }
@@ -217,6 +221,41 @@ div.intro {
   margin-left: 1em;
 }
 
+.gradient-next {
+  width: 75px;
+  height: 775%;
+  position: absolute;
+  right: -15px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, white 100%);
+  z-index: -1;
+}
+
+.gradient-prev {
+  width: 75px;
+  height: 775%;
+  position: absolute;
+  left: -15px;
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+
+.blr {
+  -webkit-filter: blur(5px) grayscale(1);
+  -moz-filter: blur(5px) grayscale(1);
+  -o-filter: blur(5px) grayscale(1);
+  -ms-filter: blur(5px) grayscale(1);
+  filter: blur(5px) grayscale(1);
+  position: relative;
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
 .reskins {
   /*display: flex;
   justify-content: flex-start;
@@ -224,26 +263,49 @@ div.intro {
   flex-wrap: wrap;*/
   border-top: 1px solid #f1f3f5;
   position: relative;
+  margin-bottom: 30px;
 
   img {
+    margin: 0;
+    border-radius: 0;
     display: block;
     width: 100%;
     height: 175px;
     object-fit: cover;
   }
+
+  .swiper-slide {
+    width: 175px;
+  }
 }
 
-.reskins > .card {
-  width: 20%;
-  margin-right: 1rem;
+.typology {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+  img {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
 }
-.reskins > .card:hover {
-  margin-right: 1rem;
+
+.reskins .card {
+  position: relative;
 }
 
 .levels {
   margin-bottom: 30px;
   border-top: 1px solid #f1f3f5;
+
+  .card {
+    width: 45%;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -269,6 +331,7 @@ div.intro {
   position: absolute;
   width: 100%;
   height: 400px;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); /* apply the blur */
   pointer-events: none; /* make the overlay click-through */
 }
@@ -313,6 +376,7 @@ article.page.level {
 }
 
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 0 8px 4px 8px;
   width: auto;
@@ -326,8 +390,11 @@ article.page.level {
 .swiper-pagination-bullet-active {
   background-color: #12b886!important;
 }
-.swiper-button-next, .swiper-button-prev {
-  color: #12b886!important;
+.swiper-button-next {
+  right: 15px!important;
+}
+.swiper-button-prev {
+  left: 15px!important;
 }
 
 iframe {
@@ -336,7 +403,6 @@ iframe {
 
 
 .card {
-  width: 45%;
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
   overflow: hidden;
   transition: .25s ease-out;
@@ -1142,7 +1208,7 @@ footer {
 tr.exclusive { background-color: #fff3b2!important; }
 
 @media (prefers-color-scheme: dark) {
-  h1, h2, h3, h4, h5, h6, p, .site-name { color: white; }
+  h1, h2, h3, h4, h5, h6, p, .site-name, .title-level { color: white; }
   article.page.level { background: linear-gradient(0deg, rgb(25, 25, 25) calc(100% - 125px), rgba(255, 255, 255, 0) 115%); }
   .entry hr, hr { border-color: rgb(50, 50, 50); }
   .details tr > td:first-child { color: lightgrey; }
@@ -1179,6 +1245,8 @@ tr.exclusive { background-color: #fff3b2!important; }
   tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color: rgb(33, 33, 33); }
   tr.exclusive td { background-color: #fff3b267!important; color: grey }
   .toc { color: lightgrey }
+  .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgba(25,25,25,0) 100%); }
+  .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 100%); }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
