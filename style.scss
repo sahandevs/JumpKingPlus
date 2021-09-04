@@ -281,6 +281,31 @@ div.intro {
   }
 }
 
+.reskin-dl {
+
+  a.dl-button {
+    border-top: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    color: #099268;
+    display: block;
+    float: unset;
+    text-align: center;
+    transition: .5s;
+    font-weight: 600;
+
+    ion-icon {
+      vertical-align: inherit;
+      font-size: inherit;
+    }
+  }
+
+  a.dl-button:hover {
+    border-top-color: transparent;
+    color: white;
+    background: #099268;
+  }
+}
+
 .typology {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1258,6 +1283,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   .toc { color: lightgrey }
   .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgba(25,25,25,0) 100%); }
   .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 100%); }
+  .reskins .reskin-dl a.dl-button { border-top: 1px solid rgb(45, 45, 45); }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
