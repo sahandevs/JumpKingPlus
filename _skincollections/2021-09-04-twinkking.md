@@ -7,8 +7,8 @@ base: [
     "Cap"
 ]
 images: [
-    "https://media.discordapp.net/attachments/779500025990086706/884149063170277446/unknown.png",
-    "https://media.discordapp.net/attachments/779500025990086706/884152990796247110/unknown.png"
+    "https://media.discordapp.net/attachments/779500025990086706/884181609539063808/horror.png",
+    "https://media.discordapp.net/attachments/779500025990086706/884182105125437480/kingicide.gif"
 ]
 dlink: "https://github.com/Phoenixx19/JumpKingPlus/raw/www/reskins/collections/TwinkKing.zip"
 ---
