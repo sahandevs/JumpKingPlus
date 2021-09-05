@@ -102,6 +102,10 @@ collections:
     permalink: /workshop/reskin/:title/
     output: true
 
+  skincollections:
+    permalink: /workshop/collection/:title/
+    output: true
+
 
 # The release of Jekyll Now that you're using
 version: v1.2.0

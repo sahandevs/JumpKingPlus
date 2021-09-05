@@ -6,18 +6,83 @@ title: Workshop
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   
   <h1>Welcome to the Workshop!</h1>
-  <h3 style="margin-bottom: 30px;">Currently work in progress for a future update...</h3>
 
   <div class="blr">
-    
-    <h2>Featured</h2>
 
-    <h2>Latest reskins&nbsp;
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <h2>Latest collections
+      &nbsp;
+      <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
+    </h2>
+    <div class="collections">
+
+        <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
+  
+        <div class="swiper-container swiper-collections">
+          <div class="swiper-wrapper">
+        {% for collection in site.skincollections reversed %}
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="{{ collection.images[0] }}"
+                  alt="{{ collection.title }}"
+                  onmouseover="this.src='{{ collection.images[1] }}'"
+                  onmouseout="this.src='{{ collection.images[0] }}'"
+                >
+                <div class="details">
+                  <div class="title-level">{{ collection.title }}<a class="dl-button" href="{{ collection.dlink }}" title="Download">
+                    <ion-icon name="download"></ion-icon>
+                  </a></div>
+                  <span class="author-level">
+                    <ion-icon name="person"></ion-icon> {{ collection.Author }}
+                  </span>
+                  <p class="desc">
+                    {{ collection.excerpt | truncate: 300 }}
+                  </p>
+                  
+                  <span class="whatsinside">
+                    Contains: 
+                    {% for baseSingle in collection.base %}
+                      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ baseSingle }}.png" alt="{{ baseSingle }}" title="{{ baseSingle }}">
+                    {% endfor %}
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+  
+        
+          <div class="swiper-button-next"><div class="gradient-next"></div></div>
+  
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".swiper-collections", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            }
+          });
+        </script>
+    </div>
+
+
+    <h2>Latest skins&nbsp;
       <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
     </h2>
     <div class="reskins">
-
-
 
       <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
 
@@ -42,8 +107,8 @@ title: Workshop
                 </span>
               </div>
               <div class="reskin-dl">
-                <a class="dl-button" href="{{ rskin.dlink }}" title="Download skin">
-                  <ion-icon name="download"></ion-icon> Download skin
+                <a class="dl-button" href="{{ rskin.dlink }}" title="Download">
+                  <ion-icon name="download"></ion-icon> Download
                 </a>
               </div>
             </div>
@@ -54,13 +119,6 @@ title: Workshop
 
       
         <div class="swiper-button-next"><div class="gradient-next"></div></div>
-      
-
-      <!-- Swiper JS -->
-      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
       <!-- Initialize Swiper -->
       <script>
