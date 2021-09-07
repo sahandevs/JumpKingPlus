@@ -208,7 +208,7 @@ span.author-level {
 }
 
 div.intro {
-  padding: 0.5em 1.6em 1.6em 1.6em;
+  padding: 0.8rem 1.6rem;
   margin-bottom: 2em;
   border-radius: 10px;
   background: linear-gradient(23deg, #f8f9fa 10%, #7fc2855e 80%);
@@ -239,21 +239,20 @@ div.intro {
   z-index: -1;
 }
 
-.blr {
-  -webkit-filter: blur(5px) grayscale(1);
-  -moz-filter: blur(5px) grayscale(1);
-  -o-filter: blur(5px) grayscale(1);
-  -ms-filter: blur(5px) grayscale(1);
-  filter: blur(5px) grayscale(1);
-  position: relative;
-  pointer-events: none;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Edge, Opera and Firefox */
+.category {
+  margin: 5rem 0;
+}
+
+.featured {
+  margin-top: 0;
+
+  p {
+    margin: 0;
+  }
+
+  .intro {
+    margin-top: 1rem;
+  }
 }
 
 .collections {
@@ -305,9 +304,13 @@ div.intro {
       vertical-align: middle;
     }
   }
+
+  .gradient-next, .gradient-prev {
+    height: 740%;
+  }
 }
 
-.reskins, .collections {
+.feature, .reskins, .collections {
   border-top: 1px solid #f1f3f5;
   position: relative;
   margin-bottom: 30px;
@@ -407,6 +410,43 @@ div.intro {
   }
 }
 
+h2.ws-titles {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    cursor: default;
+  }
+
+  .badge-pill {
+    padding: .2em .6em;
+    color: #099268;
+    background-color: transparent;
+    font-size: smaller;
+    font-weight: 600;
+    font-family: system-ui;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+
+    ion-icon {
+      font-size: larger;
+    }
+  }
+
+  .badge-pill:hover {
+    background: #099268;
+    color: white;
+    border: 1px solid #099268;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .reskins {
     flex-direction: column;
@@ -443,6 +483,32 @@ div.intro {
   background: no-repeat center center;
   background-position: 33%;
   background-size: cover;
+
+  div {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(0deg, white 0%, rgba(0,0,0,0) 100%);
+    text-shadow: 2px 2px 4px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    * {
+      font-weight: normal;
+      color: white;
+    }
+
+    span {
+      color: #099268;
+      font-weight: 700;
+    }
+  }
 }
 
 article.page.level {
@@ -507,6 +573,7 @@ iframe {
   transition: .25s ease-out;
   border-radius: 20px;
   margin: 30px 0 15px 0;
+  border: 1px solid #e7e7e7;
 }
 
 .card:hover {
@@ -1321,7 +1388,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   body, #main { background-color: rgb(25, 25, 25); }
   div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, #7fc2855e 80%); border: 1px solid rgb(45, 45, 45); }
   div.card { border: 1px solid rgb(45, 45, 45); }
-  .collections, .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
+  .feature, .collections, .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
   a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }
   a.ws-button { background-color: rgb(33, 33, 33); }
   code.highlighter-rouge { background-color: rgb(50, 50, 50)!important; color: #8e97c2!important; }
@@ -1347,6 +1414,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgba(25,25,25,0) 100%); }
   .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 100%); }
   .reskins .reskin-dl a.dl-button { border-top: 1px solid rgb(45, 45, 45); }
+  .blurred { div { background: linear-gradient(0deg, #191919 0%, rgba(0,0,0,0) 100%); } * { color: inherit; } }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

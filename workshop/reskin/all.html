@@ -1,0 +1,49 @@
+---
+layout: wspage
+title: All skins
+---
+
+<style>
+    .card {
+        width: 190px;
+    }
+</style>
+
+<div class="reskins">
+{% for rskin in site.reskins reversed %}
+  <div class="card">
+    <div class="typology">
+      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ rskin.base }}.png" alt="{{ rskin.base }}" title="{{ rskin.base }}">
+    </div>
+    <img
+      src="{{ rskin.images[0] }}"
+      alt="{{ rskin.title }}"
+      onmouseover="this.src='{{ rskin.images[1] }}'"
+      onmouseout="this.src='{{ rskin.images[0] }}'"
+    >
+    <div class="details">
+      <div class="title-level">{{ rskin.title }}</div>
+      <span class="author-level">
+        <ion-icon name="person"></ion-icon> {{ rskin.Author }}
+      </span>
+    </div>
+    <div class="reskin-dl">
+      <a class="dl-button" href="{{ rskin.dlink }}" title="Download">
+        <ion-icon name="download"></ion-icon> Download
+      </a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+<script>
+    let magicGrid = new MagicGrid({
+        container: ".reskins", // Required. Can be a class, id, or an HTMLElement.
+        static: true, // Required for static content.
+        gutter: 30, // Optional. Space between items. Default: 25(px).
+    });
+
+    magicGrid.listen();
+</script>
+

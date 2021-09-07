@@ -1,0 +1,55 @@
+---
+layout: wspage
+title: All collections
+---
+
+<style>
+    .card {
+        width: 45%;
+        display: flex;
+    }
+</style>
+
+<div class="collections">
+    {% for collection in site.skincollections reversed %}
+    <div class="card">
+        <img
+            src="{{ collection.images[0] }}"
+            alt="{{ collection.title }}"
+            onmouseover="this.src='{{ collection.images[1] }}'"
+            onmouseout="this.src='{{ collection.images[0] }}'"
+        >
+        <div class="details">
+        <div class="title-level">{{ collection.title }}<a class="dl-button" href="{{ collection.dlink }}" title="Download">
+            <ion-icon name="download"></ion-icon>
+        </a></div>
+        <span class="author-level">
+            <ion-icon name="person"></ion-icon> {{ collection.Author }}
+        </span>
+        <p class="desc">
+            {{ collection.excerpt | truncate: 300 }}
+        </p>
+        
+        <span class="whatsinside">
+            Contains: 
+            {% for baseSingle in collection.base %}
+            <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ baseSingle }}.png" alt="{{ baseSingle }}" title="{{ baseSingle }}">
+            {% endfor %}
+        </span>
+        </div>
+    </div>
+    {% endfor %}    
+</div>
+
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+<script>
+    let magicGrid = new MagicGrid({
+        container: ".collections", // Required. Can be a class, id, or an HTMLElement.
+        static: true, // Required for static content.
+        gutter: 40, // Optional. Space between items. Default: 25(px).
+        maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+    });
+
+    magicGrid.listen();
+</script>

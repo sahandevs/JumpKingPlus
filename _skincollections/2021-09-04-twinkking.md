@@ -13,4 +13,4 @@ images: [
 dlink: "https://github.com/Phoenixx19/JumpKingPlus/raw/www/reskins/collections/TwinkKing.zip"
 ---
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea odio saepe quidem aut iure.
+Jump King finally comes out of the closet... fortunately he still up for rescuing the Babe, just out of pure generosity.

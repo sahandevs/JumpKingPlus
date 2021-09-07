@@ -63,7 +63,7 @@ Level design in Jump King is a delicate balance between fairness and hardness. T
     </ol>
 </div>
 
-Testing is the most important phase of your level that should take you a lot of time, a good level has every single fall calculated, nothing is left to be random. Check out some more tips [**here**](https://phoenixx19.github.io/JumpKingPlus/workshop/commonrules/).
+Testing is the most important phase of your level that should take you a lot of time, a good level has every single fall calculated, nothing is left to be random. Check out some more tips [**here**](https://phoenixx19.github.io/JumpKingPlus/workshop/publish/).
 
 ---
 

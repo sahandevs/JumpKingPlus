@@ -1,0 +1,57 @@
+---
+layout: wspage
+title: All custom levels
+---
+
+<div class="levels">
+{% for level in site.workshop reversed %}
+    {% if level.hidden == false %}
+    <div class="card">
+        <a href="{{ site.baseurl }}{{ level.id }}">
+        <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; object-fit: cover;"
+                alt="{{ level.title }} by {{ level.Author }}">
+        </a>
+        <div class="details">
+        <div class="title-level">
+            <a href="{{ site.baseurl }}{{ level.id }}">
+            <span>{{ level.title }}</span>
+            </a>
+            {% if level.bitly %}
+            <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download">
+                <ion-icon name="download"></ion-icon>
+            </a>
+            {% endif %}
+        </div>
+        <span class="author-level">
+            <ion-icon name="person"></ion-icon> {{ level.Author }}
+        </span>
+        <p class="desc">
+            {{ level.excerpt | truncate: 300 }}
+        </p>
+        <div class="details" style="padding: 0;">
+
+            {% for tag in level.tags %}
+            <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
+            <span class="rounded-full level-tag">
+                <span style="color: #868e96;">#</span>{{ tag }}
+            </span>
+            </a>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+</div>
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+<script>
+let magicGrid = new MagicGrid({
+    container: ".levels", // Required. Can be a class, id, or an HTMLElement.
+    static: true, // Required for static content.
+    gutter: 40, // Optional. Space between items. Default: 25(px).
+    maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+});
+
+magicGrid.listen();
+</script>
