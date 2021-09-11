@@ -36,8 +36,10 @@ layout: default
           feather.replace()
         </script>
       </div>
-
       <div class="entry">
+        {% if post.subtitle %}
+          <p>{{ post.subtitle }}</p>
+        {% endif %}
         {{ post.excerpt }}
       </div>
       <!--<div class="pagination" style="border-top: 0; padding: 10px 0;">
@@ -78,7 +80,7 @@ layout: default
       </div>
 
       <div class="entry">
-        {{ post.excerpt | truncate: 350 }}
+        {{ post.excerpt | truncate: 500 }}
       </div>
       <!--<div class="pagination" style="border-top: 0; padding: 10px 0;">
       <span class="prev">

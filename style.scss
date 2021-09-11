@@ -16,7 +16,7 @@
 /**************/
 
 :root {
-  --swiper-theme-color: #12b886!important;
+  --swiper-theme-color: $link-color!important;
 }
 
 html {
@@ -148,14 +148,50 @@ article.post:first-child {
 article.post .entry {
   padding: 1em 1.2em 0 1.2em;
 }
-
+  
 article.post .meta {
   border-bottom: 1px solid #f1f3f5;
   padding: 0 1.2em;
 }
 
 article.post.pinned {
-  background-color: #f5fffc;
+  background-color: rgba($link-color, 0.05);
+}
+
+article.blog {
+  .meta {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $divider-color;
+    margin-bottom: 3rem;
+  }
+  h1 { font-size: xxx-large; }
+  h2 { font-weight: 500; }
+  h3 { margin-top: 4rem; font-size: 1.4em; }
+  h4 { margin-top: 2.5rem; }
+  span { font-size: unset; margin-top: .75rem; display: block; }
+  p {
+    margin: 1rem 0;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400; 
+    line-height: 35px;
+  }
+  hr {
+    margin: 5rem 0;
+  }
+  .entry {
+    img {
+      margin: 5rem 0;
+      margin-left: -15%;
+      width: 130%;
+      max-width: 130%;
+    }
+    .thumbnail {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  
 }
 
 .details {
@@ -211,7 +247,7 @@ div.intro {
   padding: 0.8rem 1.6rem;
   margin-bottom: 2em;
   border-radius: 10px;
-  background: linear-gradient(23deg, #f8f9fa 10%, #7fc2855e 80%);
+  background: linear-gradient(23deg, #f8f9fa 10%, rgba($link-color, 0.5) 90%);
   border: 1px solid #f1f3f5;
   overflow: auto;
 }
@@ -375,7 +411,7 @@ div.intro {
   a.dl-button {
     border-top: 1px solid transparent;
     padding: 0.5rem 1rem;
-    color: #099268;
+    color: $link-color;
     display: block;
     text-align: center;
     transition: .5s;
@@ -385,7 +421,7 @@ div.intro {
   a.dl-button:hover {
     border-top-color: transparent;
     color: white;
-    background: #099268;
+    background: $link-color;
   }
 }
 
@@ -437,7 +473,7 @@ h2.ws-titles {
 
   .badge-pill {
     padding: .2em .6em;
-    color: #099268;
+    color: $link-color;
     background-color: transparent;
     font-size: smaller;
     font-weight: 600;
@@ -458,9 +494,9 @@ h2.ws-titles {
   }
 
   .badge-pill:hover {
-    background: #099268;
+    background: $link-color;
     color: white;
-    border: 1px solid #099268;
+    border: 1px solid $link-color;
   }
 }
 
@@ -522,7 +558,7 @@ h2.ws-titles {
     }
 
     span {
-      color: #099268;
+      color: $link-color;
       font-weight: 700;
     }
   }
@@ -550,6 +586,7 @@ article.page.level {
 }
 
 .swiper-button-next, .swiper-button-prev {
+  color: $link-color!important;
   transition: .3s;
 }
 
@@ -570,7 +607,7 @@ article.page.level {
   background-color: lightgray!important;
 }
 .swiper-pagination-bullet-active {
-  background-color: #12b886!important;
+  background-color: $link-color!important;
 }
 .swiper-button-next {
   right: 15px!important;
@@ -1219,6 +1256,7 @@ nav {
     a {
       color: $base-lighten-color;
       border: 1px solid $divider-color;
+      border-radius: 10px;
       padding: 10px 20px;
       background: $background-color;
 
@@ -1237,6 +1275,7 @@ nav {
     a {
       color: $base-lighten-color;
       border: 1px solid $divider-color;
+      border-radius: 10px;
       padding: 10px 20px;
       background: $background-color;
 
@@ -1390,6 +1429,26 @@ footer {
 
 tr.exclusive { background-color: #fff3b2!important; }
 
+.card-question {
+  margin-bottom: 2em;
+  border-radius: 10px;
+  background-color: #f1f3f577;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+.question {
+  background: linear-gradient(23deg, #ebecee 10%, rgba($link-color, .1) 80%);
+  border-bottom: 1px solid #ccc;
+  padding: .5em 1em;
+  margin: 0!important;
+}
+.card-question>* {
+  margin: 1em;
+}
+.card-question img {
+  max-width: calc(100% - 2em);
+}
+
 @media (prefers-color-scheme: dark) {
   h1, h2, h3, h4, h5, h6, p, .site-name, .title-level { color: white; }
   article.page.level { background: linear-gradient(0deg, rgb(25, 25, 25) calc(100% - 125px), rgba(255, 255, 255, 0) 115%); }
@@ -1397,13 +1456,13 @@ tr.exclusive { background-color: #fff3b2!important; }
   .details tr > td:first-child { color: lightgrey; }
   .details tr > td { color: lightgrey; border-bottom-color: rgb(50, 50, 50); }
   .level-tag { color: lightgrey; background-color: rgb(50, 50, 50); }
-  a.tag-link:hover .level-tag { background-color: rgba(9,146,105,0.25); }
+  a.tag-link:hover .level-tag { background-color: rgba($link-color,0.25); }
   .wrapper-sidebar { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); border-bottom: 1px solid rgb(45, 45, 45); }
   .wrapper-footer-desktop, .wrapper-footer-mobile { background-color: rgb(33, 33, 33); border-top: 1px solid rgb(45, 45, 45); }
   footer .svg-icon svg { fill: lightgrey; }
   footer p, .site-description { color: lightgrey; }
   body, #main { background-color: rgb(25, 25, 25); }
-  div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, #7fc2855e 80%); border: 1px solid rgb(45, 45, 45); }
+  div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, rgba($link-color, 0.5) 90%); border: 1px solid rgb(45, 45, 45); }
   div.card { border: 1px solid rgb(45, 45, 45); }
   .feature, .collections, .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
   a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }
@@ -1413,16 +1472,16 @@ tr.exclusive { background-color: #fff3b2!important; }
   blockquote { color: #868e96; }
   pre.highlight { border: 0!important; background-color: rgb(50, 50, 50); color: lightgrey; }
   .post { background-color: rgb(33, 33, 33)!important; border: 1px solid rgb(45, 45, 45)!important; }
-  .post.pinned { background-color: rgba(9,146,105,0.1)!important; border: 1px solid rgba(9,146,105,0.25)!important; }
-  .post.pinned .meta { border-bottom: 1px solid rgba(9,146,105,0.25)!important; }
-  .post .meta { border-bottom: 1px solid rgb(45, 45, 45)!important; }
+  .post.pinned { background-color: rgba($link-color,0.1)!important; border: 1px solid rgba($link-color,0.5)!important; }
+  .post.pinned .meta { border-bottom: 1px solid rgba($link-color,0.5)!important; }
+  .meta, .post .meta { border-bottom: 1px solid rgb(45, 45, 45)!important; }
   .pagination { border-top: 1px solid rgb(45, 45, 45); }
   .pagination > .next a, .pagination > .prev a { background-color: rgb(33, 33, 33); border: 1px solid rgb(45, 45, 45) }
-  .pagination > .next a:hover, .pagination > .next a:focus { background-color: rgba(9,146,105,0.25)!important;  }
-  .pagination > .prev a:hover, .pagination > .prev a:focus { background-color: rgba(9,146,105,0.25)!important;  }
+  .pagination > .next a:hover, .pagination > .next a:focus { background-color: rgba($link-color,0.25)!important;  }
+  .pagination > .prev a:hover, .pagination > .prev a:focus { background-color: rgba($link-color,0.25)!important;  }
   .disclaimer p { color: black }
   .posts .tag li > a { color: lightgrey; background-color: rgb(45, 45, 45); }
-  .posts .tag li > a:hover { background-color: rgba(9,146,105,0.25); }
+  .posts .tag li > a:hover { background-color: rgba($link-color,0.25); }
   table { border: 1px solid rgb(50, 50, 50); color: lightgrey; }
   td, th { border: 1px solid rgb(50, 50, 50); }
   tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color: rgb(33, 33, 33); }
@@ -1432,6 +1491,8 @@ tr.exclusive { background-color: #fff3b2!important; }
   .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 100%); }
   .reskins .reskin-dl a.dl-button { border-top: 1px solid rgb(45, 45, 45); }
   .blurred { div { background: linear-gradient(0deg, #191919 0%, rgba(0,0,0,0) 100%); } * { color: inherit; } }
+  .question { background: linear-gradient(23deg, rgb(45, 45, 45) 10%, rgba($link-color,0.25) 80%); border-bottom: 1px solid rgb(50, 50, 50); }
+  .card-question { border: 1px solid rgb(50, 50, 50); background-color: rgb(33, 33, 33); }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
