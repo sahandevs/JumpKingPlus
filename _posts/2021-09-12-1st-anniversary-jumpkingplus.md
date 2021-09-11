@@ -64,6 +64,10 @@ It's been a pleasure helping contribute to JumpKingPlus for over 10 months at th
 
 You might even see some new features from me someday, who knows... ¯\\_(ツ)_/¯
 
+#### ThomasOfTawny (Community Manager of Nexile)
+
+I can definitely say we have observed the growth of the modding community with merriment since the first edition of JK+, it was a big step up from the simple skin modifications we saw prior. Making a framework and documentation for custom maps is a blessing for us. Furthermore the people we have seen using it is the reason we can proudly share its progress through official channels.
+
 #### IntroCar (Babe of Ascension creator)
 
 Through hard-work, struggle, tiredness, bugs, and overall Jump King being a really difficult program to Mod, JumpKingPlus has done so much over its 1 year of being release. Its gone from small timer presets and custom discord showings of your progress in the game, to custom levels, new mechanics, new skins, and and a boat-load of unique and fun stuff to come in the future for the community to play with and enjoy. We appreciate everyone who has download Jump King+ for its been a pleasure assisting people's climb to the top and giving people more content for them to play while awaiting for Jump King Quest. Thank you.
