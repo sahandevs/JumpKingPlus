@@ -84,6 +84,6 @@ Watching JumpKingPlus transform from speedrunning client, to now a modloader off
 
 I would like to thank: 
 
-anyone involved with **JumpKingPlus**, <br>the Jump King Discord community, <br>Rossyian, <br>the testers, <br>the map makers, <br>the skin makers, <br>the people modding Jump King with new stuff <br>and you for reading this. 
+anyone involved with **JumpKingPlus**, <br>the Jump King Discord community, <br>Rossiyan, <br>the testers, <br>the map makers, <br>the skin makers, <br>the people modding Jump King with new stuff <br>and you for reading this. 
 
 It means the 🌍 to me!
