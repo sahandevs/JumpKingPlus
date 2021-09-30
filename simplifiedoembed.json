@@ -1,0 +1,5 @@
+{
+    "title": "Links",
+    "author_name": "{{ page.Author }}",
+    "author_url": "https://twitter.com/phxx19"
+}
