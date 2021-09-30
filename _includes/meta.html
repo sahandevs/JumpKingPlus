@@ -14,7 +14,7 @@
         <meta property="og:description" content="{{ site.description }}" />
     {% endif %}
 
-    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:url" content="{{ site.baseurl }}">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkpluslogo.png">
@@ -26,4 +26,5 @@
         <meta property="og:title" content="{{ site.title }}" />
     {% endif %}
 
-    <link rel="alternate" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/oembed.json" title="{{ site.title }}">
+    <link rel="alternate" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/oembed.json" type="application/json+oembed" title="{{ site.title }}">
+    <meta http-equiv = "refresh" content = "0; url = {{ site.baseurl }}" />
