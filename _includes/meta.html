@@ -4,7 +4,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     <meta name="author" content="{{ site.title }}" />
-    <meta name="theme-color" content="#ff0000">
 
     {% if page.homepage %}
         <link type="application/json+oembed" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/simplifiedoembed.json">
@@ -22,8 +21,16 @@
 
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:url" content="{{ site.baseurl }}">
+    
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkpluslogo.png">
+
+    {% if page.layout == "workshop" or page.layout == "wspage" or page.layout == "wsdefault" %}
+        <meta name="theme-color" content="#2f9e44">
+        <meta property="og:image" content="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkcustomapslogo.png">
+    {% else %}
+        <meta name="theme-color" content="#ff0000">
+        <meta property="og:image" content="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkpluslogo.png">
+    {% endif %}
 
     {% if page.title %}
         <meta property="og:title" content="{{ page.title }}" />
