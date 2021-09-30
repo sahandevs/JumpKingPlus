@@ -1,9 +1,7 @@
 {
+    "title": "Links",
     "author_name": "Phoenixx19",
     "author_url": "https://twitter.com/phxx19",
     "provider_name": "JumpKingPlus",
-    "provider_url": "https://github.com/JumpKingPlus",
-    "title": null,
-    "type": "application/json+oembed",
-    "version": "1.0"
+    "provider_url": "https://github.com/JumpKingPlus"
 }
