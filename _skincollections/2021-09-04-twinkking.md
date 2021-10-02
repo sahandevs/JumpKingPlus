@@ -4,7 +4,8 @@ date: 2021-09-04
 Author: MERNY
 base: [
     "Base", 
-    "Cap"
+    "Cap",
+	"Crown"
 ]
 images: [
     "https://media.discordapp.net/attachments/779500025990086706/884181609539063808/horror.png",
