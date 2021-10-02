@@ -1,94 +1,95 @@
 ---
-layout: wsdefault
+layout: workshop
 title: Workshop
 ---
-<script src="https://unpkg.com/feather-icons"></script>
-<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-  
-  <h1>Welcome to the Workshop!</h1>
 
-  <div class="blr">
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../tinglejs/tingle.css">
+  <script src="../tinglejs/tingle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Swiper JS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <h2>Latest collections
-      &nbsp;
+  <!--
+  <div class="category">
+    <h2>
+      Featured&nbsp;
       <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
     </h2>
-    <div class="collections">
-
-        <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
-  
-        <div class="swiper-container swiper-collections">
-          <div class="swiper-wrapper">
-        {% for collection in site.skincollections reversed %}
-            <div class="swiper-slide">
-              <div class="card">
-                <img
-                  src="{{ collection.images[0] }}"
-                  alt="{{ collection.title }}"
-                  onmouseover="this.src='{{ collection.images[1] }}'"
-                  onmouseout="this.src='{{ collection.images[0] }}'"
-                >
-                <div class="details">
-                  <div class="title-level">{{ collection.title }}<a class="dl-button" href="{{ collection.dlink }}" title="Download">
-                    <ion-icon name="download"></ion-icon>
-                  </a></div>
-                  <span class="author-level">
-                    <ion-icon name="person"></ion-icon> {{ collection.Author }}
-                  </span>
-                  <p class="desc">
-                    {{ collection.excerpt | truncate: 300 }}
-                  </p>
-                  
-                  <span class="whatsinside">
-                    Contains: 
-                    {% for baseSingle in collection.base %}
-                      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ baseSingle }}.png" alt="{{ baseSingle }}" title="{{ baseSingle }}">
-                    {% endfor %}
-                  </span>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-  
-        
-          <div class="swiper-button-next"><div class="gradient-next"></div></div>
-  
-        <!-- Initialize Swiper -->
-        <script>
-          var swiper = new Swiper(".swiper-collections", {
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            }
-          });
-        </script>
+    
+    <div class="feature">
+      <div class="intro">
+        <p>Nothing here yet!</p>
+      </div>
     </div>
+  </div>
+  -->
 
-
-    <h2>Latest skins&nbsp;
-      <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
+  <div class="category featured">
+    <h2 class="ws-titles">
+      <span>
+        Latest skins&nbsp;
+        <a><span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span></a>
+      </span> 
+      <span>
+        <a class="btn btn--primary btn-demo js-tingle-modal-1" style="display: inline-block;">
+          <span class="badge-pill"><ion-icon name="help-circle"></ion-icon> Installation method</span>
+        </a>
+        <a href="{{ site.baseurl }}/workshop/reskin/all">
+          <span class="badge-pill">
+            See all <ion-icon name="arrow-forward"></ion-icon>
+          </span>
+        </a>
+      </span>
     </h2>
+
+    <!-- Tingle tiny content -->
+    <div class="tingle-tiny-1" style="display: none;">
+      <h1>Adding and removing a skin</h1>
+      <hr>
+      <h3 style="margin-top: 1rem;">Text explaination</h3>
+      <h4 class="question">How do I add a skin?</h4>
+      <ol>
+          <li>Find a skin you would like to use in the workshop, download it using the Download button.</li>
+          <li>Open the .zip file.</li>
+          <li>Head to <code class="language-plaintext highlighter-rouge">Jump King/Content/wardrobe</code>.</li>
+          <li>Drag the files from the .zip file inside the folder.</li>
+          <li>Profit.</li>
+      </ol>
+      <p>If a skin is in the way once you start the game, consider disabling it in the Inventory > Wardrobe.</p>
+
+      <h4 class="question">How do I remove a skin?</h4>
+      <p>It’s even more simple.<br>Just delete the skin (both <code class="language-plaintext highlighter-rouge">.xnb</code> and <code class="language-plaintext highlighter-rouge">.xml</code> files) with the same name.</p>
+    </div>
+  <!-- /Tingle tiny content -->
+
+    <script type="text/javascript">
+        var modalTinyNoFooter = new tingle.modal({
+            onClose: function () { },
+            onOpen: function() {
+              var close = document.querySelectorAll(".tingle-modal__close")[0];
+              var modalContent = document.querySelectorAll(".tingle-modal-box__content")[0];
+              modalContent.appendChild(close);
+            },
+            beforeOpen: function () { },
+            beforeClose: function () { return true; },
+            //cssClass: ['class1', 'class2']
+        });
+        var btn = document.querySelector('.js-tingle-modal-1');
+        btn.addEventListener('click', function () {
+            modalTinyNoFooter.open();
+        });
+        modalTinyNoFooter.setContent(document.querySelector('.tingle-tiny-1').innerHTML);
+    </script>
+
     <div class="reskins">
 
       <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
 
       <div class="swiper-container swiper-reskins">
         <div class="swiper-wrapper">
-      {% for rskin in site.reskins reversed %}
+      {% for rskin in site.reskins reversed limit: 20 %}
           <div class="swiper-slide">
             <div class="card">
               <div class="typology">
@@ -126,76 +127,258 @@ title: Workshop
           slidesPerView: "auto",
           spaceBetween: 20,
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".reskins .swiper-button-next",
+            prevEl: ".reskins .swiper-button-prev",
           },
           pagination: {
-            el: ".swiper-pagination",
+            el: ".reskins .swiper-pagination",
             clickable: true,
           }
         });
       </script>
 
     </div>
-
   </div>
 
-  <h2>Latest levels&nbsp;
-    <a href="{{ site.baseurl }}/faq/#how-do-i-install-a-custom-level" style="display: inline-block;">
-      <span class="badge-pill" style="font-size: smaller;">Installation method</span>
-    </a>
-  </h2>
+  <div class="category">
+    <h2 class="ws-titles">
+      <span>
+        Latest collections
+        &nbsp;
+        <a><span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span></a>
+      </span>
+      <span>
+        <a class="btn btn--primary btn-demo js-tingle-modal-2" style="display: inline-block;">
+          <span class="badge-pill"><ion-icon name="help-circle"></ion-icon> Installation method</span>
+        </a>
+        <a href="{{ site.baseurl }}/workshop/collection/all">
+          <span class="badge-pill">
+            See all <ion-icon name="arrow-forward"></ion-icon>
+          </span>
+        </a>
+      </span>
+    </h2>
 
-  <div class="levels">
-    {% for level in site.workshop reversed %}
-      {% if level.hidden == false %}
-        <div class="card">
-          <a href="{{ site.baseurl }}{{ level.id }}">
-            <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; object-fit: cover;"
-                  alt="{{ level.title }} by {{ level.Author }}">
-          </a>
-          <div class="details">
-            <div class="title-level">
-              <a href="{{ site.baseurl }}{{ level.id }}">
-                <span>{{ level.title }}</span>
-              </a>
-              {% if level.bitly %}
-                <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download">
-                  <ion-icon name="download"></ion-icon>
-                </a>
-              {% endif %}
-            </div>
-            <span class="author-level">
-              <ion-icon name="person"></ion-icon> {{ level.Author }}
-            </span>
-            <p class="desc">
-              {{ level.excerpt | truncate: 300 }}
-            </p>
-            <div class="details" style="padding: 0;">
+    <!-- Tingle tiny content -->
+    <div class="tingle-tiny-2" style="display: none;">
+      <h1>Adding and removing a collection</h1>
+      <hr>
+      <h3 style="margin-top: 1rem;">Text explaination</h3>
+      <h4 class="question">How do I add a skin collection?</h4>
+      <ol>
+          <li>Find a collection you would like to use in the workshop, download it using the Download icon button.</li>
+          <li>Open the .zip file.</li>
+          <li>Head to <code class="language-plaintext highlighter-rouge">Jump King/Content/wardrobe</code>.</li>
+          <li>Drag the files from the .zip file inside the folder.</li>
+          <li>Profit.</li>
+      </ol>
+      <p>If some skins are in the way once you start the game, consider disabling them in the Inventory > Wardrobe.</p>
 
-              {% for tag in level.tags %}
-              <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags#{{ tag }}">
-                <span class="rounded-full level-tag">
-                  <span style="color: #868e96;">#</span>{{ tag }}
-                </span>
-              </a>
-              {% endfor %}
+      <h4 class="question">How do I remove a skin collection?</h4>
+      <p>It’s even more simple.<br>Just delete all the skins (both <code class="language-plaintext highlighter-rouge">.xnb</code> and <code class="language-plaintext highlighter-rouge">.xml</code> files) with the same name prefix.</p>
+    </div>
+  <!-- /Tingle tiny content -->
+
+    <script type="text/javascript">
+        var modalTinyNoFooter2 = new tingle.modal({
+            onClose: function () { },
+            onOpen: function() {
+              var close = document.querySelectorAll(".tingle-modal__close")[1];
+              var modalContent = document.querySelectorAll(".tingle-modal-box__content")[1];
+              modalContent.appendChild(close);
+            },
+            beforeOpen: function () { },
+            beforeClose: function () { return true; },
+            //cssClass: ['class1', 'class2']
+        });
+        var btn = document.querySelector('.js-tingle-modal-2');
+        btn.addEventListener('click', function () {
+            modalTinyNoFooter2.open();
+        });
+        modalTinyNoFooter2.setContent(document.querySelector('.tingle-tiny-2').innerHTML);
+    </script>
+
+    <div class="collections">
+
+        <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
+
+        <div class="swiper-container swiper-collections">
+          <div class="swiper-wrapper">
+        {% for collection in site.skincollections reversed limit: 4 %}
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="{{ collection.images[0] }}"
+                  alt="{{ collection.title }}"
+                  onmouseover="this.src='{{ collection.images[1] }}'"
+                  onmouseout="this.src='{{ collection.images[0] }}'"
+                >
+                <div class="details">
+                  <div class="title-level">{{ collection.title }}<a class="dl-button" href="{{ collection.dlink }}" title="Download">
+                    <ion-icon name="download"></ion-icon>
+                  </a></div>
+                  <span class="author-level">
+                    <ion-icon name="person"></ion-icon> {{ collection.Author }}
+                  </span>
+                  <p class="desc">
+                    {{ collection.excerpt | truncate: 300 }}
+                  </p>
+                  
+                  <span class="whatsinside">
+                    Contains: 
+                    {% for baseSingle in collection.base %}
+                      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ baseSingle }}.png" alt="{{ baseSingle }}" title="{{ baseSingle }}">
+                    {% endfor %}
+                  </span>
+                </div>
+              </div>
             </div>
+            {% endfor %}
           </div>
         </div>
-      {% endif %}
-    {% endfor %}
+
+        
+          <div class="swiper-button-next"><div class="gradient-next"></div></div>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".swiper-collections", {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+              nextEl: ".collections .swiper-button-next",
+              prevEl: ".collections .swiper-button-prev",
+            },
+            pagination: {
+              el: ".collections .swiper-pagination",
+              clickable: true,
+            }
+          });
+        </script>
+    </div>
   </div>
 
-  <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-  <script>
-    let magicGrid = new MagicGrid({
-      container: ".levels", // Required. Can be a class, id, or an HTMLElement.
-      static: true, // Required for static content.
-      gutter: 40, // Optional. Space between items. Default: 25(px).
-      maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
-    });
+  <div class="category">
 
-    magicGrid.listen();
-  </script>
+    <h2 class="ws-titles">Latest levels&nbsp;
+      <span>
+        <a class="btn btn--primary btn-demo js-tingle-modal-3" style="display: inline-block;">
+          <span class="badge-pill"><ion-icon name="help-circle"></ion-icon> Installation method</span>
+        </a>
+        <a href="{{ site.baseurl }}/workshop/all">
+          <span class="badge-pill">
+            See all <ion-icon name="arrow-forward"></ion-icon>
+          </span>
+        </a>
+      </span>
+    </h2>
+
+    <!-- Tingle tiny content -->
+    <div class="tingle-tiny-3" style="display: none;">
+      <h1>Adding and removing a custom level</h1>
+      <hr>
+      <h3>Video tutorial</h3>
+      <iframe src="https://www.youtube.com/embed/1encOb7Rs6o?autoplay=0" allowfullscreen="" width="100%" height="600" frameborder="0"></iframe>
+      <h3 style="margin-top: 1rem;">Text explaination</h3>
+      <h4 class="question">How do I install a custom level?</h4>
+      <ol>
+          <li>Find a level you would like to play in the workshop section, download it using the Download button.</li>
+          <li>Open the .zip file.</li>
+          <li>Replace the <code class="language-plaintext highlighter-rouge">Jump King/Content/mods</code> folder with the <code class="language-plaintext highlighter-rouge">mods</code> folder inside the .zip file.</li>
+          <li>(optional) Make sure the level.xnb and mod.xml file exist.</li>
+          <li>Open Jump King and click on New Game (unless you have a save for it).</li>
+          <li>Profit.</li>
+      </ol>
+      <h4 class="question">How do I uninstall a custom level?</h4>
+      <p>It’s even more simple.<br>Just delete (or rename with something else) the <code class="language-plaintext highlighter-rouge">mods</code> folder or what’s inside of it.</p>
+    </div>
+  <!-- /Tingle tiny content -->
+
+    <script type="text/javascript">
+        var modalTinyNoFooter3 = new tingle.modal({
+            onClose: function () { },
+            onOpen: function() {
+              var close = document.querySelectorAll(".tingle-modal__close")[2];
+              var modalContent = document.querySelectorAll(".tingle-modal-box__content")[2];
+              modalContent.appendChild(close);
+            },
+            beforeOpen: function () { },
+            beforeClose: function () { return true; },
+            //cssClass: ['class1', 'class2']
+        });
+        var btn = document.querySelector('.js-tingle-modal-3');
+        btn.addEventListener('click', function () {
+            modalTinyNoFooter3.open();
+        });
+        modalTinyNoFooter3.setContent(document.querySelector('.tingle-tiny-3').innerHTML);
+    </script>
+
+    <div class="levels">
+
+      <div class="card wip">
+        <div class="details">
+          <div class="title-level">
+              <h1>4</h1>
+              <span><span class="underlined">new</span> levels</span>
+              <p class="desc">
+                are currently being work in progress.
+              </p>
+          </div>
+        </div>
+      </div>
+
+      {% for level in site.workshop reversed limit: 8 %}
+        {% if level.hidden == false %}
+          <div class="card">
+            <a href="{{ site.baseurl }}{{ level.id }}">
+              <img src="{{ level.images[0] }}" style="border-radius: 0; margin: 0; object-fit: cover;"
+                    alt="{{ level.title }} by {{ level.Author }}">
+            </a>
+            <div class="details">
+              <div class="title-level">
+                <a href="{{ site.baseurl }}{{ level.id }}">
+                  <span>{{ level.title }}</span>
+                </a>
+                {% if level.bitly %}
+                  <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download">
+                    <ion-icon name="download"></ion-icon>
+                  </a>
+                {% endif %}
+              </div>
+              <span class="author-level">
+                <ion-icon name="person"></ion-icon> {{ level.Author }}
+              </span>
+              <p class="desc">
+                {{ level.excerpt | truncate: 300 }}
+              </p>
+              <div class="details" style="padding: 0;">
+
+                {% for tag in level.tags %}
+                <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/workshop/tags/?tag={{ tag }}">
+                  <span class="rounded-full level-tag">
+                    <span style="color: #868e96;">#</span>{{ tag }}
+                  </span>
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+    <script>
+      let magicGrid = new MagicGrid({
+        container: ".levels", // Required. Can be a class, id, or an HTMLElement.
+        static: true, // Required for static content.
+        gutter: 40, // Optional. Space between items. Default: 25(px).
+        maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+      });
+
+      magicGrid.listen();
+    </script>
+  </div>
+
+  
   

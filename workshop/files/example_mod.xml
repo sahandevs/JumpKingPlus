@@ -16,6 +16,14 @@
 	<About>
 		<title>Sample Title</title>
 		<ending_screen>2</ending_screen>
+		<disableProgress>true</disableProgress> <!-- optional -->
+		<StartPosition> <!-- just dont write this <StartPosition>, if you don't want it -->
+			<positionX>240</positionX>
+			<positionY>160</positionY>
+			<velocityX></velocityX> <!-- optional -->
+			<velocityY>10</velocityY> <!-- optional -->
+			<isOnGround></isOnGround> <!-- optional -->
+		</StartPosition>
 	</About>
 	
 	<!-- Custom fonts, leave blank if default -->

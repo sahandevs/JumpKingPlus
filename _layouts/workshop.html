@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+
+    {% include wsnav.html %}
+
+    {% if page.toc==true %}
+      <aside class="toc">
+        {% include toc.html html=content %}
+      </aside>
+    {% endif %}
+
+    <div id="main" role="main" class="wrapper-content" style="background-color: rgba(0, 0, 0, 0);overflow-y: hidden;">
+        <div class="blurred" id="workshop-img">
+            <div class="the-new-workshop-woohoo">
+                <h1>Say hello to the <span>new</span> workshop!</h1>
+                <p><span>New</span> workshop, <span>new</span> functionalities.</p>
+            </div>
+        </div>
+        <script>
+            let imgArr = [
+                // collections
+                "https://media.discordapp.net/attachments/867291880025751552/884160655840665640/20210906052545_1.png",
+                "https://media.discordapp.net/attachments/779500025990086706/884181609539063808/horror.png",
+                // custom levels
+                "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/2_banner.png",
+                "https://media.discordapp.net/attachments/771125324846858261/859825051683913738/unknown.png",
+                "https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png",
+                "https://media.discordapp.net/attachments/623779998494490624/875512861554790410/unknown.png",
+                // whatever
+                "https://media.discordapp.net/attachments/623779998494490624/884121913776046170/unknown.png",
+                "https://media.discordapp.net/attachments/623779998494490624/877079317664907314/unknown.png",
+                "https://media.discordapp.net/attachments/623779998494490624/881832060984119336/MAPIMAGE.png",
+                "https://media.discordapp.net/attachments/623779998494490624/875431416857497640/20210813014126_1.jpg",
+                "https://media.discordapp.net/attachments/623779998494490624/875430313189339196/20210813005604_1.jpg"
+            ];
+
+            var num = Math.floor(Math.random() * (imgArr.length+1));
+
+            document.getElementById('workshop-img').style.backgroundImage = `url(`+imgArr[num]+`)`;
+        </script>
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include analytics.html %}
+  </body>
+
+  {% if page.toc==true %}
+  <script>
+    document.getElementById("main").classList.add("withtoc");
+  </script>
+  {% endif %}
+
+  <div class="wrapper-footer-mobile">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+
+
+</html>

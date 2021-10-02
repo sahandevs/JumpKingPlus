@@ -23,16 +23,33 @@ pinned: false
         border-radius: 5px;
         display: inline-block;
     }
+    h2 {
+      margin: 3rem 0 1rem;
+    }
+    h3 {
+      margin: 2rem 0 1rem;
+    }
+    h4 {
+      margin: 1.66rem 0 .75rem;
+    }
+    hr {
+      margin: 4rem 0;
+    }
+    div.intro {
+      margin: 2rem 0;
+    }
 </style>
 
 Welcome to the documentation for custom levels on Jump King using JumpKingPlus! On your left you can find the table of contents with everything you should need to make a custom level.
 
-<a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a>
+<a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a> (Not recommended, not updated since May 10 2021)
+
+<hr>
 
 ## Warning
-When this document referres on a folder, this is obviously meant to be inside `Jump King/Content/mods`, JumpKingPlus does **not** take any responsibility of your actions as you agreed downloading JumpKingPlus with a MIT License.
+When this document referrers on a folder, this is obviously meant to be inside `Jump King/Content/mods`, JumpKingPlus does **not** take any responsibility of your actions as you agreed downloading JumpKingPlus with a MIT License.
 
-I reccomend you to use the **working sample level** to start with, and edit it for your new custom level!
+I recommend you to use the **working sample level** to start with, and edit it for your new custom level!
 
 ## Requirements for building custom levels
 > Custom levels are available only using __JumpKingPlus on [v1.2.0](https://github.com/Phoenixx19/JumpKingPlus/releases/tag/v1.2.0) or above__.
@@ -154,7 +171,15 @@ In this file, you will set up the basics information of your level such as:
 |---|---|---|
 |`<About>`|Contains the fundamentals of the mod|✖|
 |`<title>`|Title of the custom level (will show up in the Stats Display window)|✖|
+|`<image_key>`|Image for Discord RPC of the custom level, this will be added on the workshop release|✔|
 |`<ending_screen>`|Screen where the babe spawns|✖|
+|`<disableProgress>`|Disable level% on the custom level (default as false)|✖|
+|`<StartPosition>`|Contains all the data for the custom start position|✖|
+|`<positionX>`|Starting X positon of the player|✔ if parent tag is present|
+|`<positionY>`|Starting Y positon of the player|✔ if parent tag is present|
+|`<velocityX>`|Starting X speed of the player|✖|
+|`<velocityY>`|Starting Y speed of the player|✖|
+|`<isOnGround>`|`True` if the player is on ground|✖|
 |`<Fonts>`|Array of available fonts (MenuFont, MenuFontSmall, StyleFont, OptimusUnderline, Tangerine, LocationFont, GargoyleFont)|✔|
 |`<Ending>`|Contains the babe ending images, only one story is available for now|✖|
 |`<MainBabe>`|Screen for beating the custom game|✖|
@@ -166,6 +191,8 @@ In this file, you will set up the basics information of your level such as:
 |`<string>`|Ending lines (from 1 to 5 works fine)|✔|
 
 The title and the ending screen are necessary to make the custom level playable. The title will show up only when the game started is Main Babe / Normal Game.
+
+The StartPosition tag is optional, while the tags inside of it aren't. Which means that if the StartPosition is present, the tags marked as mandatory need to be in there.
 
 Custom fonts are optional as specified, if left to blank, JumpKingPlus will automatically pick the default ones.
 
@@ -790,8 +817,141 @@ Implemented from <span class="badge-pill">v1.5.1</span>, this let's you change t
 
 ---
 
+## Requirements for skins and collections
+> Custom levels are available only using __JumpKingPlus on [v1.6.0](https://github.com/Phoenixx19/JumpKingPlus/releases/tag/v1.6.0) or above__.
+
+All you need is:
+- a good pixel art editor (Aseprite, GraphicsGale, Photoshop or GIMP).
+- a program that converts images:
+  - [XNBCLI](https://github.com/LeonBlade/xnbcli/releases/latest) for converting **images** into XNB and viceversa
+  - [Fast XNB Builder](https://github.com/Phoenixx19/Fast-XNB-Builder/releases/tag/r3) for converting **images and music** into XNB
+  - [PNG to XNB](https://cdn.discordapp.com/attachments/765578031749136395/881986228998778880/png_to_xnb.exe) for converting one PNG at a time or an entire folder of PNGs at once to XNB. ([Thanks, Terraria forum](https://forums.terraria.org/index.php?threads/yet-another-png-to-xnb-converter.39420/))
+- Jump King base file.
+
+### Disclaimer
+If you are working on a Jump King Base reskin, enabling and disabling it will work only in the title screen (currently) and they won't be working on custom maps since it would overlay the already existing base for the custom map.
+
+### Reskin or collection?
+Before getting started you need to know the difference between a reskin and a collection.
+
+- A **reskin** is a *single custom skin* that can be toggled singularly in the `Reskins` menu.
+- A **collection** is a *group of skins* that can be toggled together in the `Collections` menu.
+
+### Getting started
+First of all, open the software of your choice and set two layers. The first (or top) layer should be the layer you use for drawing your reskin, the second (or bottom) layer should be the base file; this second layer will help you building a fully working reskin.
+
+A simple trick while making a custom reskin is setting the second (or bottom) layer to a lower opacity, like 50%.
+
+Once done: 
+> If you are doing a reskin: 
+> 1. Disable the second (bottom) layer. 
+> 2. Save to `(YOUR RESKIN NAME).png`.
+
+> If you are doing a collection: 
+> 1. Disable the second layer to all your images.
+> 2. Save them with the current format: `(YOUR COLLECTION NAME)_(YOUR RESKIN NAME or ITEM NAME).png`.
+> This format is necessary to simplify the end user to understand what's inside a collection and what not.
+
+#### Config file for reskins
+The config file (named as `(YOUR RESKIN NAME).xml`) is needed to define what skin is getting a reskin, and what reskin is enabled, plus other details.<br>
+**Each reskin needs one config file.**
+
+|tag|description|
+|---|---|
+|`<isCollection>`|This is mandatory, set to `false` for **reskins**.|
+|`<skin>`|Can be: Crown, Shoes, CrownNBP, GiantBoots, Cap, GnomeHat, Tunic, YellowShoes, CrownOwl, CapeOwl, NULL (for jump king bases).|
+|`<name>`|Any text (has to be the same name for the .xnb and .xml).|
+|`<description>`|Any text or null (optional).|
+|`<enabled>`|Can be: true or false (use true as default).|
+
+Here's a sample xml file that you can use:
+
+```xml
+<?xml version="1.0"?>
+<WardrobeSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- 
+		JUMPKINGPLUS V1.6.0 by Phoenixx19
+		 https://phoenixx19.github.io/JumpKingPlus/workshop
+		 Wardrobe feature - Custom skins support.
+	-->
+  <isCollection>false</isCollection>
+	<skin>NULL</skin>
+	<name>forsenCD</name>
+	<description>:tf: u mad?</description>
+	<enabled>true</enabled>
+</WardrobeSettings>
+```
+
+Save it as `(YOUR RESKIN NAME).xml`.
+
+#### Config file for collections
+The config file is needed for collections to define the details of the collection and the list of reskins used in the collection.<br>
+**One collections needs one single config file. Reskins part of collection SHOULD NOT have a config file.**
+
+|tag|description|
+|---|---|
+|`<isCollection>`|This is mandatory, set to `true` for **collections**.|
+|`<skin>`|Doesn't get read, but use `NULL` for coherence.|
+|`<name>`|Any text (has to be the same name for the .xnb and .xml).|
+|`<description>`|Any text or null (optional).|
+|`<enabled>`|Can be: true or false (use true as default).|
+|`<collection>`|All the details for the collection.|
+|`<name>`|**Inside the collection tag:** Any text (has to be the same name for the .xml).|
+|`<description>`|**Inside the collection tag:** Any text or null (optional).|
+|`<enabled>`|**Inside the collection tag:** Can be: true or false (use true as default).|
+|`<Reskins>`|Array of Reskin|
+|`<Reskin>`|Contains the skin and name of a singular reskin inside the collection.|
+|`<skin>`|Can be: Crown, Shoes, CrownNBP, GiantBoots, Cap, GnomeHat, Tunic, YellowShoes, CrownOwl, CapeOwl, NULL (for jump king bases).|
+|`<name>`|Any text (has to be the same name for the .xnb).|
+
+```xml
+<WardrobeSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- 
+		JUMPKINGPLUS V1.6.0 by Phoenixx19
+		 https://phoenixx19.github.io/JumpKingPlus/workshop
+		 Wardrobe feature - Custom skins support.
+	-->
+  <isCollection>true</isCollection>
+  <skin>NULL</skin>
+  <name></name>
+  <description></description>
+  <enabled>false</enabled>
+  <collection>
+    <name>red</name>
+    <description>:tf: u mad?</description>
+    <enabled>true</enabled>
+    <Reskins>
+      <Reskin>
+        <skin>Tunic</skin>
+        <name>red</name>
+      </Reskin>
+      <Reskin>
+        <skin>NULL</skin>
+        <name>forsenCD</name>
+      </Reskin>
+      <Reskin>
+        <skin>CrownOwl</skin>
+        <name>Celeste Cap</name>
+      </Reskin>
+    </Reskins>
+  </collection>
+</WardrobeSettings>
+```
+Make sure that you have the same filename as the collection name.
+
+### Testing
+Convert the images to XNB like shown [**here**](#convert-images-and-music-fast-xnb-builder).
+
+Make sure that all the .xnb and .xml files are inside `Jump King/Content/wardrobe`.
+
+And you are ready to test it in-game, start up the game and good luck editing.
+
+---
+
 ## Publishing
-Head over on the [__publish page__]({{ site.baseurl }}/workshop/publish) to get your level added!
+Head over on the [__publish page__]({{ site.baseurl }}/workshop/publish) to get your level, reskin or collection added!
 
 <br>
 Special thanks to MERNY!<br>

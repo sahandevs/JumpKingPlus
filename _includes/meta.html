@@ -5,11 +5,8 @@
 
     <meta name="author" content="{{ site.title }}" />
 
-    {% if page.homepage %}
-        <link type="application/json+oembed" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/simplifiedoembed.json">
-    {% else %}
-        <link type="application/json+oembed" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/oembed.json">
-    {% endif %}
+    <link type="application/json+oembed" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/oembed.json">
+    
 
     {% if page.excerpt %}
         <meta name="description" content="{{ page.excerpt | strip_html }}" />

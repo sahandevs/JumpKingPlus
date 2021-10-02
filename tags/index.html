@@ -1,6 +1,6 @@
 ---
-layout: page
-title: tags
+layout: default
+title: Tags
 permalink: /tags/
 ---
 
@@ -9,36 +9,78 @@ permalink: /tags/
 {% endif %}
 
 <div class="tags">
-  <ul class="label">
+  <div class="sticky">
+    <h1 id="title">Tags</h1>
     {% for tag in site.tags %}
-    <li>
-      <a href="#{{ tag[0] }}">
-        <span>{{ tag[0] }}</span>
+    <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/tags/?tag={{ tag[0] }}">
+      <span class="rounded-full level-tag" id="tag-{{ tag[0] }}">
+        <span style="color: #868e96;">#</span>{{ tag[0] }}
         <span class="count">{{ tag[1] | size }}</span>
-      </a>
-    </li>
+      </span>
+    </a>
     {% endfor %}
-  </ul>
+  </div>
 
-  {% for tag in site.tags %}
-    <h2 id="{{ tag[0] }}">
-      {{ tag[0] }}
-    </h2>
-    <ul class="tag">
+
+  <div class="tags-content">
+    <div class="tag-content" id="no-tag">
+      <h2>No tag selected.</h2>
+      <p>Click on a tag to filter posts.</p>
+    </div>
+
+    {% for tag in site.tags %}
+  <div class="tag-content" id="{{ tag[0] }}">
+    <h2>Posts for <span style="font-size: inherit;"><span style="color: #868e96;">#{{ tag[0] }}</span></span></h2>
+    
+    <div class="posts">
       {% for post in tag[1] %}
         {% if post.title != null %}
-          <li>
-            {% if post.link %}
-              <a href="{{ post.link }}">
-            {% else %}
-              <a href="{{ site.baseurl }}{{ post.url }}">
-            {% endif %}
-                {{ post.title }}
-              </a>
-              <time>{{ post.date | date: "%Y-%m-%d" }}</time>
-          </li>
+          <article class="post">
+            <div class="meta">
+              <h1>
+                {% if post.link %}
+                <a href="{{ post.link }}">
+                {% else %}
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                {% endif %}
+                  {{ post.title }}
+                </a>
+              </h1>
+              <p>{{ post.excerpt | truncate: 500 }}</p>
+            </div>
+            <div class="entry">
+              <span class="date">
+                <span>by <strong>{{ post.Author }}</strong></span>
+                <span style="float: right;">{{ post.date | date: "%Y-%m-%d" }}</span>
+              </span>
+            </div>
+          </article>
         {% endif %}
       {% endfor %}
-    </ul>
+    </div>
+  </div>
   {% endfor %}
+  </div>
 </div>
+
+<script>
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+  }
+
+  let tag = getUrlVars()["tag"];
+
+  document.getElementById('no-tag').style.display = "block";
+  if (tag !== null) {
+    document.getElementById("tag-"+tag).className += " active";
+    document.getElementById(tag).style.display = "block";
+    document.getElementById('no-tag').style.display = "none";
+    document.getElementById('title').innerHTML = document.querySelector("#"+tag+" h2").innerHTML;
+    document.querySelector("#"+tag+" h2").style.display = "none";
+  }
+  
+</script>
