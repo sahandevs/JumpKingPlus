@@ -105,6 +105,10 @@ a.dl-button ion-icon {
     font-size: 27px;
 }
 
+.sticky {
+  position: sticky;
+}
+
 ion-icon {
     vertical-align: text-bottom;
     font-size: 17px;
@@ -146,11 +150,11 @@ article.post:first-child {
 }
 
 article.post .entry {
-  padding: 1em 1.2em 0 1.2em;
+  padding: 0 1.2em;
+  margin-top: .6em;
 }
   
 article.post .meta {
-  border-bottom: 1px solid #f1f3f5;
   padding: 0 1.2em;
 }
 
@@ -258,21 +262,23 @@ div.intro {
 }
 
 .gradient-next {
-  width: 75px;
+  width: 125px;
   height: 775%;
   position: absolute;
-  right: -15px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, white 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, white 66%);
   z-index: -1;
+  right: 0;
+  pointer-events: none;
 }
 
 .gradient-prev {
-  width: 75px;
+  width: 125px;
   height: 775%;
   position: absolute;
-  left: -15px;
-  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, white 33%, rgba(255, 255, 255, 0) 100%);
   z-index: -1;
+  left: 0;
+  pointer-events: none;
 }
 
 .blr {
@@ -461,6 +467,21 @@ div.intro {
   .card {
     width: 45%;
   }
+
+  .wip {
+    background: linear-gradient(23deg, #19191938 10%, rgba(47, 158, 68, 0.08) 90%);
+
+    .underlined {
+      color: $link-color;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: xxx-large;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 h2.ws-titles {
@@ -610,10 +631,10 @@ article.page.level {
   background-color: $link-color!important;
 }
 .swiper-button-next {
-  right: 15px!important;
+  right: 0!important;
 }
 .swiper-button-prev {
-  left: 15px!important;
+  left: 0!important;
 }
 
 iframe {
@@ -672,6 +693,9 @@ iframe {
   transition: .5s;
   margin-top: .5em;
 }
+.level-tag.active { 
+  background-color: rgba($link-color,0.5); 
+}
 
 td span.level-tag {
   display: inline-block;
@@ -700,7 +724,7 @@ a.tag-link:hover {
 
 a.ws-link-bg {
   color: $background-color;
-  background-color: $link-lighten-color;
+  background-color: $link-color;
   border: 1px solid $link-lighten-color;
 }
 a.ws-link-bg:hover {
@@ -711,7 +735,7 @@ a.ws-link-bg:hover {
 .ws-build-logo {
   display: inline-block;
   top: 7.5%;
-  right: 12%;
+  left: 64%;
   position: absolute;
 
   a {
@@ -727,6 +751,21 @@ a.ws-link-bg:hover {
     @include mobile {
       font-size: 1em;
     }
+  }
+
+  &:hover span.onhover {
+    display: block;
+    height: 26.4px;
+    width: max-content;
+    margin: 0 .5em;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  span.onhover {
+    display: none;
   }
 }
 
@@ -1122,34 +1161,16 @@ nav {
 
 // Posts
 
-.posts{
 
-  .tag {
-    display: inline;
-    font-weight: 300;
-    font-size: $small-font-size;
+.tag {
+  display: inline;
+  font-weight: 300;
+  font-size: $small-font-size;
+}
 
-    li:before {
-      content: '';
-    }
-
-    li {
-      display: inline;
-      margin: 0;
-
-      > a {
-        margin: 3px 3px 3px 0;
-        padding: .5px 4px;
-        color: $base-color;
-        background-color: $tag-index-label-background-color;
-        border-radius: 3px;
-
-        &:hover {
-          color: $link-color;
-          background-color:$link-bghv-color;
-        }
-      }
-    }
+article.posts {
+  div.entry {
+    margin-top: 2em;
   }
 }
 
@@ -1176,7 +1197,7 @@ nav {
   font-weight: 300;
   font-size: $small-font-size;
   color: $base-lighten-color;
-  margin-right: 4px;
+  margin-right: 1em;
 }
 
 
@@ -1302,36 +1323,62 @@ nav {
 }
 
 // Tags
-.tags > .label {
-  > li:before {
-    content: "";
+.tags {
+  > .sticky {
+    top: 32px;
+    padding: 2em;
+    padding-top: 1.25em;
+    backdrop-filter: blur(32px);
+    border-radius: 32px;
+    background: linear-gradient(23deg, #19191938 10%, rgba(47, 158, 68, 0.08) 90%);
+    z-index: 9999;
+
+    span.count {
+      border-radius: 9999px;
+      padding: .13rem .5rem;
+      background-color: $tag-index-count-background-color;
+    }
   }
 
-  > li {
-    margin: 0;
-    font-size: $small-font-size;
-    font-weight: 300;
-    display: inline;
+  .tags-content {
+    padding: 2em;
 
-    > a {
-      display: inline-block;
-      margin: 1px;
-      color: $base-color;
-      background-color: $tag-index-label-background-color;
-      border-radius: 3px;
+    .tag-content {
+      display: none;
+    }
+  }
 
-      &:hover {
-        background-color: $link-bghv-color;
-      }
+  > .label {
+    > li:before {
+      content: "";
+    }
 
-      span {
-        float: left;
-        padding: .5px 5px;
+    > li {
+      margin: 0;
+      font-size: $small-font-size;
+      font-weight: 300;
+      display: inline;
 
-        &.count {
-          background-color: $tag-index-count-background-color;
-          border-radius: 0 3px 3px 0;
+      > a {
+        display: inline-block;
+        margin: 1px;
+        color: $base-color;
+        background-color: $tag-index-label-background-color;
+        border-radius: 3px;
 
+        &:hover {
+          background-color: $link-bghv-color;
+        }
+
+        span {
+          float: left;
+          padding: .5px 5px;
+
+          &.count {
+            background-color: $tag-index-count-background-color;
+            border-radius: 0 3px 3px 0;
+
+          }
         }
       }
     }
@@ -1465,6 +1512,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, rgba($link-color, 0.5) 90%); border: 1px solid rgb(45, 45, 45); }
   div.card { border: 1px solid rgb(45, 45, 45); }
   .feature, .collections, .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
+  .levels .wip { p { color: white; } }
   a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }
   a.ws-button { background-color: rgb(33, 33, 33); }
   code.highlighter-rouge { background-color: rgb(50, 50, 50)!important; color: #8e97c2!important; }
@@ -1473,22 +1521,18 @@ tr.exclusive { background-color: #fff3b2!important; }
   pre.highlight { border: 0!important; background-color: rgb(50, 50, 50); color: lightgrey; }
   .post { background-color: rgb(33, 33, 33)!important; border: 1px solid rgb(45, 45, 45)!important; }
   .post.pinned { background-color: rgba($link-color,0.1)!important; border: 1px solid rgba($link-color,0.5)!important; }
-  .post.pinned .meta { border-bottom: 1px solid rgba($link-color,0.5)!important; }
-  .meta, .post .meta { border-bottom: 1px solid rgb(45, 45, 45)!important; }
   .pagination { border-top: 1px solid rgb(45, 45, 45); }
   .pagination > .next a, .pagination > .prev a { background-color: rgb(33, 33, 33); border: 1px solid rgb(45, 45, 45) }
   .pagination > .next a:hover, .pagination > .next a:focus { background-color: rgba($link-color,0.25)!important;  }
   .pagination > .prev a:hover, .pagination > .prev a:focus { background-color: rgba($link-color,0.25)!important;  }
   .disclaimer p { color: black }
-  .posts .tag li > a { color: lightgrey; background-color: rgb(45, 45, 45); }
-  .posts .tag li > a:hover { background-color: rgba($link-color,0.25); }
   table { border: 1px solid rgb(50, 50, 50); color: lightgrey; }
   td, th { border: 1px solid rgb(50, 50, 50); }
   tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color: rgb(33, 33, 33); }
   tr.exclusive td { background-color: #fff3b267!important; color: grey }
   .toc { color: lightgrey }
-  .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 0%, rgba(25,25,25,0) 100%); }
-  .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 100%); }
+  .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 33%, rgba(25,25,25,0) 100%); }
+  .gradient-next { background: linear-gradient(90deg, rgba(25,25,25,0) 0%, rgb(25, 25, 25) 66%); }
   .reskins .reskin-dl a.dl-button { border-top: 1px solid rgb(45, 45, 45); }
   .blurred { div { background: linear-gradient(0deg, #191919 0%, rgba(0,0,0,0) 100%); } * { color: inherit; } }
   .question { background: linear-gradient(23deg, rgb(45, 45, 45) 10%, rgba($link-color,0.25) 80%); border-bottom: 1px solid rgb(50, 50, 50); }
