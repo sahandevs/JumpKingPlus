@@ -1,5 +1,5 @@
 ---
-layout: wspage
+layout: wsdefault
 title: All skins
 ---
 
@@ -8,6 +8,20 @@ title: All skins
         width: 190px;
     }
 </style>
+
+<h2 class="ws-titles">
+  <span>
+    {{ page.title }}&nbsp;
+    <a><span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span></a>
+  </span> 
+  <span>
+    <a href="{{ site.baseurl }}/workshop/">
+      <span class="badge-pill">
+          <ion-icon name="arrow-back"></ion-icon> Back to the workshop
+      </span>
+    </a>
+  </span>
+</h2>
 
 <div class="reskins">
 {% for rskin in site.reskins reversed %}

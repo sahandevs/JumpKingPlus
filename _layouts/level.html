@@ -179,6 +179,121 @@ layout: levelbase
                             </script>
                             {% endif %}
                         {% endif %}
+                        
+                        <tr>
+                            <td>Best time <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">from Speedrun.com</span></td>
+                            {% if page.speedrun %}
+                                <td id="speedrun">Loading...</td>
+                            {% else %}
+                                <td>Not eligible</td>
+                            {% endif %}
+                        </tr>
+                        {% if page.speedrun %}
+                            <script>
+                                let durationFragments = [
+                                    'years',
+                                    'months',
+                                    'weeks',
+                                    'days',
+                                    'hours',
+                                    'minutes',
+                                    'seconds',
+                                    'milliseconds'
+                                ];
+
+                                class Duration {
+                                    constructor (durationString) {
+                                        if (!durationString) {
+                                            return this
+                                        }
+
+                                        console.assert(
+                                            typeof durationString === 'string',
+                                            'Type of argument must be "string" and not "' +
+                                            typeof durationString + '"'
+                                        )
+
+                                        let durationPattern =
+                                            '^P' +
+                                            '(?:([0-9]+)Y)?' + // Years
+                                            '(?:([0-9]+)M)?' + // Months
+                                            '(?:([0-9]+)W)?' + // Weeks
+                                            '(?:([0-9]+)D)?' + // Days
+                                            'T?' +
+                                            '(?:([0-9]+)H)?' + // Hours
+                                            '(?:([0-9]+)M)?' + // Minutes
+                                            '(?:([0-9]+)?' +   // Seconds
+                                            '(?:\\.([0-9]{1,3}))?S)?' + // Milliseconds
+                                            '$'
+
+                                        let regex = new RegExp(durationPattern, 'i')
+                                        let durationArray = durationString.match(regex)
+
+                                        console.assert(
+                                            durationArray,
+                                            `"${durationString}" is an invalid duration string`
+                                        )
+
+                                        // Milliseconds
+                                        durationArray[8] = Number('0.' + durationArray[8]) * 1000
+
+                                        durationFragments.forEach((fragment, index) => {
+                                            let value = Number(durationArray[index + 1])
+
+                                            if (typeof value === 'number' && !Number.isNaN(value)) {
+                                                this['_' + fragment] = value
+                                            }
+                                        })
+                                    }
+
+                                    get years () { return this._years }
+                                    set years (years) { this._years = years }
+                                    setYears (years) { this.years = years; return this }
+
+                                    get months () { return this._months }
+                                    set months (months) { this._months = months }
+                                    setMonths (months) { this.months = months; return this }
+
+                                    get weeks () { return this._weeks }
+                                    set weeks (weeks) { this._weeks = weeks }
+                                    setWeeks (weeks) { this.weeks = weeks; return this }
+
+                                    get days () { return this._days }
+                                    set days (days) { this._days = days }
+                                    setDays (days) { this.days = days; return this }
+
+                                    get hours () { return this._hours }
+                                    set hours (hours) { this._hours = hours }
+                                    setHours (hours) { this.hours = hours; return this }
+
+                                    get minutes () { return this._minutes}
+                                    set minutes (minutes) { this._minutes = minutes }
+                                    setMinutes (minutes) { this.minutes = minutes; return this }
+
+                                    get seconds () { return this._seconds}
+                                    set seconds (seconds) { this._seconds = seconds }
+                                    setSeconds (seconds) { this.seconds = seconds; return this  }
+
+                                    get milliseconds () { return this._milliseconds }
+                                    set milliseconds (milliseconds) { this._milliseconds = milliseconds }
+                                    setMilliseconds (milliseconds) { this.milliseconds = milliseconds; return this }
+                                }
+
+                                async function GET(url) {
+                                    const response = await fetch(url);
+                                    const json = await response.json();
+                                    return json;
+                                }
+
+                                GET("https://www.speedrun.com/api/v1/leaderboards/pd0q5231/category/{{ page.speedrun }}").then(success => {
+                                    let timestamp = new Duration(success.data.runs[0].run.times.primary);
+                                    let recordTime = timestamp.minutes + ":" + timestamp.seconds + "." + timestamp.milliseconds;
+                                    GET(success.data.runs[0].run.players[0].uri).then(success2 => {
+                                        document.getElementById('speedrun').innerHTML = recordTime + " by " + success2.data.names.international;
+                                    })
+                                })
+                            </script>
+                            {% endif %}
                     </table>
                 </div>
             {% endunless %}
