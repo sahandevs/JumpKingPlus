@@ -173,13 +173,13 @@ In this file, you will set up the basics information of your level such as:
 |`<title>`|Title of the custom level (will show up in the Stats Display window)|✖|
 |`<image_key>`|Image for Discord RPC of the custom level, this will be added on the workshop release|✔|
 |`<ending_screen>`|Screen where the babe spawns|✖|
-|`<disableProgress>`|Disable level% on the custom level (default as false)|✖|
-|`<StartPosition>`|Contains all the data for the custom start position|✖|
-|`<positionX>`|Starting X positon of the player|✔ if parent tag is present|
-|`<positionY>`|Starting Y positon of the player|✔ if parent tag is present|
-|`<velocityX>`|Starting X speed of the player|✖|
-|`<velocityY>`|Starting Y speed of the player|✖|
-|`<isOnGround>`|`True` if the player is on ground|✖|
+|`<disableProgress>`|Disable level% on the custom level (default as false)|✔|
+|`<StartPosition>`|Contains all the data for the custom start position|✔|
+|`<positionX>`|Starting X positon of the player|✖ if parent tag is present|
+|`<positionY>`|Starting Y positon of the player|✖ if parent tag is present|
+|`<velocityX>`|Starting X speed of the player|✔|
+|`<velocityY>`|Starting Y speed of the player|✔|
+|`<isOnGround>`|`True` if the player is on ground|✔|
 |`<Fonts>`|Array of available fonts (MenuFont, MenuFontSmall, StyleFont, OptimusUnderline, Tangerine, LocationFont, GargoyleFont)|✔|
 |`<Ending>`|Contains the babe ending images, only one story is available for now|✖|
 |`<MainBabe>`|Screen for beating the custom game|✖|
