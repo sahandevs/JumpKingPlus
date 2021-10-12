@@ -12,10 +12,10 @@ hidden: false
 
 This is an in-depth blog post about the **transparency** and **security** concerns about JumpKingPlus that people could have.<br>
 In this post, every possible concern (that could be found by *kebb#9498*) will be explained and clarified.
-<!-- more -->
 
 Before talking about this, I highly suggest you to join the **official Nexile / Jump King Discord server**, also to give more proof that this is safe, that can be found by clicking on the following badge. <a href="https://discord.gg/dUk9FPDNVq"><img src="https://badgen.net/discord/members/dUk9FPDNVq?style=flat-square" alt="Discord Badge" style="margin: 0 .1rem;display:inline-block;vertical-align:sub;"></a>
 
+<!-- more -->
 <hr>
 
 ## Who's behind JumpKingPlus?

@@ -18,7 +18,7 @@ homepage: true
     <article class="post pinned">
       <div class="meta">
         <h1>
-          <span title="pinned"><i data-feather="anchor"></i></span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <!--<span title="pinned"><i data-feather="anchor"></i></span>--><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> 
         </h1>
         <span class="date">
           {{ post.date | date: "%Y-%m-%d" }}
@@ -43,19 +43,19 @@ homepage: true
           <p>{{ post.subtitle }}</p>
         {% endif %}
         {{ post.excerpt }}
+        <div class="pagination" style="border-top: 0; padding: 10px 0;">
+          <span class="prev">
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              Read More
+            </a>
+          </span>
+        </div>
       </div>
-      <!--<div class="pagination" style="border-top: 0; padding: 10px 0;">
-      <span class="prev">
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          Read More
-        </a>
-      </span>
-      </div>-->
     </article>
     {% endif %}
     {% endunless %}
   {% endfor %}
-  <hr />
+  <!-- <hr />
   {% for post in paginator.posts %}
   {% if post.hidden==true %}
   {% endif %}
@@ -90,13 +90,14 @@ homepage: true
           Read More
         </a>
       </span>
-      </div>-->
+      </div>--> <!--
     </article>
     {% endunless %}
     {% endunless %}
-  {% endfor %}
+  {% endfor %} -->
 </div>
 
+<!--
 <div class="pagination">
   {% if paginator.previous_page %}
     <span class="prev">
@@ -112,4 +113,4 @@ homepage: true
       </a>
     </span>
   {% endif %}
-</div>
+</div> -->

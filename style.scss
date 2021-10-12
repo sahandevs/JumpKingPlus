@@ -110,6 +110,7 @@ a.dl-button ion-icon {
 }
 
 ion-icon {
+    pointer-events: none;
     vertical-align: text-bottom;
     font-size: 17px;
     display: inline-block;
@@ -172,7 +173,7 @@ article.blog {
   h2 { font-weight: 500; }
   h3 { margin-top: 4rem; font-size: 1.4em; }
   h4 { margin-top: 2.5rem; }
-  span { font-size: unset; margin-top: .75rem; display: block; }
+  span.date { font-size: unset; margin-top: .75rem; display: block; margin-right: 0; }
   p {
     margin: 1rem 0;
     font-size: 17px;
@@ -193,6 +194,11 @@ article.blog {
     .thumbnail {
       margin-top: 0;
       margin-bottom: 0;
+
+      @include mobile {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+      }
     }
   }
   
@@ -259,6 +265,63 @@ div.intro {
 .intro .ws-buttons a.ws-button {
   margin-right: 0;
   margin-left: 1em;
+}
+
+.publish {
+
+  margin-top: 1.5em;
+
+  div.hidden {
+    display: none;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+
+    .badge-pill {
+      font-size: medium;
+      padding: 0.95em;
+      height: 100%;
+    }
+  }
+  div.hidden.out {
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+  }
+  div.button {
+    position: relative;
+    padding: 1.5em 2em;
+    margin: 1.5em 0;
+    border-radius: 1em;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    overflow: auto;
+    border: 1px solid #f1f3f5;
+
+    ion-icon {
+      float: right;
+      color: lightgrey;
+      font-size: -webkit-xxx-large;
+      height: 100%;
+      filter: drop-shadow(0 0 6px rgb(25,25,25));
+    }
+  }
+  ion-icon {
+    vertical-align: text-top;
+    margin-left: .2em;
+  }
+  div.button:after {
+    content: "";
+    margin-top: -1.5em;
+    position: absolute;
+    left: 0;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(25,25,25,0.75), transparent);
+  }
 }
 
 .gradient-next {
@@ -491,7 +554,9 @@ h2.ws-titles {
   a {
     cursor: default;
   }
+}
 
+.button {
   .badge-pill {
     padding: .2em .6em;
     color: $link-color;
@@ -1038,6 +1103,8 @@ img {
 	position: fixed;
 	z-index: 4;
   border-right: 1px solid $divider-color;
+  display: flex;
+  flex-direction: column;
 
   @include mobile {
     width: 100%;
@@ -1050,7 +1117,11 @@ img {
 }
 
 .sidebar {
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin-top: 5vh;
 
   @include mobile {
     text-align: center;
@@ -1059,7 +1130,6 @@ img {
 
 .site-info {
   text-align:center;
-  margin: 100px auto 0;
 
   @include mobile {
     float: none;
@@ -1180,11 +1250,11 @@ article.posts {
   background-color: #f8f9fa;
   border: 1px solid #f1f3f5;
 }
-
+/*
 .posts > .post:last-child {
   padding-bottom: 1em;
 }
-
+*/
 
 .pinned .feather-anchor {
   color: $base-lighten-color;
@@ -1404,7 +1474,7 @@ article.posts {
   margin-top: 50px;
   border-top: 1px solid $footer-border-color;
   background-color: $footer-background-color;
-  position: absolute;
+  /*position: absolute;*/
   clear:both;
   width:100%;
   bottom:0;
@@ -1510,7 +1580,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   footer p, .site-description { color: lightgrey; }
   body, #main { background-color: rgb(25, 25, 25); }
   div.intro { background: linear-gradient(23deg, rgb(25, 25, 25) 10%, rgba($link-color, 0.5) 90%); border: 1px solid rgb(45, 45, 45); }
-  div.card { border: 1px solid rgb(45, 45, 45); }
+  div.card, .publish div.button { border: 1px solid rgb(45, 45, 45); }
   .feature, .collections, .reskins, .levels { border-top: 1px solid rgb(45, 45, 45); }
   .levels .wip { p { color: white; } }
   a.ws-button:hover, a.ws-button:focus { background-color: rgb(50, 50, 50); }

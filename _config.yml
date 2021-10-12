@@ -22,14 +22,14 @@ favicon: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/fa
 
 # 菜单中的按钮
 navigation:
-  - name: workshop
-    url: /workshop
+  - name: releases
+    url: /tags/?tag=release
   - name: about
     url: /about
-  - name: faq
-    url: /faq
   - name: download
     url: https://github.com/Phoenixx19/JumpKingPlus/releases/latest
+  - name: <span title="Workshop"><ion-icon name="hammer"></ion-icon></span>
+    url: /workshop
 
 # 每页的文章数
 paginate: 8
