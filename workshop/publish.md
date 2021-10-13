@@ -8,60 +8,176 @@ toc: false
 pinned: false
 ---
 
-## Publishing guidelines
+<script>
+    function SingleDisplay(element) {
+        document.getElementById(element).classList.add('out');
+        document.getElementById(element).style.display = "block";
+        setTimeout(() => {
+            document.getElementById(element).classList.remove('out');
+        }, 150);
+    }
 
-Level design in Jump King is a delicate balance between fairness and hardness. These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on mapping. Also in order to get your map approved on the site, these rules **need** to be followed.
+    function Display(element, secondElement) {
 
-<div class="intro" style="padding: 1.6em;">
-    <ol>
-        <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player not knowing how to jump over a new screen</li>
-        <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> in the platform before the transition to the new screen</li>
-        <li><b>Platforms must be bordered with a line</b> (with at least 1px)</li>
-        <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are one after another!</li>
-    </ol>
+        document.getElementById(element).classList.add('out');
+        setTimeout(() => {
+            document.getElementById(element).classList.remove('out');
+            document.getElementById(element).style.display = "none";
+            document.getElementById(secondElement).classList.add('out');
+            document.getElementById(secondElement).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(secondElement).classList.remove('out');
+            }, 150);
+        }, 150);
+    }
+</script>
+
+<div class="publish">
+    <div class="hidden" id="home" style="display: block;">
+        <h2>Add your creations on the workshop!</h2>
+        <p>
+            Would you like to release the map/level on the site?<br>
+            ...or you have a reskin you want to publish?<br>
+            ...or you have a fullfledged collection you would like to add?
+        </p>
+        <p>Proceed by choosing the type of your creation.</p>
+        <div class="button" style="background:url(https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png) no-repeat center;background-size: cover;">
+            <button class="badge-pill level" onclick="Display('home', 'level-1')">Upload your level</button>
+            <ion-icon name="map"></ion-icon>
+        </div>
+        <div class="button" style="background:url(https://media.discordapp.net/attachments/758021625252806739/883792892567638117/dapizzaishere.png) no-repeat center;background-size: cover;">
+            <button class="badge-pill skins" onclick="Display('home', 'skins-1')">Upload your reskin or collection</button>
+            <ion-icon name="layers"></ion-icon>
+        </div>
+
+        <hr style="margin:4rem 0;">
+
+        <h3>Psst... hey... are you looking for some level tips?</h3>
+        
+        <div class="button" style="background:url(https://pbs.twimg.com/media/EreQjhKXIAI6wv6?format=jpg) no-repeat center;background-size: cover;">
+            <button class="badge-pill tips" onclick="Display('home', 'tips')">
+                Yes, give me some!
+            </button>
+            <ion-icon name="rocket"></ion-icon>
+        </div>
+    </div>
+
+    <div class="hidden" id="level-1">
+        <h2>Level publishing guidelines</h2>
+    
+        <p>Level design in Jump King is a delicate balance between <strong>fairness</strong> and <strong>hardness</strong>.</p>
+        
+        <p>These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on mapping. Also in order to get your map approved on the site, these rules <strong>need</strong> to be followed.</p>
+
+        <div class="intro" style="padding: 1.6em;">
+            <ol>
+                <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player not knowing how to jump over a new screen</li>
+                <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> in the platform before the transition to the new screen</li>
+                <li><b>Platforms must be bordered with a line</b> (with at least 1px)</li>
+                <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are one after another!</li>
+            </ol>
+        </div>
+
+        <span class="button">
+            <button class="badge-pill" onclick="Display('level-1', 'level-2')">I agree on the guidelines</button>
+        </span>
+    </div>
+
+    <div class="hidden" id="skins-1">
+        <h2>Skins and collections publish guidelines</h2>
+
+        <div class="intro" style="padding: 1.6em;">
+            <ol>
+                <li>Not NSFW or explicit content</li>
+                <li>Your skin/collection should be distinguishable from the base item</li>
+                <li>No reposts</li>
+            </ol>
+        </div>
+
+        <span class="button">
+            <button class="badge-pill" onclick="Display('skins-1', 'skins-2')">I agree on the guidelines</button>
+        </span>
+    </div>
+
+    <div class="hidden" id="level-2">
+        <h2>Next step</h2>
+        
+        <p>To get it published on the site, fill in the following Google Form where it will get verified by one the level publisher testers.</p>
+        
+        <p>The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, the JumpKingPlus' GitHub repository does not work as a cloud!</p>
+        
+        <span id="level-2-button" class="button">
+            <button class="badge-pill" onclick="Display('level-2-button', 'level-form')">Show me the form</button>
+            &nbsp;
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform" target="_blank">Open form in a new window<ion-icon name="open"></ion-icon></a>
+        </span>
+
+        <iframe id="level-form" style="
+            display: block;
+            border: none;
+            height: 100vh;
+            width: 100%;
+            margin-top: 2.5em;
+            display: none;"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform?embedded=true">
+            Loading...
+        </iframe>
+
+        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto">Loading…</iframe> -->
+    </div>
+
+    <div class="hidden" id="skins-2">
+        <h2>Next step</h2>
+
+        <p>To get it published on the site, fill in the following Google Form where it will get verified by the reskins/collection manager (MERNY#8542).</p>
+
+        <p>The .zip file should contain your reskin or collection texture and only the xml needed for the reskin or collection. For reskins and collections, we can host your reskin since it's a small file.</p>
+
+        <span id="skins-2-button" class="button">
+            <button class="badge-pill" onclick="Display('skins-2-button', 'skins-form')">Show me the form</button>
+            &nbsp;
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBNK3Y1VTlHCBeHw8EdBDllwlgwyza06HSE-on7E3HgGbTHA/viewform" target="_blank">Open form in a new window<ion-icon name="open"></ion-icon></a>
+        </span>
+
+        <iframe id="skins-form" style="
+            display: block;
+            border: none;
+            height: 100vh;
+            width: 100%;
+            margin-top: 2.5em;
+            display: none;"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdBNK3Y1VTlHCBeHw8EdBDllwlgwyza06HSE-on7E3HgGbTHA/viewform?embedded=true">
+            Loading...
+        </iframe>
+    </div>
+
+    <div class="hidden" id="tips">
+        <h3>10 level design tips</h3>
+
+        <p>Here are some secret tips that you can pick to make a great level. You don't necessarily need to follow any of these below.</p>
+        
+
+        <h4>Level design tips (hitboxes)</h4>
+
+        <ol>
+            <li>Write down your locations before starting with the level design; this will help you through the level design</li>
+            <li>Make your platforms easy to navigate</li>
+            <li>Don't exaggerate with the teleport blocks and make sure you can fall all way to the start of your level (unless you want checkpoints)</li>
+            <li>Don't create a level which focuses only on one mechanic of the game</li>
+            <li>Testing is a very important part, so don't forget to ask for an helping hand when it comes to testing</li>
+        </ol>
+        <br>
+        <h4>Art design tips (screens, props, music, etc)</h4>
+        <ol start="6">
+            <li>Create your level as detailed and unique as possible</li>
+            <li>Make sure your art design is made in the native Jump King resolution (480px x 360px)</li>
+            <li>Make it as immersive as possible using music, SFX (Sound Effects), background to your advantage</li>
+            <li>Try to create your own props, compositions instead of using the originals from Jump King, unless it's really necessary</li>
+            <li>Make sure that you have a good segue between locations in the screens (background, midground)</li>
+        </ol>
+
+        <hr>
+
+        <p>Secret tips by Phoenixx19 and Merny.</p>
+    </div>
 </div>
-
-### Advice
-Here are some rules and tips that you can pick to make a great level. You don't necessarily need to follow any of these below.
-
-#### Level design rules (hitboxes)
-
-- Write down your locations before starting with the level design; this will help you through the level design
-
-- Make your platforms easy to navigate
-
-- Don't exaggerate with the teleport blocks and make sure you can fall all way to the start of your level (unless you want checkpoints)
-
-- Don't create a level which focuses only on one mechanic of the game
-
-- Testing is a very important part, so don't forget to ask for an helping hand when it comes to testing
-
-<br>
-
-#### Art design rules (screens, props, music, etc)
-
-- Create your level as detailed and unique as possible
-
-- Make sure your art design is made in the native Jump King resolution (480px x 360px)
-
-- Make it as immersive as possible using music, SFX (Sound Effects), background to your advantage
-
-- Try to create your own props, compositions instead of using the originals from Jump King
-
-- Make sure that you have a good segue between locations in the screens (background, midground)
-
----
-
-## Next step
-
-To get it published on the site, fill in the following Google Form where it will get verified by one the level publisher testers.
-
-The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, the JumpKingPlus' GitHub repository does not work as a cloud!
-
-
-<iframe style="display: block;
-    border: none;
-    height: 100vh;
-    width: 100%" src="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform?embedded=true">Loading...</iframe>
-
-<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto">Loading…</iframe> -->
