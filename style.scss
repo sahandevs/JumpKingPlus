@@ -326,7 +326,7 @@ div.intro {
 
 .gradient-next {
   width: 125px;
-  height: 775%;
+  height: 100%;
   position: absolute;
   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, white 66%);
   z-index: -1;
@@ -336,7 +336,7 @@ div.intro {
 
 .gradient-prev {
   width: 125px;
-  height: 775%;
+  height: 100%;
   position: absolute;
   background: linear-gradient(90deg, white 33%, rgba(255, 255, 255, 0) 100%);
   z-index: -1;
@@ -425,10 +425,6 @@ div.intro {
       image-rendering: crisp-edges;
       vertical-align: middle;
     }
-  }
-
-  .gradient-next, .gradient-prev {
-    height: 740%;
   }
 }
 
@@ -672,6 +668,9 @@ article.page.level {
 }
 
 .swiper-button-next, .swiper-button-prev {
+  top: 0!important;
+  margin-top: 0!important;
+  height: 100%!important;
   color: $link-color!important;
   transition: .3s;
 }
