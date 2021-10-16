@@ -1611,6 +1611,5 @@ tr.exclusive { background-color: #fff3b2!important; }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
-@import "gitalk";
 
 

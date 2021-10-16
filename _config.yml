@@ -65,13 +65,6 @@ footer-text: JumpKingPlus is not affiliated with Nexile AB or Discord Incorporat
 # 输入Disqus shortname，即可添加评论区
 disqus: #shortname
 
-# 输入Gitalk相关设定，即可添加评论区
-gitalk:
-  clientID: 
-  clientSecret: 
-  repo: 
-  owner: 
-
 # 输入Google Analytics web tracking code
 google_analytics:
 
