@@ -1,6 +1,8 @@
 ---
 layout: workshop
 title: Workshop
+collection-limit: 4
+reskin-limit: 20
 ---
 
   <!-- Swiper JS -->
@@ -88,7 +90,10 @@ title: Workshop
 
       <div class="swiper-container swiper-reskins">
         <div class="swiper-wrapper">
-      {% for rskin in site.reskins reversed limit: 20 %}
+      {% assign count = 0 %}
+      {% for rskin in site.reskins reversed %}
+        {% assign count = count | plus: 1 %}
+        {% if count <= page.reskin-limit %}
           <div class="swiper-slide">
             <div class="card">
               <div class="typology">
@@ -113,6 +118,7 @@ title: Workshop
               </div>
             </div>
           </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
@@ -201,7 +207,10 @@ title: Workshop
 
         <div class="swiper-container swiper-collections">
           <div class="swiper-wrapper">
-        {% for collection in site.skincollections reversed limit: 4 %}
+        {% assign count = 0 %}
+        {% for collection in site.skincollections reversed %}
+        {% assign count = count | plus: 1 %}
+        {% if count <= page.collection-limit %}
             <div class="swiper-slide">
               <div class="card">
                 <img
@@ -230,6 +239,7 @@ title: Workshop
                 </div>
               </div>
             </div>
+            {% endif %}
             {% endfor %}
           </div>
         </div>
