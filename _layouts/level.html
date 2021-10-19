@@ -40,6 +40,13 @@ layout: levelbase
             {% endfor %}
 
             <h1>{{ page.title }}
+                {% if page.translations %}
+                    {% for translation in page.translations %}
+                    <a class="dl-button" href="https://bit.ly/{{ translation.bitly }}" style="margin-left: 1rem;" title="{{ translation.id }} translation">
+                        {{ translation.local }} <ion-icon name="download"></ion-icon>
+                    </a>
+                    {% endfor %}
+                {% endif %}
                 {% if page.bitly2 %}
                     <a class="dl-button" href="https://bit.ly/{{ page.bitly2 }}" style="margin-left: 1rem;" title="Mirror, if the download doesn't work">
                         Mirror <ion-icon name="download"></ion-icon>
@@ -177,6 +184,18 @@ layout: levelbase
                                         document.getElementById('bitly').innerHTML = totalDls;
                                     })
                             </script>
+                            {% endif %}
+                            {% if page.translations %}
+                                {% for translation in page.translations %}
+                                <script>
+                                    GET("https://api-ssl.bitly.com/v4/bitlinks/bit.ly/{{ translation.bitly }}/clicks/summary?units=-1")
+                                    .then(success => {
+                                        let totalDls = document.getElementById('bitly').innerHTML;
+                                        totalDls = Number(totalDls) + success.total_clicks;
+                                        document.getElementById('bitly').innerHTML = totalDls;
+                                    })
+                                </script>
+                                {% endfor %}
                             {% endif %}
                         {% endif %}
                         
