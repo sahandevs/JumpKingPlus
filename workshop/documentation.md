@@ -173,6 +173,8 @@ In this file, you will set up the basics information of your level such as:
 |`<title>`|Title of the custom level (will show up in the Stats Display window)|✖|
 |`<image_key>`|Image for Discord RPC of the custom level, this will be added on the workshop release|✔|
 |`<ending_screen>`|Screen where the babe spawns|✖|
+|`<ending_screen_nbp>`|Screen where the second babe spawns|✔|
+|`<ending_screen_owl>`|Screen where the third babe spawns|✔|
 |`<disableProgress>`|Disable level% on the custom level (default as false)|✔|
 |`<StartPosition>`|Contains all the data for the custom start position|✔|
 |`<positionX>`|Starting X positon of the player|✖ if parent tag is present|
@@ -182,13 +184,20 @@ In this file, you will set up the basics information of your level such as:
 |`<isOnGround>`|`True` if the player is on ground|✔|
 |`<Fonts>`|Array of available fonts (MenuFont, MenuFontSmall, StyleFont, OptimusUnderline, Tangerine, LocationFont, GargoyleFont)|✔|
 |`<Ending>`|Contains the babe ending images, only one story is available for now|✖|
-|`<MainBabe>`|Screen for beating the custom game|✖|
-|`<MainShoes>`|Screen for beating the custom game with the Giant Boots|✖|
+|`<MainBabe>`|Screen for beating the custom game|✔|
+|`<MainShoes>`|Screen for beating the custom game with the Giant Boots|✔|
+|`<NBPBabe>`|Screen for beating the second babe custom game|✔|
+|`<NBPShoes>`|Screen for beating the second babe custom game with the Giant Boots|✔|
+|`<OwlBabe>`|Screen for beating the third babe custom game|✔|
+|`<OwlBird>`|Screen for triggering all the positions of the tsuchinoko bird (the bird with feet)|✔|
 |`<EndingLines>`|Credit[] (or array of credit)|✔|
 |`<Credit>`|Contains the header and the strings for the ending lines|✔|
 |`<header>`|Header for ending lines|✔|
 |`<People>`|Array of strings for ending lines|✔|
 |`<string>`|Ending lines (from 1 to 5 works fine)|✔|
+|`<Compatibility>`|Contains the minimum version and maximum version of JK+ for a custom level. **This might become mandatory in the future.**|✔|
+|`<minimum_version>`|Minimum version (example 1.2.0)|✔|
+|`<maximum_version>`|Maximum version (example 1.6.1)|✔|
 
 The title and the ending screen are necessary to make the custom level playable. The title will show up only when the game started is Main Babe / Normal Game.
 
@@ -303,6 +312,18 @@ The hitbox file is a **Texture2D** (.png image with alpha channel or transparent
       <td>From 12.5% (Red: 224) to 200% (Red: 239) of the original wind strength</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(224,255,0), rgb(239,255,0));"></div></td>
     </tr>
+    <tr class="exclusive">
+      <td>Semi-solid</td>
+      <td>Block that is only solid on one side.</td>
+      <td>Solid from Top (R: 65), Right (R: 66), Bottom (R: 67), Left (R: 68)</td>
+      <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(65,65,65), rgb(68,65,65));"></div></td>
+    </tr>
+    <tr class="exclusive">
+      <td>Warp</td>
+      <td>The color red determines the X location to warp to while the green color determines Y location to warp to (Like Teleport but on the same screen)</td>
+      <td>Solid from Top (R: 65), Right (R: 66), Bottom (R: 67), Left (R: 68)</td>
+      <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(0,0,75), rgb(60,45,75));"></div></td>
+    </tr>
   </tbody>
 </table>
 
@@ -314,98 +335,64 @@ The hitbox file is a **Texture2D** (.png image with alpha channel or transparent
       <th>JK+ v1.1.0 or older</th>
       <th>JK+ v1.2.0 to v1.3.1</th>
       <th>JK+ v1.3.1</th>
-      <th>JK+ v1.4.0 or newer</th>
+      <th>JK+ v1.4.0 or v1.6.1</th>
+      <th>JK+ v1.7.0 or newer</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Solid</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Slope</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Fake</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Ice</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Snow</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Wind</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Sand</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Wind</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>No Wind</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Water</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Quark</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Teleport</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
-      <td>&check;</td>
+      <td colspan="5">&check; (from vanilla game)</td>
     </tr>
     <tr>
       <td>Low gravity</td>
       <td>&cross;</td>
       <td>?</td>
+      <td>&check;</td>
       <td>&check;</td>
       <td>&check;</td>
     </tr>
@@ -415,9 +402,27 @@ The hitbox file is a **Texture2D** (.png image with alpha channel or transparent
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&check;</td>
+      <td>&check;</td>
     </tr>
     <tr>
       <td>One-way wind gradients</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&check;</td>
+      <td>&check;</td>
+    </tr>
+    <tr>
+      <td>Warp</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&check;</td>
+    </tr>
+    <tr>
+      <td>Semi-solid</td>
+      <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
