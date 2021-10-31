@@ -17,8 +17,8 @@ base: [
     "YellowShoes"
 ]
 images: [
-    "https://media.discordapp.net/attachments/765578031749136395/898949538629443584/skthumbnail.png",
-    "https://media.discordapp.net/attachments/765578031749136395/898949523282464798/skitem.png"
+    "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/workshop/collections/5-banner.png",
+    "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/workshop/collections/5-hover.png"
 ]
 dlink: "https://github.com/Phoenixx19/JumpKingPlus/blob/www/reskins/collections/Shovel%20Knight.zip"
 ---

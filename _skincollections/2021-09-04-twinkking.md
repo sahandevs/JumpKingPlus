@@ -8,8 +8,8 @@ base: [
 	"Crown"
 ]
 images: [
-    "https://media.discordapp.net/attachments/779500025990086706/884181609539063808/horror.png",
-    "https://media.discordapp.net/attachments/779500025990086706/884182105125437480/kingicide.gif"
+    "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/workshop/collections/2-banner.png",
+    "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/workshop/collections/2-hover.gif"
 ]
 dlink: "https://github.com/Phoenixx19/JumpKingPlus/raw/www/reskins/collections/TwinkKing.zip"
 ---
