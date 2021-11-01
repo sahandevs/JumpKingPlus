@@ -19,7 +19,15 @@ layout: levelbase
 </style>
 
 <div id="blurred" class="blurred" style="background-image: url({{ page.images[0] }});"></div>
-        
+
+<script>
+    function DlPlusOne() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.countapi.xyz/hit/JumpKingPlus/level{{ page.levelId }}");
+        xhr.send();
+    }
+</script>
+
 <article class="page level">
     <div class="container">
         <div class="entry">
@@ -43,14 +51,18 @@ layout: levelbase
                 {% if page.versions %}
                     {% for version in page.versions %}
                         {% if version.hidden == false %}
-                            <a class="dl-button" href="https://bit.ly/{{ version.bitly }}" style="margin-left: 1rem;" title="{{ version.name }}">
+                            <a class="dl-button" onclick="DlPlusOne()"
+                                href="https://bit.ly/{{ version.bitly }}" style="margin-left: 1rem;"
+                                title="{{ version.name }}">
                                 {{ version.short }} <ion-icon name="download"></ion-icon>
                             </a>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
                 {% if page.bitly %}
-                    <a class="dl-button" href="https://bit.ly/{{ page.bitly }}" title="Download">
+                    <a class="dl-button" onclick="DlPlusOne()"
+                        href="https://bit.ly/{{ page.bitly }}"
+                        title="Download">
                         Download <ion-icon name="download"></ion-icon>
                     </a>
                 {% endif %}
@@ -153,43 +165,18 @@ layout: levelbase
                             <td>Compatibility</td>
                             <td>From <b>{{ page.version-start }}</b> to <b>{{ page.version-end }}</b></td>
                         </tr>
-                        {% if page.bitly %}
-                            <tr>
-                                <td>This month downloads</td>
-                                <td id="bitly">Loading...</td>
-                            </tr>
-                            <script>
-                                async function GET(url) {
-                                    const response = await fetch(url, {
-                                        headers: {
-                                            'Authorization': 'Bearer 7f05c8ea219d6e248bef62926eebb83954f9bef4'
-                                        }
-                                    })
-                                    const json = await response.json();
-                                    return json;
-                                }
-
-                                GET("https://api-ssl.bitly.com/v4/bitlinks/bit.ly/{{ page.bitly }}/clicks/summary?units=-1")
-                                    .then(success => document.getElementById('bitly').innerHTML = success.total_clicks)
-                            </script>
-                            {% if page.versions %}
-                                {% for version in page.versions %}
-                                    {% if version.bitly %}
-                                    <script>
-                                        GET("https://api-ssl.bitly.com/v4/bitlinks/bit.ly/{{ version.bitly }}/clicks/summary?units=-1")
-                                        .then(success => {
-                                            let totalDls = document.getElementById('bitly').innerHTML;
-                                            totalDls = Number(totalDls) + success.total_clicks;
-                                            document.getElementById('bitly').innerHTML = totalDls;
-                                        })
-                                    </script>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        {% endif %}
-                        
                         <tr>
-                            <td>Best time <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">from Speedrun.com</span></td>
+                            <td>Total downloads <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">using <a href="https://countapi.xyz/">CountAPI</a></span></td>
+                            <td id="downloads">Loading...</td>
+                        </tr>
+                        <script>
+                            function cb(response) {
+                                document.getElementById('downloads').innerText = response.value;
+                            }
+                        </script>
+                        <script async src="https://api.countapi.xyz/info/JumpKingPlus/level{{ page.levelId }}?callback=cb"></script>
+                        <tr>
+                            <td>Best time <span class="rounded-full level-tag" style="display: inline;font-size: smaller;">from <a href="https://www.speedrun.com/jump_king_custom_maps">Speedrun.com</a></span></td>
                             {% if page.speedrun %}
                                 <td id="speedrun">Loading...</td>
                             {% else %}
@@ -297,11 +284,11 @@ layout: levelbase
                                     let timestamp = new Duration(success.data.runs[0].run.times.primary);
                                     let recordTime = timestamp.minutes + ":" + timestamp.seconds + "." + timestamp.milliseconds;
                                     GET(success.data.runs[0].run.players[0].uri).then(success2 => {
-                                        document.getElementById('speedrun').innerHTML = recordTime + " by " + success2.data.names.international;
+                                        document.getElementById('speedrun').innerHTML = "<strong>"+recordTime + "</strong> by <i>" + success2.data.names.international + "</i>";
                                     })
                                 })
                             </script>
-                            {% endif %}
+                        {% endif %}
                     </table>
                 </div>
             {% endunless %}
