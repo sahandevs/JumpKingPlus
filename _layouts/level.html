@@ -285,6 +285,8 @@ layout: levelbase
                                     let recordTime = timestamp.minutes + ":" + timestamp.seconds + "." + timestamp.milliseconds;
                                     GET(success.data.runs[0].run.players[0].uri).then(success2 => {
                                         document.getElementById('speedrun').innerHTML = "<strong>"+recordTime + "</strong> by <i>" + success2.data.names.international + "</i>";
+                                    }).then(success3 => {
+                                        document.getElementById('speedrun').innerHTML += " <a target='_blank' href='" + success.data.runs[0].run.videos.links[0].uri +"'><ion-icon name='open'></ion-icon></a>";
                                     })
                                 })
                             </script>
