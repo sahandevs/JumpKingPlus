@@ -117,6 +117,13 @@ kramdown:
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
+feed:
+  collections:
+    - workshop
+    - reskins
+    - skincollections
+  posts_limit: 9999
+
 # Use the following plug-ins
 plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
