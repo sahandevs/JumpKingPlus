@@ -12,6 +12,13 @@ reskin-limit: 20
   <script src="../tinglejs/tingle.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function DlPlusOne(value) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.countapi.xyz/hit/JumpKingPlus/level"+value);
+        xhr.send();
+    }
+  </script>
 
   <!--
   <div class="category">
@@ -349,7 +356,7 @@ reskin-limit: 20
                   <span>{{ level.title }}</span>
                 </a>
                 {% if level.bitly %}
-                  <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download">
+                  <a class="dl-button" href="https://bit.ly/{{ level.bitly }}" title="Download" onclick="DlPlusOne({{ level.levelId }})">
                     <ion-icon name="download"></ion-icon>
                   </a>
                 {% endif %}
