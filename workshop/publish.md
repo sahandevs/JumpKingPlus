@@ -176,7 +176,7 @@ pinned: false
         <h4>Very detailed tips from Babe of Ascension's creator</h4>
         <ol>
             <li>Don't have your level just be brutally hard just because you want to compete with whose level is the hardest, and don't have it be lazy 1 block jump after 1 block jump.</li>
-            <li>Try to make something new! Make some gameplay no one has ever seen before, the combination of other gimmick can help with that, just don't get too crazy with things like sand and ice, try and mess around with some unique room layouts with just the normal block and either build off of it or smooth it out to make it better to play.</li>
+            <li>Try to make something new! Make some gameplay no one has ever seen before, the combination of other gimmicks can help with that, just don't get too crazy with things like sand and ice, try and mess around with some unique room layouts with just the normal block and either build off of it or smooth it out to make it better to play.</li>
             <li>You can have your level inspired by other areas from the original Jump King or even other custom levels for that matter, just don't have them be direct copies, and don't take inspiration off of Underberg's gameplay. Just don't.</li>
             <li>Sketch out area ideas or just ideas for the level in general with some paper and pencil, or a drawing program if that suits your fancy better. Really think about what you're doing to be doing with your level, like what are the areas' themes and ideas?</li>
             <li>Make sure your level is well balanced and doesn't have super easy areas along with extreme difficulty spikes, like Underberg to Lost Frontier for example.</li>
@@ -185,7 +185,7 @@ pinned: false
             <li>Don't spam gimmicks in your level, ex: wind + sand in one area, and water + ice on the next.</li>
             <li>Think about the player, what are they doing to think about this thing in your level, what are they going to think about that thing in your level. Don't think in your head when designing your level, think inside someone elses.</li>
             <li>Playtesters. A recommendation of 3-5 playtesters is good to have your level be improved from others' opinions and thoughts on it. This adds on to tip #9 about you don't want to just think in your own head, get others' thoughts and opinions.</li>
-            <li>Don't have your gameplay be difficult or design in a way that makes someone want to just play anymore, not due to rage, but due to just bad level design. If you have thoughts on this happening to your level, do a full run on in, along with your other playtesters to see if this reaction happens.</li>
+            <li>Don't have your gameplay be difficult or designed in a way that makes someone want to just not play your level anymore, not due to rage, but due to just bad level design. If you have thoughts on this happening to your level, do a full run on it, along with your other playtesters to see if this reaction happens.</li>
         </ol>
         <p>"11 Tips" by IntroCar.</p>
     </div>
