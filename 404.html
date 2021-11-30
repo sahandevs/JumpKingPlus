@@ -1,0 +1,65 @@
+---
+layout: default
+title: 404
+permalink: /404
+nav_exclude: true
+search_exclude: true
+---
+
+<style>
+    #main {
+        height: 100vh;
+    }
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #oof {
+        width: 10vw;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        border-radius: 0;
+        cursor: pointer;
+    }
+    .container p, .container h1 {
+        text-align: center;
+    }
+    hr.divider {
+        width: 40vh;
+        border: 1px solid;
+        margin: 3.5rem 0;
+    }
+</style>
+
+<img id="oof" src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/splat.png"  onclick="ChangeKing()" alt="Splat">
+
+<script>
+    var imgArr = [
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/bonk.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/charge.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/dance.gif",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jump_down.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jump_up.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jump_down.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/lookup.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/swag.png",
+        "https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/walk.png",
+    ];
+
+    function ChangeKing() {
+        let num = Math.floor(Math.random() * (imgArr.length));
+        document.getElementById('oof').src = imgArr[num];
+    }
+</script>
+
+<hr class="divider">
+
+<h1>Jump King fell while searching for your page.</h1>
+
+<br>
+
+<p>Use the navigation on the sidebar to find what you're looking for<br>or go to the <a href="{{ '/' | absolute_url }}"><strong>home page</strong></a>.</p>
