@@ -1,0 +1,121 @@
+<div class="category">
+    <h2 class="ws-titles">
+      <span>Latest collections</span>
+      <span>
+        <a class="button btn--primary btn-demo js-tingle-modal-2" style="display: inline-block;">
+          <span class="badge-pill"><ion-icon name="help-circle"></ion-icon> Installation method</span>
+        </a>
+        <a class="button" href="{{ site.baseurl }}/workshop/collection/all">
+          <span class="badge-pill">
+            See all <ion-icon name="arrow-forward"></ion-icon>
+          </span>
+        </a>
+      </span>
+    </h2>
+
+    <!-- Tingle tiny content -->
+    <div class="tingle-tiny-2" style="display: none;">
+      <h1>Adding and removing a collection</h1>
+      <hr>
+      <h3>Video tutorial</h3>
+      <iframe src="https://www.youtube-nocookie.com/embed/2M03SIBnMcc?autoplay=0" allowfullscreen="" width="100%" height="600" frameborder="0"></iframe>
+      <h3 style="margin-top: 1rem;">Text explaination</h3>
+      <h4 class="question">How do I add a skin collection?</h4>
+      <ol>
+          <li>Find a collection you would like to use in the workshop, download it using the Download icon button.</li>
+          <li>Open the .zip file.</li>
+          <li>Head to <code class="language-plaintext highlighter-rouge">Jump King/Content/wardrobe</code>.</li>
+          <li>Drag the files from the .zip file inside the folder.</li>
+          <li>Profit.</li>
+      </ol>
+      <p>If some skins are in the way once you start the game, consider disabling them in the Inventory > Wardrobe.</p>
+
+      <h4 class="question">How do I remove a skin collection?</h4>
+      <p>It’s even more simple.<br>Just delete all the skins (both <code class="language-plaintext highlighter-rouge">.xnb</code> and <code class="language-plaintext highlighter-rouge">.xml</code> files) with the same name prefix.</p>
+    </div>
+  <!-- /Tingle tiny content -->
+
+    <script type="text/javascript">
+        var modalTinyNoFooter2 = new tingle.modal({
+            onClose: function () { },
+            onOpen: function() {
+              var close = document.querySelectorAll(".tingle-modal__close")[1];
+              var modalContent = document.querySelectorAll(".tingle-modal-box__content")[1];
+              modalContent.appendChild(close);
+            },
+            beforeOpen: function () { },
+            beforeClose: function () { return true; },
+            //cssClass: ['class1', 'class2']
+        });
+        var btn = document.querySelector('.js-tingle-modal-2');
+        btn.addEventListener('click', function () {
+            modalTinyNoFooter2.open();
+        });
+        modalTinyNoFooter2.setContent(document.querySelector('.tingle-tiny-2').innerHTML);
+    </script>
+
+    <div class="collections">
+
+        <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
+
+        <div class="swiper-container swiper-collections">
+          <div class="swiper-wrapper">
+        {% assign count = 0 %}
+        {% for collection in site.skincollections reversed %}
+        {% assign count = count | plus: 1 %}
+        {% if count <= page.collection-limit %}
+            <div class="swiper-slide">
+              <div class="card">
+                <img
+                  src="{{ collection.images[0] }}"
+                  alt="{{ collection.title }}"
+                  onmouseover="this.src='{{ collection.images[1] }}'"
+                  onmouseout="this.src='{{ collection.images[0] }}'"
+                >
+                <div class="details">
+                  <div class="title-level">{{ collection.title }}<a class="dl-button" href="{{ collection.dlink }}" title="Download">
+                    <ion-icon name="download"></ion-icon>
+                  </a></div>
+                  <span class="author-level">
+                    <ion-icon name="person"></ion-icon> {{ collection.Author }}
+                  </span>
+                  <p class="desc">
+                    {{ collection.excerpt | truncate: 300 }}
+                  </p>
+                  
+                  <span class="whatsinside">
+                    Contains: 
+                    {% for baseSingle in collection.base %}
+                      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ baseSingle }}.png" alt="{{ baseSingle }}" title="{{ baseSingle }}">
+                    {% endfor %}
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        
+          <div class="swiper-button-next"><div class="gradient-next"></div></div>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".swiper-collections", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            loop: true,
+            spaceBetween: 20,
+            navigation: {
+              nextEl: ".collections .swiper-button-next",
+              prevEl: ".collections .swiper-button-prev",
+            },
+            pagination: {
+              el: ".collections .swiper-pagination",
+              clickable: true,
+            }
+          });
+        </script>
+    </div>
+  </div>

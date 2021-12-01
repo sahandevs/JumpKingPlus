@@ -974,16 +974,12 @@ table {
   width: 100%;
   border: 1px solid $table-border-color;
   border-collapse: collapse;
+  border-radius: 4px;
 }
 
 td, th {
   padding: .25rem .5rem;
   border: 1px solid $table-border-color;
-}
-
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: $table-background-color;
 }
 
 // Blockquote
@@ -1113,6 +1109,28 @@ img {
     border-bottom: 1px solid $divider-color;
     border-right: 0;
   }
+}
+
+.wrapper-sidebar.ext {
+  width: 100%;
+  height: auto;
+  padding-bottom: 24px;
+  position: relative;
+  border-bottom: 1px solid $divider-color;
+  border-right: 0;
+
+  header.sidebar {
+    margin-top: 24px;
+
+    .jk-logo {
+      display: none;
+    }
+  }
+}
+
+.wrapper-content.ext {
+    float: none;
+    width: initial;
 }
 
 .sidebar {
@@ -1565,6 +1583,79 @@ tr.exclusive { background-color: #fff3b2!important; }
   max-width: calc(100% - 2em);
 }
 
+.site-nav {
+  margin: 0;
+  display: block;
+  overflow-y: auto;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  border-radius: 20px;
+  border: 1px solid $divider-color;
+  background: $background-color;
+  overflow-y: hidden;
+}
+.side-bar{
+  margin-top: 2rem;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  h3 {
+    margin: 0.75rem;
+    text-align: center;
+  }
+}
+ul.nav-list > li::before {
+  content: ""!important;
+}
+ul.nav-list {
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid $divider-color;
+  padding: 0.7rem 0!important;
+  margin-bottom: -1px;
+
+  .nav-list-item {
+    font-size: 1rem!important;
+    position: relative;
+    margin: 0;
+
+    .nav-list-link {
+      transition: .25s ease-out!important;
+      margin: 0;
+      text-align: left!important;
+      letter-spacing: initial;
+      padding: 0.4rem 1rem!important;
+      margin: 0.3rem 1rem!important;
+      border-radius: 10px;
+      display: block;
+      min-height: 2rem;
+      line-height: 1.5rem;
+
+      &:hover {
+        background: lighten($color: $link-color, $amount: 5);
+        color: white;
+      }
+    }
+
+    .nav-list-link.active {
+      background: $link-color;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    ul.nav-list {
+      margin-left: 1rem;
+    }
+  }
+}
+.nav-list .nav-list-item > .nav-list {
+  display: none;
+  padding-left: 0.75rem;
+  list-style: none;
+}
+.nav-list .nav-list-item.active > .nav-list {
+  display: block;
+}
+
 @media (prefers-color-scheme: dark) {
   h1, h2, h3, h4, h5, h6, p, .site-name, .title-level { color: white; }
   article.page.level { background: linear-gradient(0deg, rgb(25, 25, 25) calc(100% - 125px), rgba(255, 255, 255, 0) 115%); }
@@ -1573,8 +1664,13 @@ tr.exclusive { background-color: #fff3b2!important; }
   .details tr > td { color: lightgrey; border-bottom-color: rgb(50, 50, 50); }
   .level-tag { color: lightgrey; background-color: rgb(50, 50, 50); }
   a.tag-link:hover .level-tag { background-color: rgba($link-color,0.25); }
-  .wrapper-sidebar { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); border-bottom: 1px solid rgb(45, 45, 45); }
-  .wrapper-footer-desktop, .wrapper-footer-mobile { background-color: rgb(33, 33, 33); border-top: 1px solid rgb(45, 45, 45); }
+  .wrapper-sidebar,
+  .wrapper-sidebar.ext { background-color: rgb(33, 33, 33); border-right: 1px solid rgb(45, 45, 45); border-bottom: 1px solid rgb(45, 45, 45); }
+  .site-nav { background-color: rgb(33, 33, 33); border: 1px solid rgb(45, 45, 45); }
+  ul.nav-list { border-top: 1px solid rgb(45, 45, 45); border-bottom: 1px solid rgb(45, 45, 45); }
+  ul.nav-list .nav-list-item .nav-list-link:hover { background: darken($color: $link-color, $amount: 5); }
+  .wrapper-footer-desktop,
+  .wrapper-footer-mobile { background-color: rgb(33, 33, 33); border-top: 1px solid rgb(45, 45, 45); }
   footer .svg-icon svg { fill: lightgrey; }
   footer p, .site-description { color: lightgrey; }
   body, #main { background-color: rgb(25, 25, 25); }
@@ -1597,7 +1693,7 @@ tr.exclusive { background-color: #fff3b2!important; }
   .disclaimer p { color: black }
   table { border: 1px solid rgb(50, 50, 50); color: lightgrey; }
   td, th { border: 1px solid rgb(50, 50, 50); }
-  tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color: rgb(33, 33, 33); }
+  tbody tr td, tbody tr th { background-color: rgb(33, 33, 33); }
   tr.exclusive td { background-color: #fff3b267!important; color: grey }
   .toc { color: lightgrey }
   .gradient-prev { background: linear-gradient(90deg, rgb(25, 25, 25) 33%, rgba(25,25,25,0) 100%); }
@@ -1607,6 +1703,10 @@ tr.exclusive { background-color: #fff3b2!important; }
   .question { background: linear-gradient(23deg, rgb(45, 45, 45) 10%, rgba($link-color,0.25) 80%); border-bottom: 1px solid rgb(50, 50, 50); }
   .card-question { border: 1px solid rgb(50, 50, 50); background-color: rgb(33, 33, 33); }
 }
+
+
+
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

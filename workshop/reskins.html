@@ -1,0 +1,116 @@
+<div class="category featured">
+    <h2 class="ws-titles">
+      <span>Latest skins</span> 
+      <span>
+        <a class="button btn--primary btn-demo js-tingle-modal-1" style="display: inline-block;">
+          <span class="badge-pill"><ion-icon name="help-circle"></ion-icon> Installation method</span>
+        </a>
+        <a class="button" href="{{ site.baseurl }}/workshop/reskin/all">
+          <span class="badge-pill">
+            See all <ion-icon name="arrow-forward"></ion-icon>
+          </span>
+        </a>
+      </span>
+    </h2>
+
+    <!-- Tingle tiny content -->
+    <div class="tingle-tiny-1" style="display: none;">
+      <h1>Adding and removing a skin</h1>
+      <hr>
+      <h3>Video tutorial</h3>
+      <iframe src="https://www.youtube-nocookie.com/embed/2M03SIBnMcc?autoplay=0" allowfullscreen="" width="100%" height="600" frameborder="0"></iframe>
+      <h3 style="margin-top: 1rem;">Text explaination</h3>
+      <h4 class="question">How do I add a skin?</h4>
+      <ol>
+          <li>Find a skin you would like to use in the workshop, download it using the Download button.</li>
+          <li>Open the .zip file.</li>
+          <li>Head to <code class="language-plaintext highlighter-rouge">Jump King/Content/wardrobe</code>.</li>
+          <li>Drag the files from the .zip file inside the folder.</li>
+          <li>Profit.</li>
+      </ol>
+      <p>If a skin is in the way once you start the game, consider disabling it in the Inventory > Wardrobe.</p>
+
+      <h4 class="question">How do I remove a skin?</h4>
+      <p>It’s even more simple.<br>Just delete the skin (both <code class="language-plaintext highlighter-rouge">.xnb</code> and <code class="language-plaintext highlighter-rouge">.xml</code> files) with the same name.</p>
+    </div>
+  <!-- /Tingle tiny content -->
+
+    <script type="text/javascript">
+        var modalTinyNoFooter = new tingle.modal({
+            onClose: function () { },
+            onOpen: function() {
+              var close = document.querySelectorAll(".tingle-modal__close")[0];
+              var modalContent = document.querySelectorAll(".tingle-modal-box__content")[0];
+              modalContent.appendChild(close);
+            },
+            beforeOpen: function () { },
+            beforeClose: function () { return true; },
+            //cssClass: ['class1', 'class2']
+        });
+        var btn = document.querySelector('.js-tingle-modal-1');
+        btn.addEventListener('click', function () {
+            modalTinyNoFooter.open();
+        });
+        modalTinyNoFooter.setContent(document.querySelector('.tingle-tiny-1').innerHTML);
+    </script>
+
+    <div class="reskins">
+
+      <div class="swiper-button-prev"><div class="gradient-prev"></div></div>
+
+      <div class="swiper-container swiper-reskins">
+        <div class="swiper-wrapper">
+      {% assign count = 0 %}
+      {% for rskin in site.reskins reversed %}
+        {% assign count = count | plus: 1 %}
+        {% if count <= page.reskin-limit %}
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="typology">
+                <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/reskins/files/{{ rskin.base }}.png" alt="{{ rskin.base }}" title="{{ rskin.base }}">
+              </div>
+              <img
+                src="{{ rskin.images[0] }}"
+                alt="{{ rskin.title }}"
+                onmouseover="this.src='{{ rskin.images[1] }}'"
+                onmouseout="this.src='{{ rskin.images[0] }}'"
+              >
+              <div class="details">
+                <div class="title-level">{{ rskin.title }}</div>
+                <span class="author-level">
+                  <ion-icon name="person"></ion-icon> {{ rskin.Author }}
+                </span>
+              </div>
+              <div class="reskin-dl">
+                <a class="dl-button" href="{{ rskin.dlink }}" title="Download">
+                  <ion-icon name="download"></ion-icon> Download
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      
+        <div class="swiper-button-next"><div class="gradient-next"></div></div>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".swiper-reskins", {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          navigation: {
+            nextEl: ".reskins .swiper-button-next",
+            prevEl: ".reskins .swiper-button-prev",
+          },
+          pagination: {
+            el: ".reskins .swiper-pagination",
+            clickable: true,
+          }
+        });
+      </script>
+
+    </div>
+  </div>

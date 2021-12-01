@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include wsnavdocs.html %}
+
+    {% if page.toc==true %}
+      <aside class="toc">
+        {% include toc.html html=content %}
+      </aside>
+    {% endif %}
+
+    <style>
+        .rectangle {
+            width:20px;
+            height:20px;
+            border: solid 1px grey;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .rectangle-gradient {
+            width:40px;
+            height:20px;
+            border: solid 1px grey;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        h1 {
+          font-size: 32px;
+          font-weight: 300;
+        }
+        h2 {
+          margin: 3rem 0 0.85rem;
+        }
+        h3 {
+          margin: 2rem 0 0.75rem;
+        }
+        h4 {
+          margin: 1.66rem 0 .65rem;
+        }
+        hr {
+          margin: 4rem 0;
+        }
+        p {
+          margin: .5rem 0;
+        }
+        div.intro {
+          margin: 2rem 0;
+        }
+        #main {
+          display: flex;
+          justify-content: center;
+        }
+        .fw-300 {
+          font-weight: 300 !important;
+        }
+        .fs-6 {
+          font-size: 24px !important;
+          margin-bottom: 1.5rem;
+        }
+        .fs-9 {
+          font-size: 36px !important;
+          line-height: 1.25;
+        }
+        .relative {
+          position: relative;
+          width: 22.5%;
+          max-width: 500px;
+          min-width: 350px;
+        }
+        .container {
+          margin: 0;
+          padding: 4rem 2rem;
+        }
+    </style>
+
+    <div id="main" role="main" class="wrapper-content ext">
+      <div class="relative">
+        <div class="side-bar">
+          <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+            <h3>Headers</h3>
+            {% include navdocs.html pages=site.docs %}
+          </nav>
+        </div>
+      </div>
+      
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include analytics.html %}
+  </body>
+
+  {% if page.toc==true %}
+  <script>
+    document.getElementById("main").classList.add("withtoc");
+  </script>
+  {% endif %}
+
+  <div class="wrapper-footer-mobile" style="display: block;">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+
+
+</html>
