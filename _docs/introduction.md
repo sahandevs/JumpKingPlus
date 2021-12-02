@@ -20,7 +20,7 @@ JumpKingPlus does **not** take any responsibility of your actions as you agreed 
 
 ## Custom levels
 ### Disclaimer
-When this document referrers on a folder, this is obviously meant to be inside `Jump King/Content/mods`.
+When it comes to Custom levels, folders that this document refers to are meant to be inside `Jump King/Content/mods`. 
 
 ### Common rules
 Level design in Jump King is a delicate balance between fairness and hardness. These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on level design. Also in order to get your map approved on the site, these rules **need** to be followed.
