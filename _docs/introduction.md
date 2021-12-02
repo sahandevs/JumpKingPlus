@@ -23,14 +23,14 @@ JumpKingPlus does **not** take any responsibility of your actions as you agreed 
 When it comes to Custom levels, folders that this document refer to are meant to be inside `Jump King/Content/mods`. 
 
 ### Common rules
-Level design in Jump King is a delicate balance between fairness and hardness. These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on level design. Also in order to get your map approved on the site, these rules **need** to be followed.
+Level design in Jump King is a delicate balance between fairness and hardness. These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on level design. In order to get your map approved on the site, these rules **need** to be followed.
 
 <div class="intro" style="padding: 1.6em;">
     <ol>
-        <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player not knowing how to jump over a new screen</li>
-        <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> in the platform before the transition to the new screen</li>
-        <li><b>Platforms must be bordered with a line</b> (with at least 1px)</li>
-        <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are one after another!</li>
+        <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player to not know how to jump to a new screen</li>
+        <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> on the platform before the transition to the new screen</li>
+        <li><b>Platforms must be bordered with a line</b> (with at least 1px) a line can look like anything as long as it's visible to the player (missing pixels, different colors, etc are allowed)</li>
+        <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are several in a row!</li>
     </ol>
 </div>
 
