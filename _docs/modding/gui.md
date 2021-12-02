@@ -35,7 +35,7 @@ contains every detail about the single location such as:
 |`<unlock>`|Screen number where location name pops up|int|
 |`<name>`|Location name|string|
 
-If you have made everything correctly, it should end up something like this:
+If you've done it correctly, it should end up something like this:
 
 <script src="https://gist.github.com/Phoenixx19/611fccf2f09494f19c5b2b031a94e467.js"></script>
 
@@ -43,13 +43,13 @@ If you have made everything correctly, it should end up something like this:
 
 ## Earthquake effect
 
-Implemented from <span class="badge-pill">**v1.4.0**</span>, this permits to disable/enable the earthquake effect used by Jump King in correspondence of the towers. This is effect consists into moving the screen left and right by one pixel. The earthquake effect can be changed using the `gui/earthquake_settings.xml` file.
+Implemented from <span class="badge-pill">**v1.4.0**</span>, this permits to disable/enable the earthquake effect used by Jump King in correspondence of the towers. This is effect consists of moving the screen left and right by one pixel. The earthquake effect can be changed using the `gui/earthquake_settings.xml` file.
 
 By default there's only one screen set to 0, so it will never trigger. In case you want to use it, you will need to name every screen number with:
 ```xml
 <int>SCREEN_NUMBER</int>
 ```
 
-It should be like the following example: 
+It should look like the following example: 
 
 <script src="https://gist.github.com/Phoenixx19/1c52c7517faf5b92ffa2367b3082b5c9.js"></script>

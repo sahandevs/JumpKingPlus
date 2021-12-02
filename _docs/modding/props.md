@@ -18,7 +18,7 @@ contains textures and settings of props used in-game.
 {:toc}
 
 ## Good practice with props
-Avoid using props in the final screen to prevent slight visual bugs from the game itself after beating the level.
+Avoid using props in the final screen to prevent slight visual bugs from the game after beating the level.
 
 <hr>
 
@@ -27,7 +27,7 @@ Avoid using props in the final screen to prevent slight visual bugs from the gam
 are **items that the player can pick up** by walking on them. These world items have their own texture inside `/mods/props/worlditems`. 
 
 
-In order to have the world items working in-game, the game reads a file called `worlditems.xml` inside the folder specified above. This file contains an `<items>` tag which is essentially an array (multiple instances) of the `<WorldItemState>` tag.
+In order to have the world items working in-game, the game reads a file called `worlditems.xml` inside the folder specified above. This file contains an `<items>` tag which is an array (multiple instances) of the `<WorldItemState>` tag.
 
 ### WorldItemState
 <span class="do-i-need-it">optional</span>
@@ -51,7 +51,7 @@ are the entities that talk and barter with you.
 > **NPCs are hardcoded** in the game, so they *can not be removed*; but they **can be reskinned and moved** to a screen you are not using (like 169, the last screen possible in the game limitations).
 
 NPCs can be of two types:
-1. `old man`, a normal entity that speaks only
+1. `old man`, a normal entity that only speaks
 2. `merchant`, an extension of the `old man` but can also barter items with the player.
 
 While the textures for both needs to be inside `textures/old_man`, the quotes and settings of each NPC is stored based of their type:
@@ -61,7 +61,7 @@ While the textures for both needs to be inside `textures/old_man`, the quotes an
 
 ### Old Man
 
-This following XML file explains one of the Old Man NPC-type, `hermit_quotes.xml`.
+This following XML file explains one of the Old Man NPC-types, `hermit_quotes.xml`.
 
 <script src="https://gist.github.com/Phoenixx19/44ac06687463a5ba28c6489948dba576.js"></script>
 
@@ -73,7 +73,7 @@ The following XML file **explains only** the other tags that need to be added if
 
 ### Item trigger
 
-Implemented from <span class="badge-pill">**v1.5.0**</span>, you can create quotes that triggers when wearing an item.
+Implemented from <span class="badge-pill">**v1.5.0**</span>, you can create quotes that trigger when wearing an item.
 
 |tag|description|
 |---|---|
@@ -109,7 +109,7 @@ Implemented from <span class="badge-pill">**v1.5.0**</span>, you can create quot
 |`<fallStart>`|Minimal fall number (number included!)|
 |`<fallEnd>`|Maximum fall number|
 
-An example of fall trigger:
+An example of a fall trigger:
 ```xml
 <falls>
   <OldManFall>
@@ -135,7 +135,7 @@ is the entity related to the bird.
 
 It is located inside the `textures/raven` folder. The folder should contain:
 - the raven texture `(raven name).xnb`
-- the configuration file `(raven name).ravset` (which is a xml file named ravset).
+- the configuration file `(raven name).ravset` (which is an xml file named ravset).
 
 > Ravens are also hardcoded in the game. Please use the ones already available.
 
@@ -186,7 +186,7 @@ is the setting file for every single prop.
 ```
 
 To add a prop on a screen:
-1. Add the prop on the list on your `prop_settings.xml` file.
+1. Add the prop on the list in your `prop_settings.xml` file.
 2. Create a configuration file called `prop(SCREEN NUMBER).xml`.
 3. Inside the file, add each prop with their type (name of the prop), position on X and Y axis (__0,0 is top-left!__) and optional if the prop should be flipped.
 4. Done!
@@ -217,7 +217,7 @@ To add a prop on a screen:
 <br>
 
 ## Hidden walls
-are used in-game to hide areas or make the screen more realistic, the hidden wall works as foreground until the player gets into its position where it gets transparent.
+are used in-game to hide areas or make the screen more realistic, the hidden wall works as foreground until the player gets into its position where it becomes transparent.
 
 The hidden walls textures are located in `props/hidden_walls/textures`, they are managed by a configuration file called `hidden_wall(SCREEN NUMBER).xml`.
 
@@ -264,7 +264,7 @@ Hidden walls can have props too; these can be added creating a different prop co
 ```
 
 ## Message
-are text bubbles that gets read by triggering an hitbox. The messages can be found inside `props/messages`.
+are text bubbles that get read by triggering a hitbox. The messages can be found inside `props/messages`.
 
 An example of a message can be seen below:
 

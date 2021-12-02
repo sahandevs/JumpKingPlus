@@ -55,13 +55,13 @@ Jump King uses a specific color to define what a block is inside of this file.
     </tr>
     <tr>
       <td>Snow</td>
-      <td>The player will remain at their position unless trying with another jump</td>
+      <td>The player cannot walk on it, but can still jump with enough power</td>
       <td>Snake Ring bypasses it</td>
       <td><div class="rectangle" style="background:rgb(255,255,0);"></div>RGB(255,255,0)</td>
     </tr>
     <tr>
       <td>Wind</td>
-      <td>If placed on a screen, it will slide the player slowly to a direction</td>
+      <td>If placed on a screen, it will push the player slowly either left or right</td>
       <td>The wind polarity reverses every 5 seconds</td>
       <td><div class="rectangle" style="background:rgb(0,255,0);"></div>RGB(0,255,0)</td>
     </tr>
@@ -102,19 +102,19 @@ Jump King uses a specific color to define what a block is inside of this file.
     </tr>
     <tr class="exclusive">
       <td>Wind gradients</td>
-      <td>16 values that determinates the intensity of the wind</td>
+      <td>16 values that determines the intensity of the wind</td>
       <td>From 12.5% to 200% of the original wind strength based on the gradient</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(192,255,0), rgb(207,255,0));"></div>RGB(192,255,0) to RGB(207,255,0)</td>
     </tr>
     <tr class="exclusive">
       <td>One-way wind gradients (LEFT)</td>
-      <td>16 values that determinates the intensity of the wind, the wind will never change direction.</td>
+      <td>16 values that determines the intensity of the wind, the wind will never change direction.</td>
       <td>From 12.5% to 200% of the original wind strength based on the gradient</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(208,255,0), rgb(223,255,0));"></div>RGB(208,255,0) to RGB(223,255,0)</td>
     </tr>
     <tr class="exclusive">
       <td>One-way wind gradients (RIGHT)</td>
-      <td>16 values that determinates the intensity of the wind, the wind will never change direction.</td>
+      <td>16 values that determines the intensity of the wind, the wind will never change direction.</td>
       <td>From 12.5% to 200% of the original wind strength based on the gradient</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(224,255,0), rgb(239,255,0));"></div>RGB(224,255,0) to RGB(239,255,0)</td>
     </tr>

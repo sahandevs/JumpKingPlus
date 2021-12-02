@@ -18,7 +18,9 @@ contains all the sound related content.
 {:toc}
 
 ## Music warning
-Make sure you compress your music/audio enough so the **level** once compressed **doesn't weight too much**!
+Make sure you compress your music/audio enough so the **level** once compressed **doesn't have file size that's too large**!
+
+It's recommended that you try to keep the final **mods** folder below **1GB**. ([BoA](https://phoenixx19.github.io/JumpKingPlus/workshop/3/) and [IB](https://phoenixx19.github.io/JumpKingPlus/workshop/4/) are both **800MB**)
 
 <br>
 
@@ -52,7 +54,7 @@ Found inside `<AmbienceSave>`, contains name and volume of a sound.
 |tag|description|
 |---|---|
 |`<name>`|Name of the file|
-|`<volume>`|Volume from 0 to 1 (basically 0-100%)|
+|`<volume>`|Volume from 0 to 1 (0-100%)|
 
 ### Screens counting warning
 > The `<screens>` tag <u>doesnt work with the name logic of the screen number</u>. This is precisely made to avoid mixmatches.
@@ -127,7 +129,7 @@ contains many other files that can be changed such as:
 ### Babe ending songs
 are songs that are played once the the player has beaten the game.
 
-In order to it:
+In order to add it:
 1. Convert a sound file into XNB format.
 2. Move the file inside `audio/music`.
 3. Name it as following depending on your babe:
@@ -137,7 +139,7 @@ In order to it:
 4. Done!
 
 ### Menu intro
-is a song that get's played once the game is on the title screen.
+is a song that gets played once the game is on the title screen.
 
 In order to add it:
 1. Simply convert an audio file into XNB.
@@ -149,4 +151,4 @@ In order to add it:
 contains **music that can be triggered**, such as the sound on the last babe screen or the gargoyles.
 
 Both the configuration file and the sound effect should be located in `audio/music/event_music`.
-The configuration file is very straight forward asking for the name of the song (in the folder) and the screen to trigger.
+The configuration file is very straight forward in asking for the name of the song (in the folder) and the screen to trigger.

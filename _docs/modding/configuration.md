@@ -60,7 +60,7 @@ The StartPosition tag is optional, while the tags inside of it aren't. Which mea
 ## Compatibility
 <span class="do-i-need-it">optional (!)</span>
 
-contains all the details to check if a level is compatible with the running Jump King version.
+contains all the details to check if a level is compatible with the running Jump King Plus version.
 
 As of now, this is optional, but it's strongly recommended to write this too since <strong>this might become mandatory in the future</strong>.
 
@@ -97,7 +97,7 @@ While the `<Fonts>` tag is required, every tag inside `<Fonts>` is optional so c
 	</Fonts>
 ```
 
-Custom fonts are optional as specified, if left to blank, JumpKingPlus will automatically pick the default ones.
+Custom fonts are optional as specified, if left blank, JumpKingPlus will automatically pick the default fonts.
 
 <br>
 
@@ -114,7 +114,7 @@ contains the custom images after beating/ending the custom level.<br>The images 
 |`<OwlBabe>`|Image name for beating the third babe custom game|string|Yes, if the third babe is used|
 |`<OwlBird>`|Image name for beating the third babe custom game with triggering all the positions of the tsuchinoko bird (the bird with feet)|string|Yes, if the third babe is used|
 
-Both MainBabe and MainShoes are supposed to be called as the .xnb files located into `/mods/ending`. **Do not** include
+Both MainBabe and MainShoes are supposed to be called as such, as the .xnb files located in `/mods/ending`. **Do not** include
 the extensions in the name, the game is automatically set to find the .xnb files.
 
 <br>
@@ -128,12 +128,12 @@ Ending lines is an array of `<Credit>`, an array means that there could possibly
 ### Credit
 <span class="do-i-need-it">optional</span>
 
-Can be found inside `<EndingLines>`, this contains an header as the title, an array of strings called `<People>`.
+Can be found inside `<EndingLines>`, this contains a header as the title, an array of strings called `<People>`.
 
 #### People 
 <span class="do-i-need-it">optional</span>
 
-Can be found inside `<Credit>`, this contains a list of `<string>` for every person credited (or text per line). Usually don't add more than 5 strings per credit since it might look bad or even not work.
+Can be found inside `<Credit>`, this contains a list of `<string>` for every person credited (or text per line). Try not to add more than 5 strings per credit since it might look bad or even not work.
 
 If you have done this correctly, it might end up like this:
 ```xml
@@ -164,6 +164,6 @@ includes all the possible text in Jump King based by your localization language.
 
 <br>
 
-And finally, once you are done you'll end up have something along the lines of this:
+And finally, once you're done you'll end up with something like this:
 
 <script src="https://gist.github.com/Phoenixx19/63f78ddf4834140eb30dbdde8031e6ed.js"></script>

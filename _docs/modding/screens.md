@@ -11,11 +11,11 @@ nav_order: 4
 contains textures such as background, foreground, midground, scrolling images and masks.
 {: .fs-6 .fw-300 }
 
-All of the layers together of a screen can make this result (*without counting the hidden wall because that's a type of prop*):
+All of the layers of a screen can be merged to make a result like this (*without counting the hidden wall because that's a type of prop*):
 
 ![Example Image](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/final.jpg)
 
-Every layer has it's own name, format and folder.<br>The following list will go from back to front.
+Every layer has its own name, format and folder.<br>The following list will go from back to front.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -25,7 +25,7 @@ Every layer has it's own name, format and folder.<br>The following list will go 
 
 ## Background
 At the lowest ground there's the background.
-The background is usually used for **skies or gradients** to put back on a certain or multiple screens.<br>
+The background is usually used for **skies or gradients** to put on the back end of screens.<br>
 The name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.xnb`.
 
 ![BG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/background.png)
@@ -38,7 +38,7 @@ The name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.x
 
 The scrolling texture is usually used for **clouds or birds** flying in the distance (*behind the player*).
 
-The scrolling images are managed by an .xml file, that determines their texture, position, velocity and layer mode (see example scroll.xml above). The texture name should be the same of the name file. Which means if you created a new scrolling texture called `clouds.xnb` the name of the texture inside the scroll setting file should be `<texture>clouds</texture>`.
+The scrolling images are managed by an .xml file, that determines their texture, position, velocity and layer mode (see example scroll.xml above). The texture name should be the same as the name file. Which means if you created a new scrolling texture called `clouds.xnb` the name of the texture inside the scroll setting file should be `<texture>clouds</texture>`.
 
 ![Scrolling](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/scroll.png)
 
@@ -46,7 +46,7 @@ The scrolling images are managed by an .xml file, that determines their texture,
 
 ## Midground
 Right after the scrolling images, there's the midground.
-The midground is usually used for **platforms and details** that want to be **behind the player** (the player can go over them).
+The midground is usually used for **platforms and details** that are **behind the player** (the player can go over them).
 The name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
 
 ![MG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/midground.png)

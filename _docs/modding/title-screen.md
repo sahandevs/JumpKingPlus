@@ -6,7 +6,7 @@ nav_order: 11
 ---
 
 # Title screen 
-Implemented from <span class="badge-pill">v1.5.1</span>, this let's you change the initial Jump King title screen.
+Implemented from <span class="badge-pill">v1.5.1</span>, this lets you change the initial Jump King title screen.
 {: .fs-6 .fw-300 }
 
 ## How-to
