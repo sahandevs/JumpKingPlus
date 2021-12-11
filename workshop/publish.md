@@ -69,14 +69,7 @@ pinned: false
         
         <p>These rules are not only made to prevent unfair and impossible levels but to respect Nexile's original ideas on mapping. Also in order to get your map approved on the site, these rules <strong>need</strong> to be followed.</p>
 
-        <div class="intro" style="padding: 1.6em;">
-            <ol>
-                <li><b>Screen transitions must be full jumps</b>; it would be unfair for a player not knowing how to jump over a new screen</li>
-                <li><b>Transition platforms should always work</b> (with a full jump) and they <b>must not be related to a specific position</b> in the platform before the transition to the new screen</li>
-                <li><b>Platforms must be bordered with a line</b> (with at least 1px)</li>
-                <li>Do not exaggerate with the Lost Frontier jumps (8px platform equals to 1px in the hitboxes file. No one likes 1px jumps, especially if there are one after another!</li>
-            </ol>
-        </div>
+        {% include rules/levels.html %}
 
         <span class="button">
             <button class="badge-pill" onclick="Display('level-1', 'level-2')">I agree on the guidelines</button>
@@ -86,13 +79,7 @@ pinned: false
     <div class="hidden" id="skins-1">
         <h2>Skins and collections publish guidelines</h2>
 
-        <div class="intro" style="padding: 1.6em;">
-            <ol>
-                <li>Not NSFW or explicit content</li>
-                <li>Your skin/collection should be distinguishable from the base item</li>
-                <li>No reposts</li>
-            </ol>
-        </div>
+        {% include rules/reskins.html %}
 
         <span class="button">
             <button class="badge-pill" onclick="Display('skins-1', 'skins-2')">I agree on the guidelines</button>

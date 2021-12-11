@@ -45,7 +45,7 @@ Next up, for testing the following times, you'll just boot up the game and click
 <br>
 
 ## Getting started for reskins/collections
-First of all, open the software of your choice and set two layers. The first (or top) layer should be the layer you use for drawing your reskin, the second (or bottom) layer should be the [**base file**](); this second layer will help you building a fully working reskin.
+First of all, open the software of your choice and set two layers. The first (or top) layer should be the layer you use for drawing your reskin, the second (or bottom) layer should be the [**base file**](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/base.png); this second layer will help you building a fully working reskin.
 
 A simple trick while making a custom reskin is setting the second (or bottom) layer to a lower opacity, like 50%.
 

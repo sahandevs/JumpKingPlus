@@ -5,7 +5,9 @@ parent: Tools
 nav_order: 2
 ---
 
-# XNBCLI
+# XNBCLI <a target="_blank" title="Download tool" href="https://github.com/LeonBlade/XNBCLI/releases/latest"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/LeonBlade/XNBCLI"><ion-icon name="logo-github"></ion-icon></a>
+{: #xnbcli .title }
+
 is a CLI tool for XNB packing/unpacking purpose built for Stardew Valley (but works for Jump King too!), made by [**LeonBlade**](https://github.com/LeonBlade).
 {: .fs-6 .fw-300 }
 

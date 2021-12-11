@@ -57,7 +57,7 @@ The name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
 Masks (and so particles) are above the player layer-wise.
 Masks can be used to give more depth to the level, some examples of masks are ash, rain and snow. The mask lets you **display the particles effect only on the blue/cyan mask you are creating**.
 
-The animated backgrounds are stored inside the default `particles` folder, to add a particle effect [**head over the particles section**]().
+The animated backgrounds are stored inside the default `particles` folder, to add a particle effect [**head over the particles section**](../particles/#weather-configuration).
 
 The name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an example `light_snow_bgmask1.xnb`.
 

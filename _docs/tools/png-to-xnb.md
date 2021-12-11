@@ -5,7 +5,9 @@ parent: Tools
 nav_order: 3
 ---
 
-# PNG to XNB
+# PNG to XNB <a target="_blank" title="Download tool" href="https://github.com/sullerandras/png_to_xnb/releases/latest"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/sullerandras/png_to_xnb"><ion-icon name="logo-github"></ion-icon></a>
+{: #png-to-xnb .title }
+
 is a tool for packing images (specifically PNG files) into XNB format, made by [**sullerandras**](https://github.com/sullerandras).
 {: .fs-6 .fw-300 }
 

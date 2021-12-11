@@ -5,7 +5,9 @@ parent: Tools
 nav_order: 4
 ---
 
-# TConvert
+# TConvert <a target="_blank" title="Download tool" href="https://github.com/trigger-segfault/TConvert/releases/latest"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/trigger-segfault/TConvert"><ion-icon name="logo-github"></ion-icon></a>
+{: #tconvert .title }
+
 is an Windows Application for managing Terraria content resources, made by [**trigger-segfault**](https://github.com/trigger-segfault).
 {: .fs-6 .fw-300 }
 

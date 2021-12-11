@@ -5,8 +5,8 @@ parent: Additional helper tools
 grand_parent: Tools
 ---
 
-# Jump King Manager
-{: .fs-9 }
+# Jump King Manager <a target="_blank" title="Download tool" href="https://github.com/ShootMe/LiveSplit.JumpKing/releases/latest"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/ShootMe/LiveSplit.JumpKing/tree/master/JumpKingManager"><ion-icon name="logo-github"></ion-icon></a>
+{: #jumpkingmanager .title.fs-9 }
 
 is a helpful tool to practice Jump King, but lets you load/save positions and teleport to any screen; made by [**DevilSquirrel**](https://github.com/ShootMe).
 {: .fs-6 .fw-300 }

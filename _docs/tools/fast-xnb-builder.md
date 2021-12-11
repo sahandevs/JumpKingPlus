@@ -5,9 +5,10 @@ parent: Tools
 nav_order: 1
 ---
 
-# Fast XNB Builder
+# Fast XNB Builder <a target="_blank" title="Download tool" href="https://github.com/Phoenixx19/Fast-XNB-Builder/releases/latest"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/NicusorN5/Fast-XNB-Builder"><ion-icon name="logo-github"></ion-icon></a>
+{: #fast-xnb-builder .title }
 
-is a quick tool to convert files to .XNB (format used by Jump King), made by [**NicusorN5**](https://github.com/NicusorN5).
+is a quick tool to convert files to .XNB, made by [**NicusorN5**](https://github.com/NicusorN5).
 {: .fs-6 .fw-300 }
 
 This program can be used in command line or with the "*Fast XNB Builder*" executable. By default, FXNBB is showing the interface for ease of use.

@@ -45,7 +45,7 @@ For example, on screen 5 there will be the particle effect *snow*.
 </Weather>
 ```
 
-To crop a particle on a screen, you need to use masks. Check [***Masks* in the Screen section**]() on its usage.
+To crop a particle on a screen, you need to use masks. Check [***Masks* in the Screen section**](../screens/#masks) on its usage.
 
 <br>
 

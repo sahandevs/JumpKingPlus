@@ -5,8 +5,8 @@ parent: Additional helper tools
 grand_parent: Tools
 ---
 
-# JKPlusModManager
-{: .fs-9 }
+# JKPlusModManager <a target="_blank" title="Download tool" href="https://github.com/Phoenixx19/JumpKingPlus/releases/tag/v1.2.0"><ion-icon name="download"></ion-icon></a><a title="Go to repository" target="_blank" href="https://github.com/Phoenixx19/JumpKingPlus/tree/master/JKPlusModManager"><ion-icon name="logo-github"></ion-icon></a>
+{: #jkplusmodmanager .title.fs-9 }
 
 is a simple WPF application which loads/unloads custom levels, made on v1.2.0 JumpKingPlus' release by [**Phoenixx19**](https://github.com/Phoenixx19).
 {: .fs-6 .fw-300 }
