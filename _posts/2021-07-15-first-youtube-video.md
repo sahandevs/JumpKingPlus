@@ -3,7 +3,7 @@ layout: post
 title: Wake up babe, new JK+ video dropped
 date: 2021-07-15
 Author: Phoenixx19
-tags: [info, not-release, youtube]
+tags: [youtube]
 comments: false
 toc: false
 pinned: false

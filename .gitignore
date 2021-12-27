@@ -2,6 +2,3 @@ _site
 .DS_Store
 .jekyll-cache
 .sass-cache
-Gemfile
-Gemfile.lock
-embed.js

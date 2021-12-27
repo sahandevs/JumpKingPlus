@@ -2,13 +2,7 @@
 <html>
   {% include head.html %}
   <body>
-    {% include wsnavdocs.html %}
-
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
+    {% include wsnav.html %}
 
     <style>
         .rectangle {
@@ -47,10 +41,6 @@
         div.intro {
           margin: 2rem 0;
         }
-        #main {
-          display: flex;
-          justify-content: center;
-        }
         .fw-300 {
           font-weight: 300 !important;
         }
@@ -61,16 +51,6 @@
         .fs-9 {
           font-size: 36px !important;
           line-height: 1.25;
-        }
-        .relative {
-          position: relative;
-          width: 22.5%;
-          max-width: 500px;
-          min-width: 350px;
-        }
-        .container {
-          margin: 0;
-          padding: 4rem 2rem;
         }
         .title ion-icon {
           vertical-align: initial;
@@ -85,7 +65,7 @@
       <div class="relative">
         <div class="side-bar">
           <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
-            <h3>Headers</h3>
+            <h3>Contents</h3>
             {% include navdocs.html pages=site.docs %}
           </nav>
         </div>
@@ -98,12 +78,6 @@
 
     {% include analytics.html %}
   </body>
-
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
 
   <div class="wrapper-footer-mobile" style="display: block;">
     <footer class="footer">

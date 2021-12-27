@@ -34,7 +34,7 @@ permalink: /tags/
     
     <div class="posts">
       {% for post in tag[1] %}
-        {% if post.title != null %}
+        {% if post.title != null and post.hidden == false %}
           <article class="post">
             <div class="meta">
               <h1>
@@ -46,6 +46,9 @@ permalink: /tags/
                   {{ post.title }}
                 </a>
               </h1>
+              {% if post.layout == "blog" %}
+                <p>{{ post.subtitle }}</p>
+              {% endif %}
               <p>{{ post.excerpt | truncate: 500 }}</p>
             </div>
             <div class="entry">

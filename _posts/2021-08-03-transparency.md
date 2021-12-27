@@ -21,10 +21,12 @@ Before talking about this, I highly suggest you to join the **official Nexile / 
 ## Who's behind JumpKingPlus?
 
 My name is **Phoenixx19** (or Andrea).<br>
-I am the main JumpKingPlus developer, repository and website creator. Also one of the owners of the [__official JumpKingPlus' YouTube channel__](https://youtube.com/channel/UCPanZmDtq5azWY_OY9XKD5w). You can contact me through these following links:
+I am the founder and main JumpKingPlus developer, repository and website creator. Also one of the owners of the [__official JumpKingPlus' YouTube channel__](https://youtube.com/channel/UCPanZmDtq5azWY_OY9XKD5w). You can contact me through these following links:
 - **Phoenixx19#0001** on Discord (add me for more inquiries about JumpKingPlus or about me)
 - [**@phxx19**](https://www.twitter.com/phxx19) on Twitter
 - [**Phoenixx19**](https://github.com/Phoenixx19) on Github
+
+
 
 <hr>
 

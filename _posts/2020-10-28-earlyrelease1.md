@@ -3,7 +3,7 @@ layout: post
 title: Early Access - Release 1 (v0.13.0)
 date: 2020-10-28
 Author: Phoenixx19
-tags: [early-access, release]
+tags: [release, early-access]
 comments: false
 toc: false
 pinned: false

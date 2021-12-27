@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body>
-    {% include nav.html %}
-
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
+  <body id="top">
+    {% if page.type == 'workshop'
+       or page.path contains "workshop"
+       or page.path contains "docs" %}
+      {% include wsnav.html %}
+    {% else %}
+      {% include nav.html %}
     {% endif %}
 
-    <div id="main" role="main" class="wrapper-content">
+    {% if page.toc==true %}
+    <div id="main" role="main" class="wrapper-content ext">
+      <div class="relative">
+        <div class="side-bar">
+          <a href="{{ site.url }}{{ site.baseurl }}/tags/?tag={{ page.tags[0] }}" class="button outline" style="margin-bottom: 2rem;">
+            <ion-icon name="arrow-back"></ion-icon>Back to #{{ page.tags[0] }}
+          </a>
+          <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+            <h3>Contents</h3>
+            {% include toc.html html=content class="nav-list" %}
+          </nav>
+        </div>
+      </div>
+      
       <div class="container">
         {{ content }}
       </div>
     </div>
+    {% elsif page.levelId %}
+      <div id="main" role="main" class="wrapper-content header"
+      style="background:rgba(0,0,0,0);overflow-y: hidden;">
+        {{ content }}
+      </div>
+    {% else %}
+    <div id="main" role="main" class="wrapper-content header">
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+    {% endif %}
 
     {% include analytics.html %}
   </body>
 
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
+  <div class="wrapper-footer-desktop">
+    <footer class="footer">
+      {% include footer.html %}
+    </footer>
+  </div>
 
   <div class="wrapper-footer-mobile">
     <footer class="footer">
       {% include footer.html %}
     </footer>
+  </div>
 
 
 </html>

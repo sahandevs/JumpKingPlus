@@ -3,7 +3,7 @@ layout: post
 title: Beta testing
 date: 2020-10-27
 Author: Phoenixx19
-tags: [info, not-release]
+tags: [info]
 comments: false
 toc: false
 pinned: false

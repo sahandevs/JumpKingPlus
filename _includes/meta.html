@@ -21,7 +21,7 @@
 
     <meta property="og:locale" content="en_US">
 
-    {% if page.layout == "workshop" or page.layout == "wspage" or page.layout == "wsdefault" or page.layout == "wsdocs" %}
+    {% if page.type == 'workshop' or page.path contains "workshop" or page.path contains "docs" %}
         <meta name="theme-color" content="#2f9e44">
         <meta property="og:image" content="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkcustomapslogo.png">
     {% elsif page.layout == "level" %}

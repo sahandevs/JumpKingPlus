@@ -3,7 +3,7 @@ layout: post
 title: An important announcement.
 date: 2021-07-25
 Author: Phoenixx19
-tags: [info, not-release, youtube]
+tags: [youtube]
 comments: false
 toc: false
 pinned: false

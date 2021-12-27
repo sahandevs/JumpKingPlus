@@ -1,11 +1,29 @@
-<div class="wrapper-sidebar">
+<div class="wrapper-sidebar header desktop">
+  <header class="sidebar">
+    <a class="site-title" href="{{ site.baseurl }}/workshop/">
+      <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkcustomapslogo.png" alt="JumpKingPlus">
+      <h1 class="site-name">JumpKingPlus</h1>
+    </a>
+    <p class="site-description"><b>Workshop</b> section</p>
+    <nav>
+      {% include wsnavtitles.html %}
+    </nav>
+  </header>
+</div>
 
-    {% include wsnavtitles.html %}
-  
-    <div class="wrapper-footer-desktop">
-      <footer class="footer">
-        {% include footer.html %}
-      </footer>
+<div class="wrapper-sidebar mobile">
+  <header class="sidebar clearfix">
+    <div class="site-info">
+      <div class="jk-logo">
+          <a href="{{ site.baseurl }}/workshop/" class="site-avatar"><img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkcustomapslogo.png" alt="JumpKingPlus' workshop section"/></a>
+      </div>
+      <h1 class="site-name"><a href="/JumpKingPlus/">JumpKingPlus</a></h1>
+      <p class="site-description"><b>Workshop</b> section</p>
     </div>
-  </div>
-  
+    <div class="navlist">
+      <nav>
+        {% include wsnavtitles.html %}
+      </nav>
+    </div>
+  </header>
+</div>

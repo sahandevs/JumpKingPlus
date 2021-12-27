@@ -13,12 +13,10 @@ is a file that JumpKingPlus reads to know the basic information about the custom
 
 In this file, you will set up the following basic information of your level using the [blank `mod.xml`](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mod.xml).
 
-<!-- <div class="ws-buttons">
-    <a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mod.xml">
+<!-- <a class="button transparent small" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mod.xml">
         <ion-icon name="code"></ion-icon>
         Blank mod.xml
-    </a>
-</div> -->
+    </a> -->
 
 ## Table of contents
 {: .no_toc .text-delta }

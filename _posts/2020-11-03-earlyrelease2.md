@@ -3,7 +3,7 @@ layout: post
 title: Early Access - Release 2 (v0.14.0)
 date: 2020-11-03
 Author: Phoenixx19
-tags: [early-access, release]
+tags: [release, early-access]
 comments: false
 toc: false
 pinned: false

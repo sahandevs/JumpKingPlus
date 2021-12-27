@@ -1,5 +1,6 @@
 ---
-layout: wsdefault
+layout: default
+type: workshop
 title: All collections
 ---
 
@@ -12,14 +13,11 @@ title: All collections
 
 <h2 class="ws-titles">
     <span>
-      {{ page.title }}&nbsp;
-      <a class="button"><span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span></a>
+      {{ page.title }}&nbsp;<span class="rounded-full level-tag" style="display: inline;font-size: smaller;">New!</span>
     </span> 
     <span>
-      <a class="button" href="{{ site.baseurl }}/workshop/">
-        <span class="badge-pill">
+      <a class="button transparent initial" href="{{ site.baseurl }}/workshop/">
             <ion-icon name="arrow-back"></ion-icon> Back to the workshop
-        </span>
       </a>
     </span>
   </h2>

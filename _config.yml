@@ -22,14 +22,18 @@ favicon: https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/fa
 
 # 菜单中的按钮
 navigation:
-  - name: releases
-    url: /tags/?tag=release
-  - name: about
-    url: /about
-  - name: download
-    url: https://github.com/Phoenixx19/JumpKingPlus/releases/latest
-  - name: <span title="Workshop"><ion-icon name="hammer"></ion-icon></span>
+  - name: features
+    url: /#features
+  - name: team
+    url: /#team
+  - name: faq and transparency
+    url: /#faq
+  - name: <span title="Workshop"><ion-icon name="hammer"></ion-icon> workshop</span>
     url: /workshop
+    class: button outline small
+  - name: <span title="1st anniversary of JumpKingPlus"><ion-icon name="ribbon"></ion-icon> One year!</span>
+    url: /1st-anniversary-jumpkingplus
+    class: anniversary
 
 # 每页的文章数
 paginate: 8
@@ -45,14 +49,14 @@ footer-links:
   email: #
   facebook: #https://www.facebook.com/<>
   flickr: #https://www.flickr.com/<>
-  github: Phoenixx19 #https://github.com/<>
+  github: Phoenixx19/JumpKingPlus #https://github.com/<>
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   pinterest: #https://www.pinterest.com/<>
   rss: #随便填点啥RSS就能用了
   stackoverflow: # http://stackoverflow.com/<>
   tumblr: # https://<username>.tumblr.com
-  twitter: phxx19
+  twitter: JumpKingPlus
   youtube: channel/UCPanZmDtq5azWY_OY9XKD5w
   paypal: phxx19
   discord: dUk9FPDNVq
@@ -61,9 +65,6 @@ footer-links:
 footer-text: JumpKingPlus is not affiliated with Nexile AB or Discord Incorporate. All brands and trademarks belong to their respective owners.
 
 # 评论，注意，请不要同时添加多种不同的评论区
-
-# 输入Disqus shortname，即可添加评论区
-disqus: #shortname
 
 # 输入Google Analytics web tracking code
 google_analytics:

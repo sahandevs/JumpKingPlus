@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
+---
+layout: default
+---
 
-    {% include wsnav.html %}
-
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
-
-    <div id="main" role="main" class="wrapper-content" style="background-color: rgba(0, 0, 0, 0);overflow-y: hidden;">
         <div class="blurred" id="workshop-img">
             <div class="the-new-workshop-woohoo">
-                <h1>Say hello to the <span>new</span> workshop!</h1>
-                <p><span>New</span> workshop, <span>new</span> functionalities.</p>
+                <h1>The JumpKingPlus' <span>workshop</span>!</h1>
+                <p>Your place to find new <span>levels</span>, <span>skins</span> and <span>collections</span> for Jump King.</p>
             </div>
         </div>
         <script>
@@ -45,21 +35,4 @@
       <div class="container">
         {{ content }}
       </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
-
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
-
-  <div class="wrapper-footer-mobile">
-    <footer class="footer">
-      {% include footer.html %}
-    </footer>
-
-
-</html>
+  

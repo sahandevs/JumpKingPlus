@@ -11,7 +11,7 @@ nav_order: 1
 Welcome to the documentation for custom levels, reskins and collections on Jump King using JumpKingPlus!
 {: .fs-6 .fw-300 }
 
-<br>On your left, you can find the table of contents with everything you should need to know on how to make a custom level or a custom reskin/collection. <!-- <a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a> (Not recommended, not updated since May 10 2021) -->
+<br>On your left, you can find the table of contents with everything you should need to know on how to make a custom level or a custom reskin/collection. <!-- <a class="button transparent small" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/documentation.pdf" title="Saves as a .pdf file"><ion-icon name="cloud-download"></ion-icon> Save documentation</a> (Not recommended, not updated since May 10 2021) -->
 
 ### What's new
 - Added download links for all tools
@@ -23,12 +23,12 @@ Welcome to the documentation for custom levels, reskins and collections on Jump 
 ### Contributors
 
 <ul class="contributors">
-    {% include_relative contributor.html name="Phoenixx19" source="github" %}
-    {% include_relative contributor.html name="MERNY" source="github" %}
-    {% include_relative contributor.html name="Elisiah (Ellie)" source="github" %}
-    {% include_relative contributor.html name="kkaero" source="discord" %}
-    {% include_relative contributor.html name="Erkstock" source="discord" %}
-    {% include_relative contributor.html name="kebb" source="github" %}
+    {% include contributor.html name="Phoenixx19" source="github" %}
+    {% include contributor.html name="MERNY" source="github" %}
+    {% include contributor.html name="Elisiah (Ellie)" source="github" %}
+    {% include contributor.html name="kkaero" source="discord" %}
+    {% include contributor.html name="Erkstock" source="discord" %}
+    {% include contributor.html name="kebb" source="github" %}
 </ul>
 
 #### Contribution

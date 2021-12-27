@@ -9,7 +9,11 @@
 
   <link rel="stylesheet" type="text/css" href="{{ site.url }}{{ site.baseurl }}/style.css" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-  <link rel="shortcut icon" href="{{ site.favicon }}">
+  {% if page.type == 'workshop' or page.path contains "workshop" or page.path contains "docs" %}
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jkcustomapslogo.png">
+  {% else %}
+    <link rel="shortcut icon" href="{{ site.favicon }}">
+  {% endif %}
   <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
   <!-- <script src="https://kit.fontawesome.com/56f7faf3f4.js"></script> -->
   <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

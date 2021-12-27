@@ -1,6 +1,7 @@
 ---
 title: Publish
-layout: wspage
+layout: default
+type: workshop
 date: 2021-04-11
 Author: Phoenixx19
 comments: false
@@ -41,12 +42,12 @@ pinned: false
             ...or you have a fullfledged collection you would like to add?
         </p>
         <p>Proceed by choosing the type of your creation.</p>
-        <div class="button" style="background:url(https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png) no-repeat center;background-size: cover;">
-            <button class="badge-pill level" onclick="Display('home', 'level-1')">Upload your level</button>
+        <div class="div-button" style="background:url(https://media.discordapp.net/attachments/771125324846858261/859834847589302332/unknown.png) no-repeat center;background-size: cover;">
+            <a class="button level" onclick="Display('home', 'level-1')">Upload your level</a>
             <ion-icon name="map"></ion-icon>
         </div>
-        <div class="button" style="background:url(https://media.discordapp.net/attachments/758021625252806739/883792892567638117/dapizzaishere.png) no-repeat center;background-size: cover;">
-            <button class="badge-pill skins" onclick="Display('home', 'skins-1')">Upload your reskin or collection</button>
+        <div class="div-button" style="background:url(https://media.discordapp.net/attachments/758021625252806739/883792892567638117/dapizzaishere.png) no-repeat center;background-size: cover;">
+            <a class="button skins" onclick="Display('home', 'skins-1')">Upload your reskin or collection</a>
             <ion-icon name="layers"></ion-icon>
         </div>
 
@@ -54,10 +55,10 @@ pinned: false
 
         <h3>Psst... hey... are you looking for some level tips?</h3>
         
-        <div class="button" style="background:url(https://pbs.twimg.com/media/EreQjhKXIAI6wv6?format=jpg) no-repeat center;background-size: cover;">
-            <button class="badge-pill tips" onclick="Display('home', 'tips')">
+        <div class="div-button" style="background:url(https://pbs.twimg.com/media/EreQjhKXIAI6wv6?format=jpg) no-repeat center;background-size: cover;">
+            <a class="button tips" onclick="Display('home', 'tips')">
                 Yes, give me some!
-            </button>
+            </a>
             <ion-icon name="rocket"></ion-icon>
         </div>
     </div>
@@ -72,7 +73,7 @@ pinned: false
         {% include rules/levels.html %}
 
         <span class="button">
-            <button class="badge-pill" onclick="Display('level-1', 'level-2')">I agree on the guidelines</button>
+            <a class="button" onclick="Display('level-1', 'level-2')">I agree on the guidelines</a>
         </span>
     </div>
 
@@ -82,7 +83,7 @@ pinned: false
         {% include rules/reskins.html %}
 
         <span class="button">
-            <button class="badge-pill" onclick="Display('skins-1', 'skins-2')">I agree on the guidelines</button>
+            <a class="button" onclick="Display('skins-1', 'skins-2')">I agree on the guidelines</a>
         </span>
     </div>
 
@@ -94,7 +95,7 @@ pinned: false
         <p>The .zip file should contain your mods folder and only the files needed for the level custom. Please host the level yourself, the JumpKingPlus' GitHub repository does not work as a cloud!</p>
         
         <span id="level-2-button" class="button">
-            <button class="badge-pill" onclick="Display('level-2-button', 'level-form')">Show me the form</button>
+            <a class="button" onclick="Display('level-2-button', 'level-form')">Show me the form</a>
             &nbsp;
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNW8MMBcqeQVjTW8va8ZQXq1-txXwDukQTzHqq8c8iLpTfgA/viewform" target="_blank">Open form in a new window<ion-icon name="open"></ion-icon></a>
         </span>
@@ -121,7 +122,7 @@ pinned: false
         <p>The .zip file should contain your reskin or collection texture and only the xml needed for the reskin or collection. For reskins and collections, we can host your reskin since it's a small file.</p>
 
         <span id="skins-2-button" class="button">
-            <button class="badge-pill" onclick="Display('skins-2-button', 'skins-form')">Show me the form</button>
+            <a class="button" onclick="Display('skins-2-button', 'skins-form')">Show me the form</a>
             &nbsp;
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBNK3Y1VTlHCBeHw8EdBDllwlgwyza06HSE-on7E3HgGbTHA/viewform" target="_blank">Open form in a new window<ion-icon name="open"></ion-icon></a>
         </span>

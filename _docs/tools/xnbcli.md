@@ -59,7 +59,7 @@ If you want to unpack an image from the game, put the file inside the `packed` f
 ### Pack images (from image file to XNB)
 If you want to pack an image to put on the mod, make sure you have the .json file of your file ready to get packed with your image. If you never unpacked an image you can use this simple .json and modify for your own use! 
 
-<span style="color: grey; font-size: small; font-weight:600;">YOURFILENAMEHERE.json&nbsp;&nbsp;<a class="ws-button code-show" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/YOURFILENAMEHERE.json"><ion-icon name="code-download"></ion-icon> Download</a></span>
+<span>YOURFILENAMEHERE.json&nbsp;&nbsp;<a class="button transparent small" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/YOURFILENAMEHERE.json"><ion-icon name="code-download"></ion-icon> Download</a></span>
 ```json
 {
     "header": {

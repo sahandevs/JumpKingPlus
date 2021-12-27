@@ -1,116 +1,373 @@
 ---
-layout: default
-homepage: true
+
 ---
 
-<script src="https://unpkg.com/feather-icons"></script>
+<!DOCTYPE html>
+<html>
 
-{% if site.posts.size == 0 %}
-  <h2>No post found</h2>
-{% endif %}
+  {% include head.html %}
+  
+  <body id="top">
+      {% include nav.html %}
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  {% if post.hidden==true %}
-  {% endif %}
-  {% unless post.hidden %}
-  {% if post.pinned==true %}
-    <article class="post pinned">
-      <div class="meta">
-        <h1>
-          <!--<span title="pinned"><i data-feather="anchor"></i></span>--><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> 
-        </h1>
-        <span class="date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </span>
+      <section id="home" class="wrapper-content header">
+        <div class="container">
+          <section>
+            <div class="content">
+              <h1 class="alkhemikal">An enhanced version of Jump King.</h1>
+              <p>JumpKingPlus is an <strong>enhancement</strong> with plentiful of small tweaks to make your hard climb to the babe even better!</p>
+              <a class="button" href="https://github.com/Phoenixx19/JumpKingPlus/releases/latest">
+                <ion-icon style="vertical-align: baseline;" name="download"></ion-icon> Get it now
+              </a>
+              <span id="downloads">
+                <script>
+                  async function GET(url) {
+                      const response = await fetch(url);
+                      const json = await response.json();
+                      return json;
+                  }
 
-        <div class="tag">
-          {% for tag in post.tags %}
-          <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/tags/?tag={{ tag }}">
-            <span class="rounded-full level-tag">
-              <span style="color: #868e96;">#</span>{{ tag }}
-            </span>
-          </a>
-          {% endfor %}
+                  function ParseGithubData(json) {
+                    let dl = 0;
+                    json.forEach(release => {
+                      release.assets.forEach(asset => {
+                        dl = Number(dl) + Number(asset.download_count);
+                      });
+                    });
+                    return dl.toLocaleString(undefined);
+                  }
+      
+                  GET("https://api.github.com/repos/Phoenixx19/JumpKingPlus/releases")
+                      .then(success => {
+                        document.getElementById('downloads').innerText = ParseGithubData(success) + " total downloads";
+                      })
+              </script>
+              </span>
+            </div>
+            <div class="images">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><g transform="translate(36 0) scale(-1 1)"><path fill="#FFAC33" d="M34.347 16.893l-8.899-3.294l-3.323-10.891a1 1 0 0 0-1.912 0l-3.322 10.891l-8.9 3.294a1 1 0 0 0 0 1.876l8.895 3.293l3.324 11.223a1 1 0 0 0 1.918-.001l3.324-11.223l8.896-3.293a.998.998 0 0 0-.001-1.875z"/><path fill="#FFCC4D" d="M14.347 27.894l-2.314-.856l-.9-3.3a.998.998 0 0 0-1.929-.001l-.9 3.3l-2.313.856a1 1 0 0 0 0 1.876l2.301.853l.907 3.622a1 1 0 0 0 1.94-.001l.907-3.622l2.301-.853a.997.997 0 0 0 0-1.874zM10.009 6.231l-2.364-.875l-.876-2.365a.999.999 0 0 0-1.876 0l-.875 2.365l-2.365.875a1 1 0 0 0 0 1.876l2.365.875l.875 2.365a1 1 0 0 0 1.876 0l.875-2.365l2.365-.875a1 1 0 0 0 0-1.876z"/></g></svg>
+              <div class="level-img">
+                <img class="level" src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/workshop/levels/ws3-3.png" alt="level">
+              </div>
+              
+              <img class="jing" src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/jump_up.png" alt="jing">
+            </div>
+            
+          </section>
         </div>
+      </section>
 
-        <script>
-          feather.replace()
-        </script>
-      </div>
-      <div class="entry">
-        {% if post.subtitle %}
-          <p>{{ post.subtitle }}</p>
-        {% endif %}
-        {{ post.excerpt }}
-        <div class="pagination" style="border-top: 0; padding: 10px 0;">
-          <span class="prev">
-            <a href="{{ site.baseurl }}{{ post.url }}">
-              Read More
-            </a>
-          </span>
+
+
+      <section id="features" class="wrapper-content header">
+        <div class="container">
+          <h2>Features (and cool perks)</h2>
+          <div class="grid">
+            <div class="long">
+              <ion-icon name="heart"></ion-icon>
+              <h3>Development community-oriented</h3>
+              <p>The JumpKingPlus' team <strong>fully supports</strong> the community around Jump King and has taken notes on the features and tweaks the game was missing and implemented it. Most of the features included in JumpKingPlus were requests from the community!</p>
+            </div>
+            <div>
+              <ion-icon name="stopwatch"></ion-icon>
+              <h3>Speedrun-friendly</h3>
+              <p>Hotkey for <img class="icon" title="Snake Ring" src="https://cdn.discordapp.com/app-assets/726077029195448430/735954342825427134.png" height="20" style="vertical-align: sub;"><img title="Giant Boots" class="icon" src="https://cdn.discordapp.com/app-assets/726077029195448430/735947335305265202.png" height="20" style="vertical-align: sub;">. Quick load feature, quick restart feature and even approved for speedruns.</p>
+            </div>
+            <div>
+              <ion-icon name="map"></ion-icon>
+              <h3>Custom level support</h3>
+              <p>Whenever you want to play a custom level such as <a href="{{ site.baseurl }}/workshop/4"><strong>Immortal Babe</strong></a> or <a href="{{ site.baseurl }}/workshop/3"><strong>Babe of Ascension</strong></a>.</p>
+            </div>
+            <div>
+              <ion-icon name="layers"></ion-icon>
+              <h3>Custom skins/collections support</h3>
+              <p>If you are tired of the classic Jump King character, single skins or collections might be for you.</p>
+            </div>
+            <div>
+              <ion-icon name="library"></ion-icon>
+              <h3>Levels and skins documentation <span class="rounded-full level-tag" style="display: inline;">New!</span></h3>
+              <p>Creating a level or a custom skin/collection has never been so easy with an <a href="{{ site.baseurl }}/workshop/docs"><strong>in-depth documentation</strong></a>.</p>
+            </div>
+          </div>
+          <div class="grid" id="grid-to-show">
+            <div class="absolute">
+              <script>
+                function DisplayGrid() {
+                  let grid = document.getElementById('grid-to-show');
+                  let array = [...grid.getElementsByTagName("div")];
+                  array.forEach(element => {
+                    if (element.classList.contains('absolute')) {
+                      grid.removeChild(element);
+                    }
+                    element.style.display = 'block';
+                  });
+                }
+              </script>
+              <a onclick="DisplayGrid()" class="button small">Read more <ion-icon name="chevron-down"></ion-icon></a>
+            </div>
+            <div>
+              <ion-icon name="logo-discord"></ion-icon>
+              <h3>Discord integration</h3>
+              <p>Let your friends see you fell in the bog for the 1062th time with the Discord's Rich Presence.</p>
+            </div>
+            <div>
+              <ion-icon name="construct"></ion-icon>
+              <h3>Assistive tools</h3>
+              <p>Build helper, jump charge percentage, precise and screen teleport feature without worrying about your achievements.</p>
+            </div>
+            <div>
+              <ion-icon name="menu"></ion-icon>
+              <h3>Improved menus</h3>
+              <p>Reorganized menus in-game in better groups to find what you need faster.</p>
+            </div>
+            <div>
+              <ion-icon name="eye"></ion-icon>
+              <h3>Stay focused on getting the babe</h3>
+              <p>Added the feature to disable NPC speeches and the location intros.</p>
+            </div>
+            <div>
+              <ion-icon name="egg"></ion-icon>
+              <h3>Easter eggs</h3>
+              <p>Collecting items can give you some unexpected results with NPCs.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </article>
-    {% endif %}
-    {% endunless %}
-  {% endfor %}
-  <!-- <hr />
-  {% for post in paginator.posts %}
-  {% if post.hidden==true %}
-  {% endif %}
-  {% unless post.hidden %}
-    {% unless post.pinned %}
-    <article class="post">
-      <div class="meta">
-        <h1>
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </h1>
-        <span class="date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </span>
+      </section>
 
-        <div class="tag">
-          {% for tag in post.tags %}
-          <a class="tag-link" href="{{ site.url }}{{ site.baseurl }}/tags/?tag={{ tag }}">
-            <span class="rounded-full level-tag">
-              <span style="color: #868e96;">#</span>{{ tag }}
-            </span>
-          </a>
-          {% endfor %}
+
+      <section id="team" class="wrapper-content header">
+        <div class="container">
+          <h2>Team and collaborators</h2>
+          <div class="grid">
+            <div>
+              <img src="https://avatars.githubusercontent.com/u/41084138?v=4" alt="Phoenixx19">
+              <h3>Phoenixx19</h3>
+              <h4>CEO, developer, website manager</h4>
+              <div class="links">
+                <a target="_blank" href="https://github.com/Phoenixx19"><ion-icon name="logo-github"></ion-icon></a>
+                <a target="_blank" href="https://www.twitter.com/phxx19"><ion-icon name="logo-twitter"></ion-icon></a>
+              </div>
+            </div>
+            <div>
+              <img src="https://avatars.githubusercontent.com/u/44384404?v=4" alt="MERNY">
+              <h3>MERNY</h3>
+              <h4>User-generated-content manager (v1.2+)</h4>
+              <div class="links">
+                <a target="_blank" href="https://www.twitter.com/MERNY_50"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a target="_blank" onclick="alert('MERNY#8542')"><ion-icon name="logo-discord"></ion-icon></a>
+              </div>
+            </div>
+            <div>
+              <img src="https://avatars.githubusercontent.com/u/37948990?v=4" alt="Ellie">
+              <h3>Elisiah</h3>
+              <h4>Developer (v1.7+)</h4>
+              <div class="links">
+                <a target="_blank" href="https://github.com/Elisiah"><ion-icon name="logo-github"></ion-icon></a>
+                <a target="_blank" href="https://www.twitter.com/TailsInABall"><ion-icon name="logo-twitter"></ion-icon></a>
+              </div>
+            </div>
+          </div>
+          <h3>Community contributors <span title="The current contributors' wall is ordered by date of contribution." style="font-size:small;vertical-align:top;cursor:help;">?</span> </h3>
+          <ul class="contributors">
+            {% for contributor in site.data.contributors.contributors %}
+              {% include contributor.html name=contributor.name contribute=contributor.contribute %}
+            {% endfor %}
+          </ul>
         </div>
+      </section>
+
+
+      <section id="faq" class="wrapper-content header">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="flex">
+            <ul class="nav-list">
+              <li class="nav-list-item active">
+                <a onclick="DisplayAnswer(this, '1')" class="nav-list-link active">Is JumpKingPlus safe?</a>
+              </li>
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '2')" class="nav-list-link">Does JumpKingPlus work on GOG?</a>
+              </li>
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '3')" class="nav-list-link">How do I install a custom level?</a>
+              </li>
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '4')" class="nav-list-link">Why is the restart button not working?</a>
+              </li>
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '5')" class="nav-list-link">How do I install a skin/collection?</a>
+              </li>
+              <!-- <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '6')" class="nav-list-link">I don't like the binds. Can I change them?</a>
+              </li> -->
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '7')" class="nav-list-link">How do I toggle "cheats"?</a>
+              </li>
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '8')" class="nav-list-link">Is it fine for speedrunning?</a>
+              </li>
+              <!-- <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '9')" class="nav-list-link">JumpKing crashes after pressing a key. Fix?</a>
+              </li> -->
+              <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '10')" class="nav-list-link">Can't uninstall JumpKingPlus...</a>
+              </li>
+              <!-- <li class="nav-list-item">
+                <a onclick="DisplayAnswer(this, '11')" class="nav-list-link">Can I customize/recompile JumpKingPlus?</a>
+              </li> -->
+            </ul>
+            <div id="answersList" class="answer">
+              <div id="answer1">
+                <p>The JumpKingPlus project is <strong>safe</strong> and <strong>open source</strong>.</p>
+                <ol>
+                  <li>
+                    It has been <strong>verified</strong> as an optional tool for speedruns on <a target="_blank" href="https://www.speedrun.com/jumpking/resources"><strong>Speedrun.com</strong></a>
+                  </li>
+                  <li>
+                    It has been used in various <strong>verified speedruns</strong>:
+                    <ul>
+                      <li>100% 43:07.070, by Laayuman <a target="_blank" href="https://www.twitch.tv/videos/953858437"><ion-icon name="logo-twitch"></ion-icon></a></li>
+                      <li>100% 47:09.83x, by Tetoloid <a target="_blank" href="https://www.twitch.tv/videos/1025815511/?&amp;tt_content=channel_name&amp;tt_medium=embed"><strong><ion-icon name="logo-twitch"></ion-icon></strong></a></li>
+                      <li>100% 57:09.960, by けんちゃん <a target="_blank" href="https://www.youtube.com/watch?v=mGp-bJN-UFg"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                      <li>All Maps 21:12.920, by Tetoloid <a target="_blank" href="https://www.youtube.com/watch?v=ztkh-5g_N_c"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                      <li>Ghost of the Babe 5:47.973, by Laayuman <a target="_blank" href="https://www.twitch.tv/videos/895408065/?&amp;tt_content=channel_name&amp;tt_medium=embed"><ion-icon name="logo-twitch"></ion-icon></a></li>
+                    </ul>
+                  </li>
+                  <li>It has been <strong>recognized by the official Jump King twitter</strong> account. <a href="https://twitter.com/nexilegames/status/1325429701549027333"><ion-icon name="logo-twitter"></ion-icon></a> <a href="https://twitter.com/nexilegames/status/1419312990705291268"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                  <li>It has been used by by <strong>popular streamers</strong> (such as forsen, xQc, Elajjaz, Mizkif and ludwig) to play custom levels such as <a href="{{ site.baseurl }}/workshop/4"><strong>Immortal Babe</strong></a> or <a href="{{ site.baseurl }}/workshop/3"><strong>Babe of Ascension</strong></a>.</li>
+                  <li>It has over <strong>15 thousand downloads</strong> and counting.</li>
+                </ol>
+                <div class="transparency">
+                  <div class="logo">
+                    <ion-icon name="shield"></ion-icon>
+                  </div>
+                  <div class="content">
+                    <h3>JumpKingPlus' Transparency and Safety</h3>
+                    <p>If you have still doubts about JumpKingPlus, read more about JumpKingPlus' transparency and safety on the blogpost <a href="/JumpKingPlus/transparency"><strong>here</strong></a>.</p>
+                  </div>
+                </div>
+              </div>
+              <div id="answer2" style="display: none;">
+                <p><strong>No</strong>, JumpKingPlus does not work with the GOG version and there is currently <u>no interest in making GOG version of JumpKingPlus</u>, not owning a copy of Jump King on the platform.</p>
+                <p>Jump King on GOG works in a different way than the Steam version, that means the installer is incompatible with Jump King (GOG version).</p>
+              </div>
+              <div id="answer3" style="display: none;">
+                <h3>Video tutorial</h3>
+                <iframe src="https://www.youtube-nocookie.com/embed/1encOb7Rs6o?autoplay=0" allowfullscreen="" width="100%" height="600" frameborder="0"></iframe>
+                <h3 style="margin-top: 1rem;">Text explaination</h3>
+                <ol>
+                    <li>Find a level you would like to play in the workshop section, download it using the Download button.</li>
+                    <li>Open the .zip file.</li>
+                    <li>Replace the <code class="language-plaintext highlighter-rouge">Jump King/Content/mods</code> folder with the <code class="language-plaintext highlighter-rouge">mods</code> folder inside the .zip file.</li>
+                    <li>(optional) Make sure the level.xnb and mod.xml file exist.</li>
+                    <li>Open Jump King and click on New Game (unless you have a save for it).</li>
+                    <li>Profit.</li>
+                </ol>
+              </div>
+              <div id="answer4" style="display: none;">
+                <p>The quick restart button has been disabled <strong>by default</strong> from <i>v1.5.2</i>.</p>
+                <p>In order to enable it:</p>
+                <ol>
+                  <li>Edit the <code class="language-plaintext highlighter-rouge">JumpKing.exe.config</code> file inside the Jump King folder.</li>
+                  <li>Find the current text in the file: <code class="language-plaintext highlighter-rouge">boomerProofRestart="True"</code>.</li>
+                  <li>Change it to <code class="language-plaintext highlighter-rouge">boomerProofRestart="True"</code>.</li>
+                </ol>
+              </div>
+              <div id="answer5" style="display: none;">
+                <h3>Video tutorial</h3>
+                <iframe src="https://www.youtube-nocookie.com/embed/2M03SIBnMcc?autoplay=0" allowfullscreen="" width="100%" height="600" frameborder="0"></iframe>
+                <h3 style="margin-top: 1rem;">Text explaination</h3>
+                <ol>
+                    <li>Find a skin/collection you would like to use in the workshop, download it using the Download icon button.</li>
+                    <li>Open the .zip file.</li>
+                    <li>Head to <code class="language-plaintext highlighter-rouge">Jump King/Content/wardrobe</code>.</li>
+                    <li>Drag the files from the .zip file inside the folder.</li>
+                </ol>
+                <p>If some skins are in the way once you start the game, consider disabling them in the Inventory > Wardrobe.</p>
+              </div>
+              <!-- <div id="answer6" style="display: none;">
+                <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/bind.png" alt="Bind">
+                <p>They are fully bindable on all devices (as long as you plug them in).
+                The previous binds before installing JumpKingPlus <strong>won’t work</strong> so please politely rebind your preferred controller.</p>
+              </div> -->
+              <div id="answer7" style="display: none;">
+                <p><strong>Warning: with cheats, achievements are disabled!</strong></p>
+                <h3>Enabling cheats</h3>
+                <p>Edit the <code class="language-plaintext highlighter-rouge">JumpKing.exe.config</code> file inside the Jump King folder; where it says <code class="language-plaintext highlighter-rouge">cheats="False"</code> change it to <code class="language-plaintext highlighter-rouge">cheats="True"</code>.</p>
+                <h3>Disabling cheats</h3>
+                <p>Edit the <code class="language-plaintext highlighter-rouge">JumpKing.exe.config</code> file inside the Jump King folder; where it says <code class="language-plaintext highlighter-rouge">cheats="True"</code> change it to <code class="language-plaintext highlighter-rouge">cheats="False"</code>.</p>
+              </div>
+              <div id="answer8" style="display: none;">
+                <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/tools.png" alt="tools" />
+                <p>JumpKingPlus has been <a href="https://phoenixx19.github.io/JumpKingPlus/speedrun"><strong>approved</strong></a> on speedrun(dot)com for speedrunning. You will need to disable cheats (if you have them enabled, <strong>cheats enabled runs will be not valid</strong>). More details on the <a href="https://www.speedrun.com/jumpking">speedrun rules</a>.</p>
+              </div>
+              <!-- <div id="answer9" style="display: none;">
+                <p>Delete your controller binds (they are .xml files, look the image below for an example) inside the <code class="language-plaintext highlighter-rouge">ControllerBinds</code> folder inside <code class="language-plaintext highlighter-rouge">Jump King\Content</code>.</p>
+                <img src="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/images/files.png" alt="binds">
+                <p>Say goodbye to your binds though.</p>
+                <p>Should be fixed with release `v1.5.1`.</p>
+              </div> -->
+              <div id="answer10" style="display: none;">
+                <p>Reinstall JumpKing and try uninstall after downloading it again.</p>
+                <h4>If still not working:</h4>
+                <p>Send me a message through Jump King's Discord or Github and we'll try to help you through.</p>
+              </div>
+              <!-- <div id="answer11" style="display: none;">
+                <p>Yes. I left the source code on Github and you can easily recompile the <code class="language-plaintext highlighter-rouge">JumpKingPlus.dll</code> file and <code class="language-plaintext highlighter-rouge">JumpKing.exe</code> (check <strong>insider</strong> branch) if you would like.</p>
+              </div> -->
+            </div>
+            <script>
+              function DisplayAnswer(item, number) {
+                var oldAnswer = document.querySelector(".nav-list-item.active");
+                oldAnswer.classList.remove('active');
+                oldAnswer.children[0].classList.remove('active');
+                item.classList.add('active');
+                item.parentNode.classList.add('active');
+                var newAnswer = document.getElementById('answer'+number);
+                var answers = document.getElementById('answersList');
+                [...answers.children].forEach(element => {
+                  element.style.display = 'none';
+                  if (element = newAnswer) {
+                    element.style.display = 'block';
+                  }
+                });
+              }
+            </script>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contact" class="wrapper-content header">
+        <div class="container">
+          <h2>Still not convinced yet?</h2>
+          <p>If you have a question to ask us, talk about the development or just have a chat.<br>Tweet us a message or join the official Jump King's Discord server!</p>
+          <div>
+            <a target="_blank" href="https://www.twitter.com/{{ site.footer-links.twitter }}"><ion-icon name="logo-twitter"></ion-icon> Tweet</a>
+            <a target="_blank" class="button small" style="margin-left: 1rem;" href="https://discord.gg/{{ site.footer-links.discord }}"><ion-icon name="logo-discord"></ion-icon> Join the Discord server</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrapper-footer-desktop">
+        <footer class="footer">
+          {% include footer.html %}
+        </footer>
       </div>
 
-      <div class="entry">
-        {{ post.excerpt | truncate: 500 }}
+      <div class="wrapper-footer-mobile">
+        <footer class="footer">
+          {% include footer.html %}
+        </footer>
       </div>
-      <!--<div class="pagination" style="border-top: 0; padding: 10px 0;">
-      <span class="prev">
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          Read More
-        </a>
-      </span>
-      </div>--> <!--
-    </article>
-    {% endunless %}
-    {% endunless %}
-  {% endfor %} -->
-</div>
 
-<!--
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <span class="prev">
-      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="prev">
-        ← Previous
-      </a>
-    </span>
-  {% endif %}
-  {% if paginator.next_page %}
-    <span class="next">
-      <a href="{{ site.baseurl}}{{ paginator.next_page_path }}" class="next">
-        Next →
-      </a>
-    </span>
-  {% endif %}
-</div> -->
+      <!-- <script>
+        function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        history.scrollRestoration = "manual";
+        window.onload = scrollToBottom;
+    </script> -->
+
+  </body>
+</html>

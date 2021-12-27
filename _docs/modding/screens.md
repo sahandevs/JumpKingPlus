@@ -34,7 +34,7 @@ The name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.x
 
 ## Scrolling images
 
-<div class="ws-buttons"><a class="ws-button" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/scroll.xml"><ion-icon name="code-slash"></ion-icon> Example scroll.xml</a></div>
+<a class="button transparent small" href="https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/scroll.xml"><ion-icon name="code-slash"></ion-icon> Example scroll.xml</a>
 
 The scrolling texture is usually used for **clouds or birds** flying in the distance (*behind the player*).
 
