@@ -18,9 +18,9 @@ contains all the sound related content.
 {:toc}
 
 ## Music warning
-Make sure you compress your music/audio enough so the **level** once compressed **doesn't have file size that's too large**!
+> If a copyright holder of a song/asset asks us to remove the copyrighted material due to not having a proper license for usage, download links to the map will be removed until the situation is resolved. Either by replacing the copyrighted material, or by acquiring the proper license/permission for its usage.
 
-It's recommended that you try to keep the final **mods** folder below **1GB**. ([BoA](https://phoenixx19.github.io/JumpKingPlus/workshop/3/) and [IB](https://phoenixx19.github.io/JumpKingPlus/workshop/4/) are both **800MB**)
+> Make sure you compress your music/audio enough so the **level** once compressed **doesn't have file size that's too large**! It's recommended that you try to keep the final **mods** folder below **1GB**. ([BoA](https://phoenixx19.github.io/JumpKingPlus/workshop/3/) and [IB](https://phoenixx19.github.io/JumpKingPlus/workshop/4/) are both **800MB**)
 
 <br>
 
