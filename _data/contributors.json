@@ -78,15 +78,15 @@
         },
         {
             "name": "kkaero",
-            "contribute": ["Documentation helper"]
+            "contribute": ["Feature idea", "Documentation helper"]
         },
         {
             "name": "Taft",
             "contribute": ["Youtube helper"]
         },
         {
-            "name": "Rampus",
-            "contribute": ["Feature idea"]
+            "name": "응웡",
+            "contribute": ["Feature idea", "Bug catcher"]
         }
     ]
 }
