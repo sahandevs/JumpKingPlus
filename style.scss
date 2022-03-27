@@ -912,12 +912,34 @@ table {
   border: 1px solid $table-border-color;
   border-collapse: collapse;
   border-radius: 4px;
+
+  &.overflow-x, &.overflow-y {
+    display: block;
+    overflow: scroll;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  &.overflow-y {
+    th {
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  &.overflow-x {
+    th {
+      position: sticky;
+      left: 0;
+    }
+  }
 }
 
 td, th {
   padding: .25rem .5rem;
   border: 1px solid $table-border-color;
 }
+
 
 // Blockquote
 blockquote {
@@ -2038,7 +2060,10 @@ footer {
   }
 }
 
-tr.exclusive { background-color: #fff3b2!important; }
+tr.exclusive { 
+  background-color: #fff3b2!important; 
+}
+
 
 .card-question {
   margin-bottom: 2em;
@@ -2209,7 +2234,7 @@ ul.nav-list {
   .disclaimer p { color: black }
   table { border: 1px solid rgb(50, 50, 50); color: lightgrey; }
   td, th { border: 1px solid rgb(50, 50, 50); }
-  tbody tr td, tbody tr th { background-color: rgb(33, 33, 33); }
+  tbody, thead { tr { td { background-color: rgb(33, 33, 33); } th { background-color: rgb(25, 25, 25); } } }
   tr.exclusive { background-color: transparent!important; }
   tr.exclusive td { background-color: #ffd0000c!important; }
   .toc { color: lightgrey }

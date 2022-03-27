@@ -94,6 +94,7 @@ Jump King uses a specific color to define what a block is inside of this file.
       <td>Works both left and right side of the screen</td>
       <td><div class="rectangle-gradient" style="background-image: linear-gradient(to right, rgb(1,0,255), rgb(255,0,255));"></div>RGB(1,0,255) to RGB(255,0,255)</td>
     </tr>
+    <hr>
     <tr class="exclusive">
       <td>Low gravity</td>
       <td>Velocity and gravity is between water and normal, the Y distance is slightly higher</td>
@@ -149,15 +150,16 @@ In order to get the full potential of a quark block:
 <br>
 
 ## JumpKingPlus' blocks compatibility table
-<table>
+<table class="overflow-x">
   <thead>
     <tr>
-      <th>block</th>
-      <th>JK+ v1.1.0 or older</th>
-      <th>JK+ v1.2.0 to v1.3.0</th>
-      <th>JK+ v1.3.1</th>
-      <th>JK+ v1.4.0 or v1.6.1</th>
-      <th>JK+ v1.7.0 or newer</th>
+      <th style="position: sticky;left: 0;">block</th>
+      <td>JK+ v1.1.0 or older</td>
+      <td>JK+ v1.2.0 to v1.3.0</td>
+      <td>JK+ v1.3.1</td>
+      <td>JK+ v1.4.0 to v1.6.1</td>
+      <td>JK+ v1.7.0</td>
+      <td>JK+ v1.7.1 or newer</td>
     </tr>
   </thead>
   <tbody>
@@ -210,39 +212,53 @@ In order to get the full potential of a quark block:
       <td colspan="5">&check; (from vanilla game)</td>
     </tr> -->
     <tr>
-      <td>Low gravity</td>
+      <th>Low gravity</th>
       <td>&cross;</td>
       <td>? <a href="#block1">*¹</a></td>
       <td>&check;</td>
       <td>&check;</td>
       <td>&check;</td>
+      <td>&check;</td>
     </tr>
     <tr>
-      <td>Wind gradients</td>
+      <th>Wind gradients</th>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&check;</td>
-      <td>&check;</td>
-    </tr>
-    <tr>
-      <td>One-way wind gradients</td>
-      <td>&cross;</td>
-      <td>&cross;</td>
-      <td>&cross;</td>
       <td>&check;</td>
       <td>&check;</td>
     </tr>
     <tr>
-      <td>Warp</td>
+      <th>One-way wind gradients</th>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&check;</td>
+      <td>&check;</td>
+      <td>&check;</td>
+    </tr>
+    <tr>
+      <th>Warp</th>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&check;</td>
+      <td>&check;</td>
     </tr>
     <tr>
-      <td>Semi-solid</td>
+      <th>Semi-solid</th>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&cross;</td>
+      <td>&check;</td>
+      <td>&check;</td>
+    </tr>
+    <tr>
+      <th>Double teleport</th>
+      <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>
       <td>&cross;</td>

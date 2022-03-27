@@ -18,7 +18,7 @@ The particles folder should include two .xml configuration file which are:
 The weather configuration `weather.xml` contains a list of pre-existing particles that can be used for your level. Inside `<weathers>`, you will find multiple instances of the `<Weather>` tag.
 
 ### Weather
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains the name of the weather, fps and screens it is in.
 

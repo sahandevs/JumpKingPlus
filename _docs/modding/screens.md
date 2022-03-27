@@ -26,7 +26,7 @@ Every layer has its own name, format and folder.<br>The following list will go f
 ## Background
 At the lowest ground there's the background.
 The background is usually used for **skies or gradients** to put on the back end of screens.<br>
-The name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.xnb`.
+This size of the file should be **480x360** pixels, the name of the file should be `bg(SCREEN NUMBER).xnb`, or as an example, `bg1.xnb`.
 
 ![BG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/background.png)
 
@@ -47,7 +47,7 @@ The scrolling images are managed by an .xml file, that determines their texture,
 ## Midground
 Right after the scrolling images, there's the midground.
 The midground is usually used for **platforms and details** that are **behind the player** (the player can go over them).
-The name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
+This size of the file should be **480x360** pixels, the name of the file should be `(SCREEN NUMBER).xnb`, or as an example, `1.xnb`.
 
 ![MG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/midground.png)
 
@@ -59,7 +59,7 @@ Masks can be used to give more depth to the level, some examples of masks are as
 
 The animated backgrounds are stored inside the default `particles` folder, to add a particle effect [**head over the particles section**](../particles/#weather-configuration).
 
-The name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an example `light_snow_bgmask1.xnb`.
+This size of the file should be **480x360** pixels, the name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an example `light_snow_bgmask1.xnb`.
 
 ![Mask](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/mask.png)
 
@@ -70,6 +70,6 @@ The name of the file should be `(MASK NAME)mask(SCREEN NUMBER).xnb`, or as an ex
 ## Foreground
 The foreground work one layer above the masks and particles.
 The foreground is used for **details that are in front of the player**, such as vines or grass.
-The name of the file should be `fg(SCREEN NUMBER).xnb`, or as an example, `fg1.xnb`.
+This size of the file should be **480x360** pixels, the name of the file should be `fg(SCREEN NUMBER).xnb`, or as an example, `fg1.xnb`.
 
 ![FG](https://raw.githubusercontent.com/Phoenixx19/JumpKingPlus/www/workshop/files/foreground.png)

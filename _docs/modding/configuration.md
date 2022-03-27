@@ -25,22 +25,35 @@ In this file, you will set up the following basic information of your level usin
 {:toc}
 
 ## About
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains all the general details about the custom level, such as the following:
 
 |name|description|type|required|
 |`<title>`|Title of the custom level (will show up in the Stats Display and Discord RPC)|string|Yes|
 |`<image_key>`|Image for Discord RPC of the custom level (this will be added on the level's workshop release)|string|No|
+|`<LevelColor>`|[Read more about the level color here.](#levelcolor)|LevelColor|No|
 |`<ending_screen>`|Screen where the first babe spawns (Main Babe)|int|Yes|
 |`<ending_screen_nbp>`|Screen where the second babe spawns (New Babe Plus)|int|No|
 |`<ending_screen_owl>`|Screen where the third babe spawns (Ghost of the Babe)|int|No|
 |`<disableProgress>`|Disable level percentage|boolean|No|
+|`<StartingPositon>`|[Read more about the starting position here.](#startposition)|StartPosition|No|
 
 The title will show up only when the game started is Main Babe / Normal Game.
 
+### LevelColor
+<p class="do-i-need-it">optional</p>
+
+Added from <span class="badge-pill">v1.7.1</span>, this setting can be found inside `<About>` and contains all the data for a custom title color for the custom map.
+
+|name|description|type|required|
+|`<red>`|Contains the value (0 to 255) for the Red channel|byte|Yes|
+|`<green>`|Contains the value (0 to 255) for the Green channel|byte|Yes|
+|`<blue>`|Contains the value (0 to 255) for the Blue channel|byte|Yes|
+|`<alpha>`|Contains the value (0 to 255) for the Alpha channel|byte|Yes|
+
 ### StartPosition
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 Can be found inside `<About>`, this contains all the data for the custom start position.
 
@@ -56,7 +69,7 @@ The StartPosition tag is optional, while the tags inside of it aren't. Which mea
 <br>
 
 ## Compatibility
-<span class="do-i-need-it">optional (!)</span>
+<p class="do-i-need-it">optional (!)</p>
 
 contains all the details to check if a level is compatible with the running Jump King Plus version.
 
@@ -69,7 +82,7 @@ As of now, this is optional, but it's strongly recommended to write this too sin
 <br>
 
 ## Fonts
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains all the custom fonts that could be used globally on Jump King for the custom level.
 
@@ -100,7 +113,7 @@ Custom fonts are optional as specified, if left blank, JumpKingPlus will automat
 <br>
 
 ## Ending
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains the custom images after beating/ending the custom level.<br>The images need be located inside `mods/ending`.
 
@@ -118,18 +131,18 @@ the extensions in the name, the game is automatically set to find the .xnb files
 <br>
 
 ## EndingLines
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains the ending lines/credits for finishing the custom level.
 Ending lines is an array of `<Credit>`, an array means that there could possibly be multiple `<Credit>` tags.
 
 ### Credit
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 Can be found inside `<EndingLines>`, this contains a header as the title, an array of strings called `<People>`.
 
 #### People 
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 Can be found inside `<Credit>`, this contains a list of `<string>` for every person credited (or text per line). Try not to add more than 5 strings per credit since it might look bad or even not work.
 
@@ -160,7 +173,7 @@ If you have done this correctly, it might end up like this:
 includes all the possible text in Jump King based by your localization language. Check out all the possible combinations
 [**here**](./files/LanguageJK.xml).
 
-<br>
+---
 
 And finally, once you're done you'll end up with something like this:
 

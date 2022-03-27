@@ -22,18 +22,19 @@ contains the list of locations and the *earthquake* effect settings.
 is a configuration file used both by the game and the Discord Rich Presence that contains the list of locations in the custom level. This can be changed editing the `gui/location_settings.xml` file.
 
 ### Locations
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 contains every location. Locations is an array of `<Location>`, an array means that there could possibly be multiple `<Location>` tags.
 
 #### Location
 contains every detail about the single location such as:
 
-|tag|description|type|
-|`<start>`|Screen number where location starts|int|
-|`<end>`|Screen number where location ends|int|
-|`<unlock>`|Screen number where location name pops up|int|
-|`<name>`|Location name|string|
+|tag|description|type|required|
+|`<start>`|Screen number where location starts|int|Yes|
+|`<end>`|Screen number where location ends|int|Yes|
+|`<unlock>`|Screen number where location name pops up|int|Yes|
+|`<name>`|Location name|string|Yes|
+|`<ignore>`|Disables percentage for a location (from <span class="badge-pill">v1.7.1</span>)|bool|No|
 
 If you've done it correctly, it should end up something like this:
 

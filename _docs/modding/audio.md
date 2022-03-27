@@ -28,7 +28,7 @@ contains all the sound related content.
 contains all the music, ambient inside each screen of the custom level.
 
 ### AmbienceInfo
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 Found inside `<special_info>`, contains all the information about a single sound file, such as:
 
@@ -41,13 +41,13 @@ Found inside `<special_info>`, contains all the information about a single sound
 |`<fade_in_length>`|Fade in length in seconds|
 
 ### AmbienceSave
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 Found inside `<sections>`, contains generic information about the music in a section (number of screens).
 **AmbienceSave** contains multiple instances of the `<Ambience>` tag.
 
 #### Ambience
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 Found inside `<AmbienceSave>`, contains name and volume of a sound.
 

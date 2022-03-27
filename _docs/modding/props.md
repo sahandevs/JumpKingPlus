@@ -30,7 +30,7 @@ are **items that the player can pick up** by walking on them. These world items 
 In order to have the world items working in-game, the game reads a file called `worlditems.xml` inside the folder specified above. This file contains an `<items>` tag which is an array (multiple instances) of the `<WorldItemState>` tag.
 
 ### WorldItemState
-<span class="do-i-need-it">optional</span>
+<p class="do-i-need-it">optional</p>
 
 contains the information of a single world item.
 
@@ -152,7 +152,7 @@ are details (that can also be animated!) on screen.
 The props in-game (such as the bonfire in the first screen) are stored in the `props/textures` folder. Inside this folder, there's a configuration file named `prop_settings.xml` which contains a list of `<PropSetting>` tags.
 
 ### PropSetting
-<span class="do-i-need-it">required</span>
+<p class="do-i-need-it">required</p>
 
 is the setting file for every single prop.
 
